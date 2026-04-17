@@ -2,12 +2,14 @@
 #
 # Fields:
 #   name         Display name
-#   type         greenhouse | workday | generic
+#   type         greenhouse | lever | workday | generic | email_only
 #   disabled     true  →  skip this company
 #
 # type=greenhouse: board_token   (boards-api.greenhouse.io/v1/boards/{token}/jobs)
+# type=lever:      company_id    (api.lever.co/v0/postings/{company_id})
 # type=workday:    workday_base + workday_path
 # type=generic:    careers_url  + optional link_pattern (substring filter on href)
+# type=email_only: resume_email  (no scraping; manual application only)
 #
 # All Greenhouse tokens live-verified. Generic URLs HTTP-verified.
 # Firms marked "private" have no known public job board; set disabled:true to skip.
@@ -103,22 +105,21 @@ companies:
   # a browser-based solution is added (e.g. Playwright). Keep disabled for now.
 
   - name: "Citadel"
-    type: workday
-    workday_base: "https://citadel.wd5.myworkdayjobs.com"
-    workday_path: "Citadel_Careers"
-    disabled: true  # blocked by Cloudflare; needs Playwright
+    type: generic
+    careers_url: "https://www.citadel.com/careers/open-opportunities/"
+    link_pattern: "/careers/"
+    disabled: true  # 403 anti-bot; needs Playwright
 
   - name: "Citadel Securities"
-    type: workday
-    workday_base: "https://citadelsecurities.wd5.myworkdayjobs.com"
-    workday_path: "CS_Careers"
-    disabled: true  # blocked by Cloudflare; needs Playwright
+    type: generic
+    careers_url: "https://www.citadelsecurities.com/careers/open-opportunities/"
+    link_pattern: "/careers/"
+    disabled: true  # 403 anti-bot; needs Playwright
 
   - name: "Cubist Systematic Strategies"
-    type: workday
-    workday_base: "https://point72.wd5.myworkdayjobs.com"
-    workday_path: "Cubist"
-    disabled: true  # not found on Greenhouse; Workday blocked
+    type: generic
+    careers_url: "https://careers.point72.com/?business=cubist"
+    disabled: true  # JS-rendered; needs Playwright
 
   # ── Generic / custom career pages (HTML scrape) ───────────────────────────────
 
@@ -132,9 +133,8 @@ companies:
     careers_url: "https://www.alphasimplex.com/careers"
 
   - name: "Ansatz Capital"
-    type: generic
-    careers_url: "https://www.ansatzcapital.com/"
-    disabled: true  # site resets connections (anti-bot)
+    type: lever
+    company_id: ansatzcapital
 
   - name: "Aquatic Capital"
     type: generic
@@ -146,13 +146,12 @@ companies:
 
   - name: "Athena Capital Research"
     type: generic
-    careers_url: "https://www.athenacapitalresearch.com/"
-    disabled: true  # DNS resolution failed
+    careers_url: "https://athenacr.hire.trakstar.com/"
 
   - name: "Balyasny Asset Management"
     type: generic
-    careers_url: "https://www.balyasny.com/"
-    disabled: true   # domain appears offline; update URL when found
+    careers_url: "https://bambusdev.my.site.com/s/"
+    disabled: true  # Salesforce Experience Cloud; JS-rendered; needs Playwright
 
   - name: "Belvedere Trading"
     type: generic
@@ -160,9 +159,8 @@ companies:
     link_pattern: "/careers/"
 
   - name: "Bluefin Trading"
-    type: generic
-    careers_url: "https://www.bluefintrading.com/careers/"
-    disabled: true  # connection refused
+    type: email_only
+    resume_email: resumes@bfcm.com
 
   - name: "Boerboel Trading"
     type: generic
@@ -176,8 +174,9 @@ companies:
 
   - name: "Crabel Capital"
     type: generic
-    careers_url: "https://crabelcapital.com/careers/"
-    disabled: true  # SSL cert hostname mismatch
+    careers_url: "https://crabel.com/careers/#positions"
+    link_pattern: "/careers/"
+    disabled: true  # JS-rendered; needs Playwright
 
   - name: "DE Shaw"
     type: generic
@@ -212,9 +211,8 @@ companies:
     careers_url: "https://galoiscapital.com/"
 
   - name: "Gelber Group"
-    type: generic
-    careers_url: "https://www.gelbergroup.com/careers/"
-    disabled: true  # SSL cert error
+    type: greenhouse
+    board_token: gelbergroup
 
   - name: "Geneva Trading"
     type: generic
@@ -223,8 +221,9 @@ companies:
 
   - name: "Group One Trading"
     type: generic
-    careers_url: "https://grouponetrading.com/"
-    disabled: true  # SSL cert expired
+    careers_url: "https://group1.com/careers/"
+    link_pattern: "/careers/"
+    disabled: true  # JS-rendered; needs Playwright
 
   - name: "GSA Capital"
     type: generic
@@ -243,11 +242,6 @@ companies:
   - name: "HAP Capital"
     type: generic
     careers_url: "https://hapcapital.com/careers/"
-
-  - name: "HC Technologies"
-    type: generic
-    careers_url: "https://www.hctech.com/"
-    disabled: true  # consistently times out
 
   - name: "Headlands Technologies"
     type: generic
@@ -279,14 +273,8 @@ companies:
     disabled: true  # private firm
 
   - name: "Laurion Capital Management"
-    type: generic
-    careers_url: "https://www.laurion.com/"
-    disabled: true  # site unreachable
-
-  - name: "MANA Partners"
-    type: generic
-    careers_url: "https://manapartners.com/careers"
-    disabled: true  # SSL cert hostname mismatch
+    type: email_only
+    resume_email: jobs@laurioncap.com
 
   - name: "Millennium Management"
     type: generic
@@ -330,8 +318,7 @@ companies:
 
   - name: "Renaissance Technologies"
     type: generic
-    careers_url: "https://careers.rentec.com/"
-    disabled: true  # private; board may require login
+    careers_url: "https://www.rentec.com/Careers.action?jobs=true"
 
   - name: "SIG (Susquehanna)"
     type: generic
@@ -372,9 +359,8 @@ companies:
     link_pattern: "/careers/"
 
   - name: "Valkyrie Trading"
-    type: generic
-    careers_url: "https://www.valkyrie.trade/careers"
-    disabled: true  # DNS resolution failed (domain may have changed)
+    type: lever
+    company_id: valkyrietrading
 
   - name: "Voleon Group"
     type: generic

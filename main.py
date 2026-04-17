@@ -52,6 +52,10 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
             log.debug("Skipping disabled company: %s", company["name"])
             continue
 
+        if company.get("type") == "email_only":
+            log.debug("Skipping email-only company: %s (%s)", company["name"], company.get("resume_email", ""))
+            continue
+
         name = company["name"]
         log.info("Scraping %s …", name)
 
