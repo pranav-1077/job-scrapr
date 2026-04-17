@@ -33,61 +33,88 @@ JOB_TITLE_TERMS = re.compile(
     re.I,
 )
 
+# Link text that indicates a "next page" pagination link
+NEXT_PAGE_TEXT = re.compile(r"^(next|next page|›|»|>)$", re.I)
+
+MAX_PAGES = 20
+
 
 def _uid(text: str, url: str) -> str:
     return hashlib.md5(f"{text}|{url}".encode()).hexdigest()[:16]
+
+
+def _find_next_page(soup: BeautifulSoup, base: str, current_url: str) -> str | None:
+    # Prefer rel="next"
+    tag = soup.find("a", rel="next", href=True)
+    if tag:
+        return urljoin(current_url, tag["href"])
+    # Fall back to text-based next link
+    for a in soup.find_all("a", href=True):
+        if NEXT_PAGE_TEXT.match(a.get_text(strip=True)):
+            return urljoin(current_url, a["href"])
+    return None
 
 
 class GenericScraper(BaseScraper):
     def fetch_jobs(self) -> list[Job]:
         careers_url = self.company["careers_url"]
         link_pattern = self.company.get("link_pattern")
-
-        resp = requests.get(careers_url, headers=HEADERS, timeout=30, allow_redirects=True)
-        resp.raise_for_status()
-
-        soup = BeautifulSoup(resp.text, "lxml")
         base = f"{urlparse(careers_url).scheme}://{urlparse(careers_url).netloc}"
 
-        # Remove navigation, footer, header noise
-        for tag in soup.find_all(["nav", "footer", "header", "script", "style"]):
-            tag.decompose()
-
         jobs = []
-        seen = set()
+        seen_urls: set[str] = set()
+        visited_pages: set[str] = set()
+        page_url: str | None = careers_url
 
-        for a in soup.find_all("a", href=True):
-            text = a.get_text(" ", strip=True)
-            href = a["href"]
+        while page_url and len(visited_pages) < MAX_PAGES:
+            if page_url in visited_pages:
+                break
+            visited_pages.add(page_url)
 
-            # Skip empty / very long / obviously non-job links
-            if not text or len(text) < 4 or len(text) > 200:
-                continue
+            resp = requests.get(page_url, headers=HEADERS, timeout=30, allow_redirects=True)
+            resp.raise_for_status()
 
-            # Resolve URL
-            if href.startswith("//"):
-                href = "https:" + href
-            elif href.startswith("/"):
-                href = base + href
-            elif not href.startswith("http"):
-                href = urljoin(careers_url, href)
+            soup = BeautifulSoup(resp.text, "lxml")
 
-            # Filter by optional link_pattern from config
-            if link_pattern and link_pattern not in href:
-                continue
+            # Remove navigation, footer, header noise
+            for tag in soup.find_all(["nav", "footer", "header", "script", "style"]):
+                tag.decompose()
 
-            # Heuristic: either the URL or the link text suggests a job
-            url_looks_like_job = bool(JOB_URL_TERMS.search(href))
-            text_looks_like_job = bool(JOB_TITLE_TERMS.search(text))
+            for a in soup.find_all("a", href=True):
+                text = a.get_text(" ", strip=True)
+                href = a["href"]
 
-            if not (url_looks_like_job or text_looks_like_job):
-                continue
+                # Skip empty / very long / obviously non-job links
+                if not text or len(text) < 4 or len(text) > 200:
+                    continue
 
-            uid = _uid(text, href)
-            if uid in seen:
-                continue
-            seen.add(uid)
+                # Resolve URL
+                if href.startswith("//"):
+                    href = "https:" + href
+                elif href.startswith("/"):
+                    href = base + href
+                elif not href.startswith("http"):
+                    href = urljoin(page_url, href)
 
-            jobs.append(Job(id=uid, title=text, url=href, location="", department=""))
+                # Filter by optional link_pattern from config
+                if link_pattern and link_pattern not in href:
+                    continue
+
+                # Heuristic: either the URL or the link text suggests a job
+                url_looks_like_job = bool(JOB_URL_TERMS.search(href))
+                text_looks_like_job = bool(JOB_TITLE_TERMS.search(text))
+
+                if not (url_looks_like_job or text_looks_like_job):
+                    continue
+
+                # Deduplicate by URL — prefer the first (usually longer/more descriptive) link text
+                if href in seen_urls:
+                    continue
+                seen_urls.add(href)
+
+                uid = _uid(text, href)
+                jobs.append(Job(id=uid, title=text, url=href, location="", department=""))
+
+            page_url = _find_next_page(soup, base, page_url)
 
         return jobs

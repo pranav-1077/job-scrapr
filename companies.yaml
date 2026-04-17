@@ -180,7 +180,7 @@ companies:
 
   - name: "DE Shaw"
     type: generic
-    careers_url: "https://www.deshaw.com/careers/opportunities"
+    careers_url: "https://www.deshaw.com/careers/choose-your-path"
     link_pattern: "/careers/"
 
   - name: "DRW"
@@ -252,11 +252,11 @@ companies:
     type: generic
     careers_url: "https://www.hudsonrivertrading.com/careers/"
     link_pattern: "/careers/"
+    disabled: true  # JS-rendered; needs Playwright
 
   - name: "Jane Street Capital"
-    type: generic
-    careers_url: "https://www.janestreet.com/join-jane-street/open-roles/"
-    link_pattern: "/join-jane-street/"
+    type: greenhouse
+    board_token: janestreet
 
   - name: "Jump Trading"
     type: generic
@@ -278,7 +278,8 @@ companies:
 
   - name: "Millennium Management"
     type: generic
-    careers_url: "https://www.mlp.com/careers"
+    careers_url: "https://career.mlp.com/careers"
+    disabled: true  # JS-rendered; needs Playwright
 
   - name: "Old Mission Capital"
     type: greenhouse
@@ -322,8 +323,9 @@ companies:
 
   - name: "SIG (Susquehanna)"
     type: generic
-    careers_url: "https://careers.sig.com/"
+    careers_url: "https://careers.sig.com/global-susquehanna-jobs"
     link_pattern: "sig.com"
+    disabled: true  # JS-rendered; needs Playwright
 
   - name: "Simplex Trading"
     type: generic
@@ -355,8 +357,8 @@ companies:
 
   - name: "Two Sigma"
     type: generic
-    careers_url: "https://www.twosigma.com/careers/"
-    link_pattern: "/careers/"
+    careers_url: "https://careers.twosigma.com/careers/InternshipsAndEarlyCareers"
+    link_pattern: "/careers/JobDetail/"
 
   - name: "Valkyrie Trading"
     type: lever
