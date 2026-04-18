@@ -23,6 +23,10 @@ companies:
     type: greenhouse
     board_token: aqr
 
+  - name: "Aquatic Capital Management"
+    type: greenhouse
+    board_token: aquaticcapitalmanagement
+
   - name: "Akuna Capital"
     type: greenhouse
     board_token: akunacapital
@@ -195,17 +199,9 @@ companies:
     link_pattern: "workable.com/jobs"
     title_selector: "span.job-ti"
 
-  - name: "Ergoteles Capital"
-    type: generic
-    careers_url: "https://ergoteles.com/"
-
   - name: "Evergreen Statistical Trading"
     type: email_only
     careers_url: "https://www.evergreenstat.com/"  # manual web form only
-
-  - name: "Galois Capital"
-    type: generic
-    careers_url: "https://galoiscapital.com/"
 
   - name: "Gelber Group"
     type: greenhouse
@@ -411,6 +407,7 @@ companies:
 
   - name: "Edgehog Trading"
     type: generic
+    disabled: true  # Vercel bot-protection checkpoint blocks scraping
     careers_url: "https://www.edgehogtrading.com/careers/open-positions"
     link_pattern: "ats.rippling.com/edgehog-trading/jobs/"
     title_selector: "h3"

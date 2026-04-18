@@ -10,7 +10,7 @@ class EmailNotifier:
     def __init__(self, config: dict):
         self.config = config
 
-    def send(self, jobs: list[dict]):
+    def send(self, jobs: list[dict], email_only_companies: list[dict] | None = None):
         password = os.environ.get("SMTP_PASSWORD") or self.config.get("smtp_password", "")
         if not password:
             raise RuntimeError(
@@ -25,8 +25,9 @@ class EmailNotifier:
         recipients = self.config["recipients"]
         msg["To"] = ", ".join(recipients)
 
-        msg.attach(MIMEText(self._build_plain(jobs), "plain"))
-        msg.attach(MIMEText(self._build_html(jobs), "html"))
+        email_only_companies = email_only_companies or []
+        msg.attach(MIMEText(self._build_plain(jobs, email_only_companies), "plain"))
+        msg.attach(MIMEText(self._build_html(jobs, email_only_companies), "html"))
 
         with smtplib.SMTP(
             self.config.get("smtp_host", "smtp.gmail.com"),
@@ -38,7 +39,7 @@ class EmailNotifier:
             server.sendmail(self.config["sender"], recipients, msg.as_string())
 
     # ── Plain text ──────────────────────────────────────────────────────────────
-    def _build_plain(self, jobs: list[dict]) -> str:
+    def _build_plain(self, jobs: list[dict], email_only: list[dict]) -> str:
         by_company: dict[str, list] = defaultdict(list)
         for j in jobs:
             by_company[j["company"]].append(j)
@@ -51,10 +52,23 @@ class EmailNotifier:
                 lines.append(f"  • {j['title']}{loc}")
                 lines.append(f"    {j['url']}")
             lines.append("")
+
+        if email_only:
+            lines += ["", "─" * 60, "Email-only companies (apply directly):", ""]
+            for co in sorted(email_only, key=lambda c: c["name"]):
+                email = co.get("resume_email", "")
+                url = co.get("careers_url", "")
+                parts = [f"  • {co['name']}"]
+                if email:
+                    parts.append(f"    Email: {email}")
+                if url:
+                    parts.append(f"    Web:   {url}")
+                lines += parts
+
         return "\n".join(lines)
 
     # ── HTML ────────────────────────────────────────────────────────────────────
-    def _build_html(self, jobs: list[dict]) -> str:
+    def _build_html(self, jobs: list[dict], email_only: list[dict]) -> str:
         by_company: dict[str, list] = defaultdict(list)
         for j in jobs:
             by_company[j["company"]].append(j)
@@ -83,6 +97,35 @@ class EmailNotifier:
 
         today = date.today().strftime("%B %d, %Y")
         table_rows = "\n".join(rows)
+
+        email_only_html = ""
+        if email_only:
+            co_items = []
+            for co in sorted(email_only, key=lambda c: c["name"]):
+                email_addr = co.get("resume_email", "")
+                url = co.get("careers_url", "")
+                email_part = (
+                    f' &mdash; <a href="mailto:{email_addr}" style="color:#2563eb;text-decoration:none;">'
+                    f'{email_addr}</a>' if email_addr else ""
+                )
+                url_part = (
+                    f' &mdash; <a href="{url}" style="color:#2563eb;text-decoration:none;">'
+                    f'website</a>' if url else ""
+                )
+                co_items.append(
+                    f'<li style="margin:4px 0;">{co["name"]}{email_part}{url_part}</li>'
+                )
+            email_only_html = f"""
+    <div style="padding:16px 24px;border-top:1px solid #e5e7eb;background:#f9fafb;">
+      <p style="margin:0 0 8px;font-size:12px;font-weight:600;color:#6b7280;
+                text-transform:uppercase;letter-spacing:.05em;">
+        Email-only companies &mdash; apply directly
+      </p>
+      <ul style="margin:0;padding-left:16px;font-size:12px;color:#374151;list-style:disc;">
+        {"".join(co_items)}
+      </ul>
+    </div>"""
+
         return f"""<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="utf-8"></head>
@@ -111,6 +154,7 @@ class EmailNotifier:
         </tbody>
       </table>
     </div>
+    {email_only_html}
     <div style="padding:12px 24px;border-top:1px solid #e5e7eb;
                 font-size:12px;color:#9ca3af;text-align:center;">
       job-scrapr &mdash; edit companies.yaml or config.yaml to customise

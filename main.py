@@ -46,6 +46,10 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
 
     all_new_jobs: list[dict] = []
     errors: list[str] = []
+    email_only_companies: list[dict] = [
+        c for c in companies
+        if not c.get("disabled") and c.get("type") == "email_only"
+    ]
 
     for company in companies:
         if company.get("disabled"):
@@ -100,7 +104,7 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
     if all_new_jobs and not dry_run:
         log.info("Sending email with %d new posting(s) …", len(all_new_jobs))
         try:
-            notifier.send(all_new_jobs)
+            notifier.send(all_new_jobs, email_only_companies)
             log.info("Email sent.")
         except Exception as exc:
             log.error("Failed to send email: %s", exc)
@@ -128,18 +132,26 @@ def verify_boards(companies: list[dict]):
         name = company["name"]
         t = company.get("type", "generic")
 
+        if t == "email_only":
+            log.info("  –  %s  (email-only, skipping)", name)
+            continue
+
         if t == "greenhouse":
             url = f"https://boards-api.greenhouse.io/v1/boards/{company['board_token']}/jobs"
         elif t == "lever":
             url = f"https://api.lever.co/v0/postings/{company['company_id']}"
+        elif t == "ashby":
+            url = f"https://api.ashbyhq.com/posting-api/job-board/{company['board_token']}"
         elif t == "workday":
             url = company["workday_base"]
         else:
             url = company.get("careers_url", "")
 
         try:
-            r = requests.head(url, timeout=10, allow_redirects=True,
-                              headers={"User-Agent": "job-scrapr/1.0"})
+            headers = {"User-Agent": "job-scrapr/1.0"}
+            r = requests.head(url, timeout=10, allow_redirects=True, headers=headers)
+            if r.status_code == 405:
+                r = requests.get(url, timeout=10, allow_redirects=True, headers=headers)
             if r.status_code < 400:
                 log.info("  ✓  %s  (%s)", name, url)
                 ok.append(name)
