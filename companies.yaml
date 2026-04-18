@@ -163,9 +163,8 @@ companies:
     resume_email: resumes@bfcm.com
 
   - name: "Boerboel Trading"
-    type: generic
-    careers_url: "https://www.boerboeltrading.com/"
-    disabled: true  # private firm
+    type: greenhouse
+    board_token: boerboeltrading
 
   - name: "Bridgewater Associates"
     type: generic
@@ -173,10 +172,8 @@ companies:
     link_pattern: "/careers"
 
   - name: "Crabel Capital"
-    type: generic
-    careers_url: "https://crabel.com/careers/#positions"
-    link_pattern: "/careers/"
-    disabled: true  # JS-rendered; needs Playwright
+    type: greenhouse
+    board_token: crabel
 
   - name: "DE Shaw"
     type: generic
@@ -194,17 +191,17 @@ companies:
 
   - name: "Eagle Seven"
     type: generic
-    careers_url: "https://www.eagle7.com/"
-    disabled: true  # private firm
+    careers_url: "https://www.eagleseven.com/"
+    link_pattern: "workable.com/jobs"
+    title_selector: "span.job-ti"
 
   - name: "Ergoteles Capital"
     type: generic
     careers_url: "https://ergoteles.com/"
 
   - name: "Evergreen Statistical Trading"
-    type: generic
-    careers_url: "https://evergreentrading.com/"
-    disabled: true  # private firm
+    type: email_only
+    careers_url: "https://www.evergreenstat.com/"  # manual web form only
 
   - name: "Galois Capital"
     type: generic
@@ -222,8 +219,7 @@ companies:
   - name: "Group One Trading"
     type: generic
     careers_url: "https://group1.com/careers/"
-    link_pattern: "/careers/"
-    disabled: true  # JS-rendered; needs Playwright
+    link_pattern: "group1.applicantpro.com/jobs/"
 
   - name: "GSA Capital"
     type: generic
@@ -252,7 +248,7 @@ companies:
     type: generic
     careers_url: "https://www.hudsonrivertrading.com/careers/"
     link_pattern: "/careers/"
-    disabled: true  # JS-rendered; needs Playwright
+    disabled: true  # JS-rendered; hrttalentcommunity Greenhouse board only has placeholders
 
   - name: "Jane Street Capital"
     type: greenhouse
@@ -267,10 +263,6 @@ companies:
     type: generic
     careers_url: "https://keposcapital.com/"
 
-  - name: "Kbit Crypto Trading"
-    type: generic
-    careers_url: "https://kbit.com/"
-    disabled: true  # private firm
 
   - name: "Laurion Capital Management"
     type: email_only
@@ -280,11 +272,6 @@ companies:
     type: generic
     careers_url: "https://career.mlp.com/careers"
     disabled: true  # JS-rendered; needs Playwright
-
-  - name: "Old Mission Capital"
-    type: greenhouse
-    board_token: oldmissioncapital
-    disabled: true  # duplicate — already listed under Greenhouse above
 
   - name: "Optiver"
     type: generic
@@ -334,13 +321,12 @@ companies:
 
   - name: "Spark Investment Management"
     type: generic
-    careers_url: "https://sparkinvestmentmanagement.com/"
-    disabled: true  # private firm
+    careers_url: "https://www.sparkim.com/careers/"
+    link_pattern: "sparkim.com/role/"
 
   - name: "TGS Management"
-    type: generic
-    careers_url: "https://www.tgsmanagement.com/"
-    disabled: true  # no public careers page found
+    type: email_only
+    careers_url: "https://jobs.lever.co/tgsmc/eeb03bfa-4314-440b-ac4c-77ca12215752"  # unlisted Lever posting; manual application only
 
   - name: "Tower Research Capital"
     type: generic
@@ -390,136 +376,100 @@ companies:
   # Enable individually if you find their career page URL.
 
   - name: "Albatross Labs"
-    type: generic
-    careers_url: "https://albatrosslabs.com/"
-    disabled: true
+    type: email_only
+    careers_url: "https://www.albatrosslabs.io/"
+    resume_email: "https://docs.google.com/forms/d/e/1FAIpQLSdCxkNS58zUi-7E5Ksm7Gj0jEz5MCJKINceNmEUzNd5xQiIDQ/viewform"  # Google Form application
 
-  - name: "ART Advisors"
-    type: generic
-    careers_url: "https://artadvisors.com/"
-    disabled: true
 
   - name: "Atto Trading"
     type: generic
-    careers_url: "https://attotrading.com/"
-    disabled: true
+    careers_url: "https://atto-trading.com/join-us"
+    link_pattern: "apply.workable.com/atto-trading/"
+    title_selector: "p.heading-medium"
 
   - name: "Banyan Alpha Investment"
-    type: generic
-    careers_url: "https://banyanalphadinvestment.com/"
-    disabled: true
+    type: email_only
+    resume_email: careers@banyanalpha.com
 
   - name: "Blackedge Capital"
-    type: generic
-    careers_url: "https://www.blackedgecapital.com/"
-    disabled: true
+    type: greenhouse
+    board_token: blackedgecapital
 
   - name: "Cutler Group"
-    type: generic
-    careers_url: "https://www.cutlergroup.com/careers"
-    disabled: true
+    type: email_only
+    careers_url: "https://www.cutler.com/contact-us/"
+    resume_email: info@cutler.com
 
   - name: "Eclipse Trading Technologies"
-    type: generic
-    careers_url: "https://eclipsetrading.com/"
-    disabled: true
+    type: email_only
+    resume_email: resumes@eclipsett.com
 
   - name: "Edge Focus Partners"
     type: generic
-    careers_url: "https://edgefocuspartners.com/"
-    disabled: true
+    careers_url: "https://www.edgefocuspartners.com/"
+    link_pattern: "edgefocuspartners.com/careers/"
 
   - name: "Edgehog Trading"
     type: generic
-    careers_url: "https://edgehogtrading.com/"
-    disabled: true
+    careers_url: "https://www.edgehogtrading.com/careers/open-positions"
+    link_pattern: "ats.rippling.com/edgehog-trading/jobs/"
+    title_selector: "h3"
 
   - name: "Epoch Capital"
-    type: generic
-    careers_url: "https://epochcapital.com/"
-    disabled: true
+    type: greenhouse
+    board_token: epochcapital
 
   - name: "Eschaton Trading"
-    type: generic
-    careers_url: "https://eschatontrading.com/"
-    disabled: true
+    type: email_only
+    resume_email: careers@eschatontrading.com
 
   - name: "Final LTD"
-    type: generic
-    careers_url: "https://finalltd.com/"
-    disabled: true
+    type: email_only
+    careers_url: "https://www.final.co.il/career/"
+    resume_email: contactus@final.co.il  # jobs listed on page; apply via modal form
 
-  - name: "Ginkgo"
-    type: generic
-    careers_url: "https://ginkgo.io/"
-    disabled: true
 
-  - name: "Hilbert Technologies"
-    type: generic
-    careers_url: "https://hilberttechnologies.com/"
-    disabled: true
 
   - name: "Istra Research"
     type: generic
-    careers_url: "https://istraresearch.com/"
-    disabled: true
+    careers_url: "https://istrallc.com/careers/"
+    link_pattern: "istrallc.com/careers-2/co/istra-research/"
+    title_selector: "div.comeet-position-name"
 
   - name: "Jocasse Quantitative"
-    type: generic
-    careers_url: "https://jocasse.com/"
-    disabled: true
+    type: email_only
+    resume_email: jointheteam@jocasseequantitative.com
 
   - name: "Linden Shore"
-    type: generic
-    careers_url: "https://lindenshore.com/"
-    disabled: true
+    type: email_only
+    resume_email: Talent@lindenshore.com
 
   - name: "Nebula Research & Development"
-    type: generic
-    careers_url: "https://nebularesearch.com/"
-    disabled: true
+    type: email_only
+    resume_email: info@nebularesearch.com
 
   - name: "Orsus Research"
     type: generic
-    careers_url: "https://orsusresearch.com/"
-    disabled: true
+    careers_url: "https://orsusresearch.com/open-positions-2/"
+    link_pattern: "orsusresearch.com"
 
-  - name: "Qsemble Capital Management"
-    type: generic
-    careers_url: "https://qsemble.com/"
-    disabled: true
 
-  - name: "Seven Eight Capital"
-    type: generic
-    careers_url: "https://seveneightcapital.com/"
-    disabled: true
 
   - name: "Stevens Capital Management"
-    type: generic
-    careers_url: "https://www.stevensmc.com/careers"
-    disabled: true
+    type: greenhouse
+    board_token: scm
 
   - name: "Sunrise Futures"
     type: generic
-    careers_url: "https://sunrisefutures.com/"
-    disabled: true
+    careers_url: "https://www.sunrisefutures.com/careers/"
+    link_pattern: "sunrisefutures.hire.trakstar.com/jobs/"
 
   - name: "Teza Technologies"
-    type: generic
-    careers_url: "https://www.tezatech.com/careers"
-    disabled: true
+    type: ashby
+    board_token: teza-technologies
 
-  - name: "Tradelink Holdings"
-    type: generic
-    careers_url: "https://tradelinkholdings.com/"
-    disabled: true
 
   - name: "Volant Trading"
-    type: generic
-    careers_url: "https://www.volanttrading.com/careers"
-    disabled: true
+    type: email_only
+    resume_email: careers@volanttrading.com
 
-  - name: "Volterra Technologies"
-    type: generic
-    careers_url: "https://volterratechnologies.com/"
-    disabled: true

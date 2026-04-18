@@ -2,6 +2,7 @@ from .greenhouse import GreenhouseScraper
 from .lever import LeverScraper
 from .workday import WorkdayScraper
 from .generic import GenericScraper
+from .ashby import AshbyScraper
 from .base import Job
 
 _SCRAPER_MAP = {
@@ -9,6 +10,7 @@ _SCRAPER_MAP = {
     "lever": LeverScraper,
     "workday": WorkdayScraper,
     "generic": GenericScraper,
+    "ashby": AshbyScraper,
 }
 
 

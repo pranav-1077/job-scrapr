@@ -76,8 +76,9 @@ class GenericScraper(BaseScraper):
 
             soup = BeautifulSoup(resp.text, "lxml")
 
-            # Remove navigation, footer, header noise
-            for tag in soup.find_all(["nav", "footer", "header", "script", "style"]):
+            # Remove navigation/footer noise; skip header — lxml sometimes restructures
+            # the DOM by nesting main content inside <header>, so removing it drops jobs
+            for tag in soup.find_all(["nav", "footer", "script", "style"]):
                 tag.decompose()
 
             for a in soup.find_all("a", href=True):
@@ -112,8 +113,19 @@ class GenericScraper(BaseScraper):
                     continue
                 seen_urls.add(href)
 
-                uid = _uid(text, href)
-                jobs.append(Job(id=uid, title=text, url=href, location="", department=""))
+                # If title_selector is set, check inside the <a> first, then nearest ancestor
+                title_selector = self.company.get("title_selector")
+                if title_selector:
+                    title_el = a.select_one(title_selector)
+                    if not title_el:
+                        container = a.find_parent(lambda tag: bool(tag.select_one(title_selector)))
+                        title_el = container.select_one(title_selector) if container else None
+                    title = title_el.get_text(" ", strip=True) if title_el else text
+                else:
+                    title = text
+
+                uid = _uid(title, href)
+                jobs.append(Job(id=uid, title=title, url=href, location="", department=""))
 
             page_url = _find_next_page(soup, base, page_url)
 
