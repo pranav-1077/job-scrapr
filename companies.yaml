@@ -105,6 +105,10 @@ companies:
     type: greenhouse
     board_token: point72
 
+  - name: "Tudor Investment Corp"
+    type: greenhouse
+    board_token: tudorgroup
+
   # ── Workday (JSON API) ────────────────────────────────────────────────────────
   # Note: Workday sites are behind Cloudflare and currently return errors for
   # automated requests. These entries will log warnings and return 0 jobs until
@@ -404,13 +408,6 @@ companies:
     type: generic
     careers_url: "https://www.edgefocuspartners.com/"
     link_pattern: "edgefocuspartners.com/careers/"
-
-  - name: "Edgehog Trading"
-    type: generic
-    disabled: true  # Vercel bot-protection checkpoint blocks scraping
-    careers_url: "https://www.edgehogtrading.com/careers/open-positions"
-    link_pattern: "ats.rippling.com/edgehog-trading/jobs/"
-    title_selector: "h3"
 
   - name: "Epoch Capital"
     type: greenhouse
