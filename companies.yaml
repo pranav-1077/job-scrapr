@@ -2,14 +2,16 @@
 #
 # Fields:
 #   name         Display name
-#   type         greenhouse | lever | workday | generic | email_only
+#   type         greenhouse | lever | workday | generic | playwright | email_only
 #   disabled     true  →  skip this company
 #
-# type=greenhouse: board_token   (boards-api.greenhouse.io/v1/boards/{token}/jobs)
-# type=lever:      company_id    (api.lever.co/v0/postings/{company_id})
-# type=workday:    workday_base + workday_path
-# type=generic:    careers_url  + optional link_pattern (substring filter on href)
-# type=email_only: resume_email  (no scraping; manual application only)
+# type=greenhouse:  board_token   (boards-api.greenhouse.io/v1/boards/{token}/jobs)
+# type=lever:       company_id    (api.lever.co/v0/postings/{company_id})
+# type=workday:     workday_base + workday_path
+# type=generic:     careers_url  + optional link_pattern (substring filter on href)
+# type=playwright:  careers_url  + optional link_pattern + optional playwright_wait_for (CSS selector)
+# type=eightfold:   careers_url  + eightfold_domain  (eightfold.ai-powered sites)
+# type=email_only:  resume_email  (no scraping; manual application only)
 #
 # All Greenhouse tokens live-verified. Generic URLs HTTP-verified.
 # Firms marked "private" have no known public job board; set disabled:true to skip.
@@ -109,21 +111,21 @@ companies:
   # a browser-based solution is added (e.g. Playwright). Keep disabled for now.
 
   - name: "Citadel"
-    type: generic
+    type: playwright
     careers_url: "https://www.citadel.com/careers/open-opportunities/"
-    link_pattern: "/careers/"
-    disabled: true  # 403 anti-bot; needs Playwright
+    link_pattern: "/careers/details/"
+    title_selector: "h2"
 
   - name: "Citadel Securities"
-    type: generic
+    type: playwright
     careers_url: "https://www.citadelsecurities.com/careers/open-opportunities/"
-    link_pattern: "/careers/"
-    disabled: true  # 403 anti-bot; needs Playwright
+    link_pattern: "/careers/details/"
+    title_selector: "h2"
 
   - name: "Cubist Systematic Strategies"
-    type: generic
+    type: playwright
     careers_url: "https://careers.point72.com/?business=cubist"
-    disabled: true  # JS-rendered; needs Playwright
+    link_pattern: "CSJobDetail"
 
   # ── Generic / custom career pages (HTML scrape) ───────────────────────────────
 
@@ -241,10 +243,9 @@ companies:
     link_pattern: "/careers/"
 
   - name: "Hudson River Trading"
-    type: generic
+    type: playwright
     careers_url: "https://www.hudsonrivertrading.com/careers/"
-    link_pattern: "/careers/"
-    disabled: true  # JS-rendered; hrttalentcommunity Greenhouse board only has placeholders
+    link_pattern: "/hrt-job/"
 
   - name: "Jane Street Capital"
     type: greenhouse
@@ -265,9 +266,9 @@ companies:
     resume_email: jobs@laurioncap.com
 
   - name: "Millennium Management"
-    type: generic
+    type: eightfold
     careers_url: "https://career.mlp.com/careers"
-    disabled: true  # JS-rendered; needs Playwright
+    eightfold_domain: "mlp.com"
 
   - name: "Optiver"
     type: generic
@@ -305,10 +306,9 @@ companies:
     careers_url: "https://www.rentec.com/Careers.action?jobs=true"
 
   - name: "SIG (Susquehanna)"
-    type: generic
+    type: playwright
     careers_url: "https://careers.sig.com/global-susquehanna-jobs"
     link_pattern: "sig.com"
-    disabled: true  # JS-rendered; needs Playwright
 
   - name: "Simplex Trading"
     type: generic
