@@ -10,7 +10,8 @@ class EmailNotifier:
     def __init__(self, config: dict):
         self.config = config
 
-    def send(self, jobs: list[dict], email_only_companies: list[dict] | None = None):
+    def send(self, jobs: list[dict], email_only_companies: list[dict] | None = None,
+             removed_jobs: list[dict] | None = None):
         password = os.environ.get("SMTP_PASSWORD") or self.config.get("smtp_password", "")
         if not password:
             raise RuntimeError(
@@ -20,14 +21,20 @@ class EmailNotifier:
 
         msg = MIMEMultipart("alternative")
         today = date.today().strftime("%B %d, %Y")
-        msg["Subject"] = f"[job-scrapr] {len(jobs)} new posting(s) — {today}"
+        removed_jobs = removed_jobs or []
+        parts = []
+        if jobs:
+            parts.append(f"{len(jobs)} new posting(s)")
+        if removed_jobs:
+            parts.append(f"{len(removed_jobs)} removed")
+        msg["Subject"] = f"[job-scrapr] {', '.join(parts)} — {today}"
         msg["From"] = self.config["sender"]
         recipients = self.config["recipients"]
         msg["To"] = ", ".join(recipients)
 
         email_only_companies = email_only_companies or []
-        msg.attach(MIMEText(self._build_plain(jobs, email_only_companies), "plain"))
-        msg.attach(MIMEText(self._build_html(jobs, email_only_companies), "html"))
+        msg.attach(MIMEText(self._build_plain(jobs, email_only_companies, removed_jobs), "plain"))
+        msg.attach(MIMEText(self._build_html(jobs, email_only_companies, removed_jobs), "html"))
 
         with smtplib.SMTP(
             self.config.get("smtp_host", "smtp.gmail.com"),
@@ -39,7 +46,8 @@ class EmailNotifier:
             server.sendmail(self.config["sender"], recipients, msg.as_string())
 
     # ── Plain text ──────────────────────────────────────────────────────────────
-    def _build_plain(self, jobs: list[dict], email_only: list[dict]) -> str:
+    def _build_plain(self, jobs: list[dict], email_only: list[dict],
+                     removed_jobs: list[dict] | None = None) -> str:
         by_company: dict[str, list] = defaultdict(list)
         for j in jobs:
             by_company[j["company"]].append(j)
@@ -53,6 +61,20 @@ class EmailNotifier:
                 lines.append(f"  • {j['title']}{loc}{posted}")
                 lines.append(f"    {j['url']}")
             lines.append("")
+
+        if removed_jobs:
+            removed_by_company: dict[str, list] = defaultdict(list)
+            for r in removed_jobs:
+                removed_by_company[r["company"]].append(r)
+            lines += ["", "─" * 60, "Removed postings (no longer listed):", ""]
+            for company in sorted(removed_by_company):
+                lines.append(f"── {company} ──")
+                for r in removed_by_company[company]:
+                    loc = f" [{r['location']}]" if r.get("location") else ""
+                    lines.append(f"  ✕ {r['title']}{loc}")
+                    if r.get("url"):
+                        lines.append(f"    {r['url']}")
+                lines.append("")
 
         if email_only:
             lines += ["", "─" * 60, "Email-only companies (apply directly):", ""]
@@ -69,7 +91,8 @@ class EmailNotifier:
         return "\n".join(lines)
 
     # ── HTML ────────────────────────────────────────────────────────────────────
-    def _build_html(self, jobs: list[dict], email_only: list[dict]) -> str:
+    def _build_html(self, jobs: list[dict], email_only: list[dict],
+                    removed_jobs: list[dict] | None = None) -> str:
         by_company: dict[str, list] = defaultdict(list)
         for j in jobs:
             by_company[j["company"]].append(j)
@@ -100,6 +123,75 @@ class EmailNotifier:
 
         today = date.today().strftime("%B %d, %Y")
         table_rows = "\n".join(rows)
+        new_jobs_html = f"""
+    <div style="padding:24px;">
+      <table style="width:100%;border-collapse:collapse;font-size:14px;">
+        <thead>
+          <tr style="background:#f3f4f6;">
+            <th style="{TH}">Company</th>
+            <th style="{TH}">Role</th>
+            <th style="{TH}">Location</th>
+            <th style="{TH}">Department</th>
+            <th style="{TH}">Posted</th>
+          </tr>
+        </thead>
+        <tbody>
+          {table_rows}
+        </tbody>
+      </table>
+    </div>""" if jobs else ""
+
+        removed_html = ""
+        if removed_jobs:
+            removed_by_company: dict[str, list] = defaultdict(list)
+            for r in removed_jobs:
+                removed_by_company[r["company"]].append(r)
+            removed_rows = []
+            for company in sorted(removed_by_company):
+                first = True
+                for r in removed_by_company[company]:
+                    loc = r.get("location") or ""
+                    dept = r.get("department") or ""
+                    co_cell = (
+                        f'<td rowspan="{len(removed_by_company[company])}" style="{TD} font-weight:600;'
+                        f'vertical-align:top;border-right:2px solid #fecaca;color:#6b7280;">{company}</td>'
+                        if first else ""
+                    )
+                    title_cell = (
+                        f'<a href="{r["url"]}" style="color:#9ca3af;text-decoration:line-through;">'
+                        f'{r["title"]}</a>'
+                        if r.get("url") else
+                        f'<span style="color:#9ca3af;text-decoration:line-through;">{r["title"]}</span>'
+                    )
+                    removed_rows.append(
+                        f"<tr style='background:#fef2f2;'>"
+                        f"{co_cell}"
+                        f'<td style="{TD}">{title_cell}</td>'
+                        f'<td style="{TD} color:#9ca3af;">{loc}</td>'
+                        f'<td style="{TD} color:#9ca3af;">{dept}</td>'
+                        f"</tr>"
+                    )
+                    first = False
+            removed_html = f"""
+    <div style="padding:24px;border-top:1px solid #fecaca;">
+      <p style="margin:0 0 12px;font-size:12px;font-weight:600;color:#9ca3af;
+                text-transform:uppercase;letter-spacing:.05em;">
+        Removed postings &mdash; no longer listed
+      </p>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;">
+        <thead>
+          <tr style="background:#fef2f2;">
+            <th style="{TH} color:#6b7280;">Company</th>
+            <th style="{TH} color:#6b7280;">Role</th>
+            <th style="{TH} color:#6b7280;">Location</th>
+            <th style="{TH} color:#6b7280;">Department</th>
+          </tr>
+        </thead>
+        <tbody>
+          {chr(10).join(removed_rows)}
+        </tbody>
+      </table>
+    </div>"""
 
         email_only_html = ""
         if email_only:
@@ -139,25 +231,11 @@ class EmailNotifier:
     <div style="background:#1e40af;color:#fff;padding:20px 24px;">
       <h1 style="margin:0;font-size:20px;">job-scrapr</h1>
       <p style="margin:4px 0 0;opacity:.85;font-size:14px;">
-        {len(jobs)} new posting(s) &mdash; {today}
+        {len(jobs)} new posting(s){f" &mdash; {len(removed_jobs)} removed" if removed_jobs else ""} &mdash; {today}
       </p>
     </div>
-    <div style="padding:24px;">
-      <table style="width:100%;border-collapse:collapse;font-size:14px;">
-        <thead>
-          <tr style="background:#f3f4f6;">
-            <th style="{TH}">Company</th>
-            <th style="{TH}">Role</th>
-            <th style="{TH}">Location</th>
-            <th style="{TH}">Department</th>
-            <th style="{TH}">Posted</th>
-          </tr>
-        </thead>
-        <tbody>
-          {table_rows}
-        </tbody>
-      </table>
-    </div>
+    {new_jobs_html}
+    {removed_html}
     {email_only_html}
     <div style="padding:12px 24px;border-top:1px solid #e5e7eb;
                 font-size:12px;color:#9ca3af;text-align:center;">

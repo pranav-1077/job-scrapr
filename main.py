@@ -43,8 +43,10 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
     notifier = EmailNotifier(config["email"])
     keyword_filters: list[str] = config.get("keyword_filters", [])
     delay = config.get("delay_between_companies", 1)
+    notify_removed: bool = config.get("notify_removed_jobs", True)
 
     all_new_jobs: list[dict] = []
+    all_removed_jobs: list[dict] = []
     errors: list[str] = []
     email_only_companies: list[dict] = [
         c for c in companies
@@ -75,6 +77,7 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
                 continue
 
             new_jobs = state.get_new_jobs(name, jobs)
+            removed_jobs = state.get_removed_jobs(name, jobs)
 
             # Apply keyword filter
             if keyword_filters:
@@ -87,6 +90,13 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
                     all_new_jobs.append(vars(j))
             else:
                 log.info("  no new jobs")
+
+            if removed_jobs:
+                log.info("  %d removed job(s): %s", len(removed_jobs),
+                         ", ".join(r["title"] for r in removed_jobs))
+                all_removed_jobs.extend(removed_jobs)
+            else:
+                log.debug("  no removed jobs")
 
             state.update(name, jobs)
 
@@ -101,19 +111,26 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
     if errors:
         log.warning("Completed with %d error(s):\n  %s", len(errors), "\n  ".join(errors))
 
-    if all_new_jobs and not dry_run:
-        log.info("Sending email with %d new posting(s) …", len(all_new_jobs))
+    should_email = bool(all_new_jobs) or (notify_removed and bool(all_removed_jobs))
+    removed_for_email = all_removed_jobs if notify_removed else []
+
+    if should_email and not dry_run:
+        log.info("Sending email — %d new, %d removed posting(s) …",
+                 len(all_new_jobs), len(all_removed_jobs))
         try:
-            notifier.send(all_new_jobs, email_only_companies)
+            notifier.send(all_new_jobs, email_only_companies, removed_for_email)
             log.info("Email sent.")
         except Exception as exc:
             log.error("Failed to send email: %s", exc)
-    elif all_new_jobs:
-        log.info("[dry-run] Would send email with %d posting(s).", len(all_new_jobs))
+    elif should_email:
+        log.info("[dry-run] Would send email with %d new, %d removed posting(s).",
+                 len(all_new_jobs), len(all_removed_jobs))
         for j in all_new_jobs:
-            log.info("  [%s] %s — %s", j["company"], j["title"], j["url"])
+            log.info("  [NEW]     [%s] %s — %s", j["company"], j["title"], j["url"])
+        for r in all_removed_jobs:
+            log.info("  [REMOVED] [%s] %s — %s", r["company"], r["title"], r.get("url", ""))
     else:
-        log.info("No new jobs found — no email sent.")
+        log.info("No new or removed jobs found — no email sent.")
 
 
 # ── Board verification ────────────────────────────────────────────────────────
