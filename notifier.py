@@ -49,7 +49,8 @@ class EmailNotifier:
             lines.append(f"── {company} ──")
             for j in by_company[company]:
                 loc = f" [{j['location']}]" if j.get("location") else ""
-                lines.append(f"  • {j['title']}{loc}")
+                posted = f" · posted {j['posted_at']}" if j.get("posted_at") else ""
+                lines.append(f"  • {j['title']}{loc}{posted}")
                 lines.append(f"    {j['url']}")
             lines.append("")
 
@@ -79,6 +80,7 @@ class EmailNotifier:
             for j in by_company[company]:
                 dept = j.get("department") or ""
                 loc = j.get("location") or ""
+                posted = j.get("posted_at") or ""
                 co_cell = (
                     f'<td rowspan="{len(by_company[company])}" style="{TD} font-weight:600;'
                     f'vertical-align:top;border-right:2px solid #e5e7eb;">{company}</td>'
@@ -91,6 +93,7 @@ class EmailNotifier:
                     f'{j["title"]}</a></td>'
                     f'<td style="{TD} color:#6b7280;">{loc}</td>'
                     f'<td style="{TD} color:#6b7280;">{dept}</td>'
+                    f'<td style="{TD} color:#6b7280;">{posted}</td>'
                     f"</tr>"
                 )
                 first = False
@@ -147,6 +150,7 @@ class EmailNotifier:
             <th style="{TH}">Role</th>
             <th style="{TH}">Location</th>
             <th style="{TH}">Department</th>
+            <th style="{TH}">Posted</th>
           </tr>
         </thead>
         <tbody>

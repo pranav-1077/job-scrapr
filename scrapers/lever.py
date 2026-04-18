@@ -1,3 +1,4 @@
+import datetime
 import requests
 from .base import BaseScraper, Job
 
@@ -19,11 +20,18 @@ class LeverScraper(BaseScraper):
         jobs = []
         for item in data:
             cats = item.get("categories") or {}
+            created_ms = item.get("createdAt")
+            posted_at = (
+                datetime.datetime.fromtimestamp(created_ms / 1000, tz=datetime.timezone.utc)
+                .date().isoformat()
+                if created_ms else None
+            )
             jobs.append(Job(
                 id=item["id"],
                 title=item.get("text", ""),
                 location=cats.get("location", ""),
                 url=item.get("hostedUrl", ""),
                 department=cats.get("team", ""),
+                posted_at=posted_at,
             ))
         return jobs

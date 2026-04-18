@@ -23,11 +23,15 @@ class GreenhouseScraper(BaseScraper):
             if depts:
                 dept = depts[0].get("name", "")
 
+            raw_date = item.get("first_published") or item.get("updated_at")
+            posted_at = raw_date[:10] if raw_date else None
+
             jobs.append(Job(
                 id=str(item["id"]),
                 title=item.get("title", ""),
                 location=item.get("location", {}).get("name", ""),
                 url=item.get("absolute_url", ""),
                 department=dept,
+                posted_at=posted_at,
             ))
         return jobs

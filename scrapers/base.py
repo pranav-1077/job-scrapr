@@ -1,4 +1,4 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Optional
 
 
@@ -10,6 +10,7 @@ class Job:
     location: str = ""
     department: str = ""
     company: str = ""  # filled in by main after scraping
+    posted_at: Optional[str] = None  # ISO date string, only set for API-based boards
 
     def matches_filters(self, keywords: list[str]) -> bool:
         if not keywords:
