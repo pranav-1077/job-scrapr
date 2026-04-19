@@ -1,6 +1,17 @@
 # job-scrapr
 
-Scrapes job boards at ~100 quant/trading firms and emails new postings daily.
+Scrapes job boards at 94 quant/trading firms and emails new postings daily.
+
+## How it works
+
+Each company in `companies.yaml` is assigned a scraper type:
+
+- **greenhouse / lever / workday / ashby / eightfold** — hits the firm's public jobs API directly (fast, structured)
+- **generic** — fetches the careers page with a plain HTTP request and extracts job links via BeautifulSoup heuristics
+- **playwright** — launches a headless Chromium browser for JS-rendered pages that require JavaScript execution
+- **email_only** — no scraping; just reminds you to check the site manually
+
+On each run, newly found jobs are diffed against the last saved state and only fresh postings (and any removed ones) are emailed. Results are stored in `data/` as JSON.
 
 ## Setup
 
@@ -22,7 +33,7 @@ python main.py --catalog-only
 # Normal run: email any new postings since last run
 python main.py
 
-# Schedule daily via cron
+# Install launchd job (runs on wake if Mac was asleep at schedule time)
 python main.py --setup-cron
 
 # Check which boards are reachable

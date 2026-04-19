@@ -119,12 +119,14 @@ companies:
     careers_url: "https://www.citadel.com/careers/open-opportunities/"
     link_pattern: "/careers/details/"
     title_selector: "h2"
+    disabled: true  # Cloudflare Turnstile blocks headless browsers
 
   - name: "Citadel Securities"
     type: playwright
     careers_url: "https://www.citadelsecurities.com/careers/open-opportunities/"
     link_pattern: "/careers/details/"
     title_selector: "h2"
+    disabled: true  # Cloudflare Turnstile blocks headless browsers
 
   - name: "Cubist Systematic Strategies"
     type: playwright
