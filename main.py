@@ -198,36 +198,71 @@ _CRON_SCHEDULES = {
 def setup_cron(config: dict, config_path: Path):
     frequency = config.get("frequency", "daily")
     hour = config.get("run_hour", 8)
-    schedule = _CRON_SCHEDULES.get(frequency, "0 8 * * *").format(hour=hour)
 
     script = Path(__file__).resolve()
     python = sys.executable
     log_dir = script.parent / "logs"
     log_dir.mkdir(exist_ok=True)
 
-    cmd = (
-        f"{schedule}  cd {script.parent} && "
-        f"{python} {script} --config {config_path.resolve()} "
-        f">> {log_dir}/scraper.log 2>&1"
-    )
+    plist_label = "com.job-scrapr.daily"
+    plist_path = Path.home() / "Library" / "LaunchAgents" / f"{plist_label}.plist"
 
-    result = subprocess.run(["crontab", "-l"], capture_output=True, text=True)
-    existing = result.stdout if result.returncode == 0 else ""
+    if frequency == "hourly":
+        interval_key = "<key>StartInterval</key>\n\t\t<integer>3600</integer>"
+    elif frequency == "weekly":
+        interval_key = (
+            "<key>StartCalendarInterval</key>\n\t\t<dict>"
+            "\n\t\t\t<key>Weekday</key><integer>1</integer>"
+            f"\n\t\t\t<key>Hour</key><integer>{hour}</integer>"
+            "\n\t\t\t<key>Minute</key><integer>0</integer>"
+            "\n\t\t</dict>"
+        )
+    else:  # daily
+        interval_key = (
+            "<key>StartCalendarInterval</key>\n\t\t<dict>"
+            f"\n\t\t\t<key>Hour</key><integer>{hour}</integer>"
+            "\n\t\t\t<key>Minute</key><integer>0</integer>"
+            "\n\t\t</dict>"
+        )
 
-    if str(script) in existing:
-        print("Cron job already installed. Current crontab entry:")
-        for line in existing.splitlines():
-            if str(script) in line:
-                print(" ", line)
-        return
+    plist_content = f"""<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+\t<key>Label</key>
+\t<string>{plist_label}</string>
+\t<key>ProgramArguments</key>
+\t<array>
+\t\t<string>{python}</string>
+\t\t<string>{script}</string>
+\t\t<string>--config</string>
+\t\t<string>{config_path.resolve()}</string>
+\t</array>
+\t<key>WorkingDirectory</key>
+\t<string>{script.parent}</string>
+\t{interval_key}
+\t<key>StandardOutPath</key>
+\t<string>{log_dir}/scraper.log</string>
+\t<key>StandardErrorPath</key>
+\t<string>{log_dir}/scraper.log</string>
+\t<key>RunAtLoad</key>
+\t<false/>
+</dict>
+</plist>
+"""
 
-    new_crontab = existing.rstrip("\n") + "\n" + cmd + "\n"
-    proc = subprocess.run(["crontab", "-"], input=new_crontab, text=True, capture_output=True)
+    if plist_path.exists():
+        subprocess.run(["launchctl", "unload", str(plist_path)], capture_output=True)
+
+    plist_path.write_text(plist_content)
+    proc = subprocess.run(["launchctl", "load", str(plist_path)], capture_output=True, text=True)
+
     if proc.returncode == 0:
-        print(f"Cron job installed ({frequency} at {hour}:00):\n  {cmd}")
+        print(f"launchd job installed ({frequency} at {hour}:00): {plist_path}")
+        print("Unlike cron, this will run when your Mac wakes up if it was asleep at the scheduled time.")
     else:
-        print(f"Failed to install cron job: {proc.stderr}")
-        print(f"Add this line manually to your crontab (`crontab -e`):\n  {cmd}")
+        print(f"Failed to load launchd job: {proc.stderr}")
+        print(f"Plist written to {plist_path} — load it manually with:\n  launchctl load {plist_path}")
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────

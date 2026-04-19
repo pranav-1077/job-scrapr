@@ -189,6 +189,7 @@ companies:
     type: generic
     careers_url: "https://www.deshaw.com/careers/choose-your-path"
     link_pattern: "/careers/"
+    title_selector: "span.job-display-name"
 
   - name: "DRW"
     type: generic

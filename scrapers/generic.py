@@ -105,13 +105,12 @@ def _parse_jobs_from_html(
             continue
         seen_urls.add(href)
 
-        # If title_selector is set, check inside the <a> first, then nearest ancestor
+        # If title_selector is set, only match if selector is found inside the <a> itself
         if title_selector:
             title_el = a.select_one(title_selector)
             if not title_el:
-                container = a.find_parent(lambda tag: bool(tag.select_one(title_selector)))
-                title_el = container.select_one(title_selector) if container else None
-            title = title_el.get_text(" ", strip=True) if title_el else text
+                continue
+            title = title_el.get_text(" ", strip=True)
         else:
             title = text
 
