@@ -78,7 +78,9 @@ def _parse_jobs_from_html(
         href = a["href"]
 
         # Skip empty / very long / obviously non-job links
-        if not text or len(text) < 4 or len(text) > 200:
+        # Length check skipped when title_selector is set — the selector extracts the title,
+        # so the full <a> text length is irrelevant.
+        if not text or len(text) < 4 or (not title_selector and len(text) > 200):
             continue
 
         # Resolve URL

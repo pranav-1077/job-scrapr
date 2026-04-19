@@ -308,6 +308,12 @@ companies:
     type: generic
     careers_url: "https://radixtrading.co/"
 
+  - name: "Research Affiliates"
+    type: generic
+    careers_url: "https://www.researchaffiliates.com/about-us/careers"
+    link_pattern: "/about-us/careers/"
+    title_selector: "span.font-whitney-semibold"
+
   - name: "Renaissance Technologies"
     type: generic
     careers_url: "https://www.rentec.com/Careers.action?jobs=true"
@@ -356,6 +362,11 @@ companies:
   - name: "Voleon Group"
     type: generic
     careers_url: "https://voleon.com/"
+
+  - name: "Voloridge Investment Management"
+    type: generic
+    careers_url: "https://www.voloridge.com/join-our-team"
+    link_pattern: "hiringthing.com"
 
   - name: "Walleye Trading"
     type: generic
