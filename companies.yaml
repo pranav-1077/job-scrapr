@@ -132,6 +132,7 @@ companies:
     type: playwright
     careers_url: "https://careers.point72.com/?business=cubist"
     link_pattern: "CSJobDetail"
+    playwright_wait_for: "a[href*='CSJobDetail']"
 
   # ── Generic / custom career pages (HTML scrape) ───────────────────────────────
 
@@ -237,8 +238,9 @@ companies:
 
   - name: "GTS"
     type: generic
-    careers_url: "https://gtsx.com/careers/"
-    link_pattern: "/careers/"
+    careers_url: "https://careers-gtsx.icims.com/jobs/search?ss=1&searchLocation=&searchCategory&in_iframe=1"
+    link_pattern: "/job?in_iframe=1"
+    title_selector: "h3"
 
   - name: "HAP Capital"
     type: generic
@@ -324,9 +326,8 @@ companies:
     link_pattern: "sig.com"
 
   - name: "Simplex Trading"
-    type: generic
-    careers_url: "https://www.simplextrading.com/careers/"
-    link_pattern: "/careers/"
+    type: greenhouse
+    board_token: simplextrading
 
   - name: "Spark Investment Management"
     type: generic
@@ -338,9 +339,8 @@ companies:
     careers_url: "https://jobs.lever.co/tgsmc/eeb03bfa-4314-440b-ac4c-77ca12215752"  # unlisted Lever posting; manual application only
 
   - name: "Tower Research Capital"
-    type: generic
-    careers_url: "https://www.tower-research.com/open-positions"
-    link_pattern: "/open-positions"
+    type: greenhouse
+    board_token: towerresearchcapital
 
   - name: "Tradebot"
     type: generic
@@ -419,7 +419,7 @@ companies:
     resume_email: resumes@eclipsett.com
 
   - name: "Edge Focus Partners"
-    type: generic
+    type: playwright
     careers_url: "https://www.edgefocuspartners.com/"
     link_pattern: "edgefocuspartners.com/careers/"
 
