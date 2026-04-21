@@ -43,9 +43,14 @@ python main.py --dry-run
 
 ## Config
 
-**`config.yaml`** — set your email, frequency, and keyword filters  
+**`config.yaml`** — keyword filters, request settings  
 **`companies.yaml`** — add/remove/disable companies  
-**`.env`** — `SMTP_PASSWORD=your_gmail_app_password`
+**`.env`** — secrets for local runs:
+```
+SMTP_PASSWORD=your_gmail_app_password
+EMAIL_SENDER=you@gmail.com
+EMAIL_RECIPIENTS=you@gmail.com
+```
 
 To add a company:
 ```yaml
@@ -69,10 +74,11 @@ emails new postings automatically. State is persisted in an orphan `data` branch
 bash bootstrap_data_branch.sh
 ```
 
-**2. Add your Gmail App Password as a repository secret:**
+**2. Add three repository secrets:**
 - Go to **Settings → Secrets and variables → Actions → New repository secret**
-- Name: `SMTP_PASSWORD`
-- Value: your Gmail App Password
+- `SMTP_PASSWORD` — your Gmail App Password (generate at myaccount.google.com/apppasswords)
+- `EMAIL_SENDER` — the Gmail address sending the email (e.g. `you@gmail.com`)
+- `EMAIL_RECIPIENTS` — comma-separated list of recipient addresses (e.g. `you@gmail.com`)
 
 **3. Push `main` to GitHub** — the workflow will appear under the Actions tab.
 
