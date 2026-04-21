@@ -3,6 +3,7 @@
 
 import argparse
 import logging
+import os
 import time
 from pathlib import Path
 
@@ -26,7 +27,14 @@ def load_yaml(path: Path) -> dict | list:
 
 
 def load_config(config_path: Path) -> dict:
-    return load_yaml(config_path)
+    config = load_yaml(config_path)
+    email = config.setdefault("email", {})
+    if not email.get("sender"):
+        email["sender"] = os.environ["EMAIL_SENDER"]
+    if not email.get("recipients"):
+        raw = os.environ["EMAIL_RECIPIENTS"]
+        email["recipients"] = [r.strip() for r in raw.split(",")]
+    return config
 
 
 def load_companies(companies_path: Path) -> list[dict]:
