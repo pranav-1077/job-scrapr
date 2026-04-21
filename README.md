@@ -64,25 +64,20 @@ To add a company:
 ## GitHub Actions (automated daily runs)
 
 The workflow in `.github/workflows/scrape.yml` runs the scraper on a schedule and
-emails new postings automatically. State is persisted in an orphan `data` branch so
-`main` stays clean.
+emails new postings automatically. `data/seen_jobs.json` is committed back to `main`
+after each run to persist state.
 
 ### One-time setup
 
-**1. Bootstrap the data branch** (run once locally before pushing):
-```bash
-bash bootstrap_data_branch.sh
-```
-
-**2. Add three repository secrets:**
+**1. Add three repository secrets:**
 - Go to **Settings → Secrets and variables → Actions → New repository secret**
 - `SMTP_PASSWORD` — your Gmail App Password (generate at myaccount.google.com/apppasswords)
 - `EMAIL_SENDER` — the Gmail address sending the email (e.g. `you@gmail.com`)
 - `EMAIL_RECIPIENTS` — comma-separated list of recipient addresses (e.g. `you@gmail.com`)
 
-**3. Push `main` to GitHub** — the workflow will appear under the Actions tab.
+**2. Push `main` to GitHub** — the workflow will appear under the Actions tab.
 
-**4. First run — catalog without emailing:**  
+**3. First run — catalog without emailing:**  
 Trigger the workflow manually via **Actions → Daily Job Scrape → Run workflow**, and
 check the **"Catalog jobs without sending email"** box. This snapshots all current
 jobs so the next scheduled run only emails genuinely new postings.
