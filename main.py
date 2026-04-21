@@ -39,7 +39,9 @@ def load_companies(companies_path: Path) -> list[dict]:
 # ── Main scrape loop ──────────────────────────────────────────────────────────
 
 def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_only: bool = False):
-    state = JobState(config.get("data_dir", "./data"))
+    raw_data_dir = config.get("data_dir", "./data")
+    data_dir = raw_data_dir if Path(raw_data_dir).is_absolute() else Path(__file__).parent / raw_data_dir
+    state = JobState(str(data_dir))
     notifier = EmailNotifier(config["email"])
     keyword_filters: list[str] = config.get("keyword_filters", [])
     delay = config.get("delay_between_companies", 1)

@@ -1,0 +1,67 @@
+name: Daily Job Scrape
+
+on:
+  schedule:
+    - cron: '0 15 * * 1-5'  # 8:00 AM PT (UTC-7 summer / UTC-8 winter); weekdays only
+  workflow_dispatch:         # allow manual trigger from GitHub UI
+    inputs:
+      catalog_only:
+        description: 'Catalog jobs without sending email (use for first run)'
+        type: boolean
+        default: false
+      dry_run:
+        description: 'Scrape but do not send email'
+        type: boolean
+        default: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to push state back to the data branch
+
+    steps:
+      - name: Check out main branch
+        uses: actions/checkout@v4
+
+      - name: Check out data branch into ./data
+        uses: actions/checkout@v4
+        with:
+          ref: data
+          path: data
+          # If the data branch doesn't exist yet this step fails — see bootstrap note below.
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright browsers
+        run: playwright install chromium --with-deps
+
+      - name: Run scraper
+        env:
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        run: |
+          FLAGS=""
+          if [ "${{ github.event.inputs.catalog_only }}" = "true" ]; then
+            FLAGS="$FLAGS --catalog-only"
+          fi
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            FLAGS="$FLAGS --dry-run"
+          fi
+          python main.py $FLAGS
+
+      - name: Commit updated state
+        working-directory: data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add seen_jobs.json
+          # Only commit if there are actual changes
+          git diff --cached --quiet || git commit -m "chore: update seen_jobs.json [skip ci]"
+          git push

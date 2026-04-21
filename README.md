@@ -11,13 +11,14 @@ Each company in `companies.yaml` is assigned a scraper type:
 - **playwright** — launches a headless Chromium browser for JS-rendered pages that require JavaScript execution
 - **email_only** — no scraping; just reminds you to check the site manually
 
-On each run, newly found jobs are diffed against the last saved state and only fresh postings (and any removed ones) are emailed. Results are stored in `data/` as JSON.
+On each run, newly found jobs are diffed against the last saved state and only fresh postings (and any removed ones) are emailed. State is stored in `data/seen_jobs.json`.
 
 ## Setup
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
+playwright install chromium
 
 cp .env.example .env
 # add your Gmail App Password to .env
@@ -57,3 +58,38 @@ To add a company:
   # careers_url: "..."   # generic only
   # disabled: true       # to skip without deleting
 ```
+
+## GitHub Actions (automated daily runs)
+
+The workflow in `.github/workflows/scrape.yml` runs the scraper on a schedule and
+emails new postings automatically. State is persisted in an orphan `data` branch so
+`main` stays clean.
+
+### One-time setup
+
+**1. Bootstrap the data branch** (run once locally before pushing):
+```bash
+bash bootstrap_data_branch.sh
+```
+
+**2. Add your Gmail App Password as a repository secret:**
+- Go to **Settings → Secrets and variables → Actions → New repository secret**
+- Name: `SMTP_PASSWORD`
+- Value: your Gmail App Password
+
+**3. Push `main` to GitHub** — the workflow will appear under the Actions tab.
+
+**4. First run — catalog without emailing:**  
+Trigger the workflow manually via **Actions → Daily Job Scrape → Run workflow**, and
+check the **"Catalog jobs without sending email"** box. This snapshots all current
+jobs so the next scheduled run only emails genuinely new postings.
+
+### Schedule
+
+Runs weekdays at **8:00 AM PT** (`0 15 * * 1-5` UTC). Adjust the cron expression in
+`.github/workflows/scrape.yml` to change the time or add weekends.
+
+### Manual trigger
+
+You can run the workflow any time from **Actions → Daily Job Scrape → Run workflow**,
+with optional `dry_run` or `catalog_only` flags.
