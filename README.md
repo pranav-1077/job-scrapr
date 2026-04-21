@@ -34,9 +34,6 @@ python main.py --catalog-only
 # Normal run: email any new postings since last run
 python main.py
 
-# Install launchd job (runs on wake if Mac was asleep at schedule time)
-python main.py --setup-cron
-
 # Check which boards are reachable
 python main.py --verify-boards
 

@@ -3,8 +3,6 @@
 
 import argparse
 import logging
-import subprocess
-import sys
 import time
 from pathlib import Path
 
@@ -188,85 +186,6 @@ def verify_boards(companies: list[dict]):
             print(f"  {name}  [{code}]  {url}")
 
 
-# ── Cron setup ────────────────────────────────────────────────────────────────
-
-_CRON_SCHEDULES = {
-    "hourly": "0 * * * *",
-    "daily": "0 {hour} * * *",
-    "weekly": "0 {hour} * * 1",
-}
-
-
-def setup_cron(config: dict, config_path: Path):
-    frequency = config.get("frequency", "daily")
-    hour = config.get("run_hour", 8)
-
-    script = Path(__file__).resolve()
-    python = sys.executable
-    log_dir = script.parent / "logs"
-    log_dir.mkdir(exist_ok=True)
-
-    plist_label = "com.job-scrapr.daily"
-    plist_path = Path.home() / "Library" / "LaunchAgents" / f"{plist_label}.plist"
-
-    if frequency == "hourly":
-        interval_key = "<key>StartInterval</key>\n\t\t<integer>3600</integer>"
-    elif frequency == "weekly":
-        interval_key = (
-            "<key>StartCalendarInterval</key>\n\t\t<dict>"
-            "\n\t\t\t<key>Weekday</key><integer>1</integer>"
-            f"\n\t\t\t<key>Hour</key><integer>{hour}</integer>"
-            "\n\t\t\t<key>Minute</key><integer>0</integer>"
-            "\n\t\t</dict>"
-        )
-    else:  # daily
-        interval_key = (
-            "<key>StartCalendarInterval</key>\n\t\t<dict>"
-            f"\n\t\t\t<key>Hour</key><integer>{hour}</integer>"
-            "\n\t\t\t<key>Minute</key><integer>0</integer>"
-            "\n\t\t</dict>"
-        )
-
-    plist_content = f"""<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-\t<key>Label</key>
-\t<string>{plist_label}</string>
-\t<key>ProgramArguments</key>
-\t<array>
-\t\t<string>{python}</string>
-\t\t<string>{script}</string>
-\t\t<string>--config</string>
-\t\t<string>{config_path.resolve()}</string>
-\t</array>
-\t<key>WorkingDirectory</key>
-\t<string>{script.parent}</string>
-\t{interval_key}
-\t<key>StandardOutPath</key>
-\t<string>{log_dir}/scraper.log</string>
-\t<key>StandardErrorPath</key>
-\t<string>{log_dir}/scraper.log</string>
-\t<key>RunAtLoad</key>
-\t<false/>
-</dict>
-</plist>
-"""
-
-    if plist_path.exists():
-        subprocess.run(["launchctl", "unload", str(plist_path)], capture_output=True)
-
-    plist_path.write_text(plist_content)
-    proc = subprocess.run(["launchctl", "load", str(plist_path)], capture_output=True, text=True)
-
-    if proc.returncode == 0:
-        print(f"launchd job installed ({frequency} at {hour}:00): {plist_path}")
-        print("Unlike cron, this will run when your Mac wakes up if it was asleep at the scheduled time.")
-    else:
-        print(f"Failed to load launchd job: {proc.stderr}")
-        print(f"Plist written to {plist_path} — load it manually with:\n  launchctl load {plist_path}")
-
-
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 def main():
@@ -276,7 +195,6 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Scrape but don't send email")
     parser.add_argument("--catalog-only", action="store_true",
                         help="On first run, record all current jobs without emailing")
-    parser.add_argument("--setup-cron", action="store_true", help="Install cron job and exit")
     parser.add_argument("--verify-boards", action="store_true", help="Check all board URLs are reachable")
     parser.add_argument("-v", "--verbose", action="store_true")
     args = parser.parse_args()
@@ -293,10 +211,6 @@ def main():
 
     config = load_config(config_path)
     companies = load_companies(companies_path)
-
-    if args.setup_cron:
-        setup_cron(config, config_path)
-        return
 
     if args.verify_boards:
         verify_boards(companies)
