@@ -14,11 +14,15 @@ email:
 keyword_filters:
   - quant
   - quantitative
+  - software
+  - engineer
   - software engineer
   - software developer
   - researcher
   - trader
   - data scientist
+  - data engineer
+  - data
   - machine learning
   - ml engineer
   - algo
@@ -32,5 +36,5 @@ request_timeout: 30   # seconds per HTTP request
 
 # ── Parallelism ───────────────────────────────────────────────────────────────────
 max_workers: 10       # concurrent scrapers; keep low enough to avoid rate-limiting
-scraper_timeout: 30   # seconds per scraper before it's considered hung and skipped
+scraper_timeout: 60   # seconds per scraper before it's considered hung and skipped
 max_job_age_days: 60  # ignore jobs posted more than this many days ago (API scrapers only)

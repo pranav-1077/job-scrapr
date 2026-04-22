@@ -70,14 +70,15 @@ def _scrape_one(
     try:
         scraper = get_scraper(company)
         jobs = scraper.fetch_jobs()
-        if cutoff:
-            jobs = [j for j in jobs if j.posted_at is None or date.fromisoformat(j.posted_at) >= cutoff]
         log.debug("  [%s] fetched %d job(s)", name, len(jobs))
         if catalog_only and state.is_first_run(name):
             log.info("  [%s] first run — catalogued %d job(s)", name, len(jobs))
             return _ScrapeResult(name=name, jobs=jobs, new_jobs=[], removed_jobs=[], catalog_only=True)
         new_jobs = state.get_new_jobs(name, jobs)
         removed_jobs = state.get_removed_jobs(name, jobs)
+        # Date and keyword filters apply only to new-job alerts, not to state or removed detection.
+        if cutoff:
+            new_jobs = [j for j in new_jobs if j.posted_at is None or date.fromisoformat(j.posted_at) >= cutoff]
         if keyword_filters:
             new_jobs = [j for j in new_jobs if j.matches_filters(keyword_filters)]
         log.info("  [%s] %d new, %d removed", name, len(new_jobs), len(removed_jobs))
