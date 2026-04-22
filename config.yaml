@@ -33,3 +33,4 @@ request_timeout: 30   # seconds per HTTP request
 # ── Parallelism ───────────────────────────────────────────────────────────────────
 max_workers: 10       # concurrent scrapers; keep low enough to avoid rate-limiting
 scraper_timeout: 30   # seconds per scraper before it's considered hung and skipped
+max_job_age_days: 60  # ignore jobs posted more than this many days ago (API scrapers only)
