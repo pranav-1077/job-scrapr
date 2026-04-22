@@ -28,5 +28,8 @@ keyword_filters:
 data_dir: ./data
 
 # ── Request behaviour ─────────────────────────────────────────────────────────────
-request_timeout: 30        # seconds per HTTP request
-delay_between_companies: 1 # seconds to sleep between companies (be polite)
+request_timeout: 30   # seconds per HTTP request
+
+# ── Parallelism ───────────────────────────────────────────────────────────────────
+max_workers: 10       # concurrent scrapers; keep low enough to avoid rate-limiting
+scraper_timeout: 30   # seconds per scraper before it's considered hung and skipped

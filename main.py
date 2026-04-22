@@ -3,9 +3,13 @@
 
 import argparse
 import logging
+import math
 import os
-import time
+from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError as FuturesTimeoutError
+from dataclasses import dataclass
+from datetime import date, timedelta
 from pathlib import Path
+from typing import Optional
 
 import yaml
 from dotenv import load_dotenv
@@ -42,7 +46,79 @@ def load_companies(companies_path: Path) -> list[dict]:
     return data["companies"]
 
 
+# ── Parallel scraping ─────────────────────────────────────────────────────────
+
+@dataclass
+class _ScrapeResult:
+    name: str
+    jobs: list
+    new_jobs: list
+    removed_jobs: list
+    error: Optional[str] = None
+    catalog_only: bool = False
+
+
+def _scrape_one(
+    company: dict,
+    state: JobState,
+    keyword_filters: list[str],
+    catalog_only: bool,
+    cutoff: Optional[date],
+) -> _ScrapeResult:
+    name = company["name"]
+    log.info("Scraping %s …", name)
+    try:
+        scraper = get_scraper(company)
+        jobs = scraper.fetch_jobs()
+        if cutoff:
+            jobs = [j for j in jobs if j.posted_at is None or date.fromisoformat(j.posted_at) >= cutoff]
+        log.debug("  [%s] fetched %d job(s)", name, len(jobs))
+        if catalog_only and state.is_first_run(name):
+            log.info("  [%s] first run — catalogued %d job(s)", name, len(jobs))
+            return _ScrapeResult(name=name, jobs=jobs, new_jobs=[], removed_jobs=[], catalog_only=True)
+        new_jobs = state.get_new_jobs(name, jobs)
+        removed_jobs = state.get_removed_jobs(name, jobs)
+        if keyword_filters:
+            new_jobs = [j for j in new_jobs if j.matches_filters(keyword_filters)]
+        log.info("  [%s] %d new, %d removed", name, len(new_jobs), len(removed_jobs))
+        return _ScrapeResult(name=name, jobs=jobs, new_jobs=new_jobs, removed_jobs=removed_jobs)
+    except Exception as exc:
+        log.warning("  [%s] ERROR: %s", name, exc)
+        return _ScrapeResult(name=name, jobs=[], new_jobs=[], removed_jobs=[], error=str(exc))
+
+
 # ── Main scrape loop ──────────────────────────────────────────────────────────
+
+def _run_batch(
+    companies: list[dict],
+    executor: ThreadPoolExecutor,
+    state: JobState,
+    keyword_filters: list[str],
+    catalog_only: bool,
+    cutoff: Optional[date],
+    scraper_timeout: int,
+    max_workers: int,
+) -> tuple[list[_ScrapeResult], list[str]]:
+    """Submit a batch of companies to the executor and collect results."""
+    if not companies:
+        return [], []
+    total_timeout = scraper_timeout * math.ceil(len(companies) / max_workers)
+    future_to_company = {
+        executor.submit(_scrape_one, c, state, keyword_filters, catalog_only, cutoff): c
+        for c in companies
+    }
+    completed: list[_ScrapeResult] = []
+    timed_out: list[str] = []
+    try:
+        for future in as_completed(future_to_company, timeout=total_timeout):
+            completed.append(future.result())
+    except FuturesTimeoutError:
+        for future, company in future_to_company.items():
+            if not future.done():
+                timed_out.append(company["name"])
+                log.warning("Scraper timed out (hung): %s", company["name"])
+    return completed, timed_out
+
 
 def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_only: bool = False):
     raw_data_dir = config.get("data_dir", "./data")
@@ -50,69 +126,51 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
     state = JobState(str(data_dir))
     notifier = EmailNotifier(config["email"])
     keyword_filters: list[str] = config.get("keyword_filters", [])
-    delay = config.get("delay_between_companies", 1)
+    max_workers: int = config.get("max_workers", 10)
+    scraper_timeout: int = config.get("scraper_timeout", 60)
     notify_removed: bool = config.get("notify_removed_jobs", True)
+    max_job_age_days: int = config.get("max_job_age_days", 60)
+    cutoff: Optional[date] = date.today() - timedelta(days=max_job_age_days) if max_job_age_days else None
+
+    active_companies = [c for c in companies if not c.get("disabled") and c.get("type") != "email_only"]
+    email_only_companies: list[dict] = [c for c in companies if not c.get("disabled") and c.get("type") == "email_only"]
+
+    fast = [c for c in active_companies if c.get("type") != "playwright"]
+    slow = [c for c in active_companies if c.get("type") == "playwright"]
+
+    completed_results: list[_ScrapeResult] = []
+    timed_out_names: list[str] = []
+
+    executor = ThreadPoolExecutor(max_workers=max_workers)
+    try:
+        if fast:
+            log.info("Phase 1: %d API/generic scrapers …", len(fast))
+        r1, t1 = _run_batch(fast, executor, state, keyword_filters, catalog_only, cutoff, scraper_timeout, max_workers)
+        if slow:
+            log.info("Phase 2: %d Playwright scrapers …", len(slow))
+        r2, t2 = _run_batch(slow, executor, state, keyword_filters, catalog_only, cutoff, scraper_timeout, max_workers)
+        completed_results = r1 + r2
+        timed_out_names = t1 + t2
+    finally:
+        # Don't block shutdown on threads that are genuinely stuck.
+        executor.shutdown(wait=False, cancel_futures=True)
 
     all_new_jobs: list[dict] = []
     all_removed_jobs: list[dict] = []
-    errors: list[str] = []
-    email_only_companies: list[dict] = [
-        c for c in companies
-        if not c.get("disabled") and c.get("type") == "email_only"
-    ]
+    errors: list[str] = [f"{n}: timed out after {scraper_timeout}s" for n in timed_out_names]
 
-    for company in companies:
-        if company.get("disabled"):
-            log.debug("Skipping disabled company: %s", company["name"])
+    for result in completed_results:
+        if result.error:
+            errors.append(f"{result.name}: {result.error}")
             continue
-
-        if company.get("type") == "email_only":
-            log.debug("Skipping email-only company: %s (%s)", company["name"], company.get("resume_email", ""))
+        if result.catalog_only:
+            state.update(result.name, result.jobs)
             continue
-
-        name = company["name"]
-        log.info("Scraping %s …", name)
-
-        try:
-            scraper = get_scraper(company)
-            jobs = scraper.fetch_jobs()
-            log.debug("  fetched %d job(s) total", len(jobs))
-
-            if catalog_only and state.is_first_run(name):
-                log.info("  catalogued %d job(s) (first run, no email)", len(jobs))
-                state.update(name, jobs)
-                time.sleep(delay)
-                continue
-
-            new_jobs = state.get_new_jobs(name, jobs)
-            removed_jobs = state.get_removed_jobs(name, jobs)
-
-            # Apply keyword filter
-            if keyword_filters:
-                new_jobs = [j for j in new_jobs if j.matches_filters(keyword_filters)]
-
-            if new_jobs:
-                log.info("  %d new job(s)", len(new_jobs))
-                for j in new_jobs:
-                    j.company = name
-                    all_new_jobs.append(vars(j))
-            else:
-                log.info("  no new jobs")
-
-            if removed_jobs:
-                log.info("  %d removed job(s): %s", len(removed_jobs),
-                         ", ".join(r["title"] for r in removed_jobs))
-                all_removed_jobs.extend(removed_jobs)
-            else:
-                log.debug("  no removed jobs")
-
-            state.update(name, jobs)
-
-        except Exception as exc:
-            log.warning("  ERROR scraping %s: %s", name, exc)
-            errors.append(f"{name}: {exc}")
-
-        time.sleep(delay)
+        for j in result.new_jobs:
+            j.company = result.name
+            all_new_jobs.append(vars(j))
+        all_removed_jobs.extend(result.removed_jobs)
+        state.update(result.name, result.jobs)
 
     state.save()
 
