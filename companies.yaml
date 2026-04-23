@@ -149,9 +149,6 @@ companies:
     type: lever
     company_id: ansatzcapital
 
-  - name: "Aquatic Capital"
-    type: generic
-    careers_url: "https://www.aquaticcapital.com/"
 
   - name: "Arrowstreet Capital"
     type: generic

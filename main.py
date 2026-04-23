@@ -129,6 +129,7 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
     keyword_filters: list[str] = config.get("keyword_filters", [])
     max_workers: int = config.get("max_workers", 10)
     scraper_timeout: int = config.get("scraper_timeout", 60)
+    playwright_scraper_timeout: int = config.get("playwright_scraper_timeout", 120)
     notify_removed: bool = config.get("notify_removed_jobs", True)
     max_job_age_days: int = config.get("max_job_age_days", 60)
     cutoff: Optional[date] = date.today() - timedelta(days=max_job_age_days) if max_job_age_days else None
@@ -149,7 +150,7 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
         r1, t1 = _run_batch(fast, executor, state, keyword_filters, catalog_only, cutoff, scraper_timeout, max_workers)
         if slow:
             log.info("Phase 2: %d Playwright scrapers …", len(slow))
-        r2, t2 = _run_batch(slow, executor, state, keyword_filters, catalog_only, cutoff, scraper_timeout, max_workers)
+        r2, t2 = _run_batch(slow, executor, state, keyword_filters, catalog_only, cutoff, playwright_scraper_timeout, max_workers)
         completed_results = r1 + r2
         timed_out_names = t1 + t2
     finally:
