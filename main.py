@@ -3,7 +3,6 @@
 
 import argparse
 import logging
-import math
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError as FuturesTimeoutError
 from dataclasses import dataclass
@@ -97,13 +96,11 @@ def _run_batch(
     keyword_filters: list[str],
     catalog_only: bool,
     cutoff: Optional[date],
-    scraper_timeout: int,
-    max_workers: int,
+    total_timeout: int,
 ) -> tuple[list[_ScrapeResult], list[str]]:
     """Submit a batch of companies to the executor and collect results."""
     if not companies:
         return [], []
-    total_timeout = scraper_timeout * math.ceil(len(companies) / max_workers)
     future_to_company = {
         executor.submit(_scrape_one, c, state, keyword_filters, catalog_only, cutoff): c
         for c in companies
@@ -143,23 +140,24 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
     completed_results: list[_ScrapeResult] = []
     timed_out_names: list[str] = []
 
+    # Playwright scrapers are submitted first so they get immediate worker slots.
+    # Fast scrapers fill remaining workers in parallel rather than waiting for a second phase.
+    # Total budget = playwright ceiling + one fast-scraper ceiling to cover stragglers.
+    total_timeout = playwright_scraper_timeout + scraper_timeout
+    log.info("Scraping %d companies (%d Playwright, %d fast) …", len(active_companies), len(slow), len(fast))
+
     executor = ThreadPoolExecutor(max_workers=max_workers)
     try:
-        if fast:
-            log.info("Phase 1: %d API/generic scrapers …", len(fast))
-        r1, t1 = _run_batch(fast, executor, state, keyword_filters, catalog_only, cutoff, scraper_timeout, max_workers)
-        if slow:
-            log.info("Phase 2: %d Playwright scrapers …", len(slow))
-        r2, t2 = _run_batch(slow, executor, state, keyword_filters, catalog_only, cutoff, playwright_scraper_timeout, max_workers)
-        completed_results = r1 + r2
-        timed_out_names = t1 + t2
+        completed_results, timed_out_names = _run_batch(
+            slow + fast, executor, state, keyword_filters, catalog_only, cutoff, total_timeout
+        )
     finally:
         # Don't block shutdown on threads that are genuinely stuck.
         executor.shutdown(wait=False, cancel_futures=True)
 
     all_new_jobs: list[dict] = []
     all_removed_jobs: list[dict] = []
-    errors: list[str] = [f"{n}: timed out after {scraper_timeout}s" for n in timed_out_names]
+    errors: list[str] = [f"{n}: timed out after {total_timeout}s" for n in timed_out_names]
 
     for result in completed_results:
         if result.error:
