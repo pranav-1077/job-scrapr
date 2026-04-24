@@ -137,9 +137,8 @@ companies:
   # ── Generic / custom career pages (HTML scrape) ───────────────────────────────
 
   - name: "3Red Partners"
-    type: generic
-    careers_url: "https://www.3redpartners.com/careers/"
-    link_pattern: "/careers/"
+    type: greenhouse
+    board_token: 3redpartners
 
   - name: "Alphasimplex"
     type: generic
@@ -164,9 +163,8 @@ companies:
     disabled: true  # Salesforce Experience Cloud; JS-rendered; needs Playwright
 
   - name: "Belvedere Trading"
-    type: generic
-    careers_url: "https://belvederetrading.com/careers/"
-    link_pattern: "/careers/"
+    type: lever
+    company_id: belvederetrading
 
   - name: "Bluefin Trading"
     type: email_only
@@ -197,8 +195,8 @@ companies:
     link_pattern: "/careers/"
 
   - name: "DV Trading"
-    type: generic
-    careers_url: "https://dvtrading.com/"
+    type: greenhouse
+    board_token: dvtrading
 
   - name: "Eagle Seven"
     type: generic
@@ -215,9 +213,8 @@ companies:
     board_token: gelbergroup
 
   - name: "Geneva Trading"
-    type: generic
-    careers_url: "https://www.genevatrading.com/careers/"
-    link_pattern: "/careers/"
+    type: greenhouse
+    board_token: genevatrading
 
   - name: "Group One Trading"
     type: generic
@@ -225,13 +222,12 @@ companies:
     link_pattern: "group1.applicantpro.com/jobs/"
 
   - name: "GSA Capital"
-    type: generic
-    careers_url: "https://www.gsacapital.com/careers/"
+    type: greenhouse
+    board_token: gsacapital
 
   - name: "GSR Crypto"
-    type: generic
-    careers_url: "https://www.gsr.io/careers/"
-    link_pattern: "/careers/"
+    type: greenhouse
+    board_token: gsrmarkets
 
   - name: "GTS"
     type: generic
@@ -258,9 +254,8 @@ companies:
     board_token: janestreet
 
   - name: "Jump Trading"
-    type: generic
-    careers_url: "https://www.jumptrading.com/careers/"
-    link_pattern: "/careers/"
+    type: greenhouse
+    board_token: jumptrading
 
   - name: "Kepos Capital"
     type: generic
@@ -286,8 +281,8 @@ companies:
     careers_url: "https://www.panagora.com/careers/"
 
   - name: "PDT Partners"
-    type: generic
-    careers_url: "https://www.pdtpartners.com/jobs.html"
+    type: greenhouse
+    board_token: pdtpartners
 
   - name: "Peak6"
     type: generic
@@ -304,8 +299,8 @@ companies:
     careers_url: "https://www.quantlab.com/careers/"
 
   - name: "Radix Trading"
-    type: generic
-    careers_url: "https://radixtrading.co/"
+    type: greenhouse
+    board_token: radixuniversity
 
   - name: "Research Affiliates"
     type: generic
@@ -344,8 +339,8 @@ companies:
     careers_url: "https://www.tradebot.com/careers/"
 
   - name: "TransMarket Group"
-    type: generic
-    careers_url: "https://transmarketgroup.com/careers/"
+    type: greenhouse
+    board_token: transmarketgroup
 
   - name: "Two Sigma"
     type: generic
@@ -357,8 +352,8 @@ companies:
     company_id: valkyrietrading
 
   - name: "Voleon Group"
-    type: generic
-    careers_url: "https://voleon.com/"
+    type: lever
+    company_id: voleon
 
   - name: "Voloridge Investment Management"
     type: generic
@@ -393,10 +388,8 @@ companies:
 
 
   - name: "Atto Trading"
-    type: generic
-    careers_url: "https://atto-trading.com/join-us"
-    link_pattern: "apply.workable.com/atto-trading/"
-    title_selector: "p.heading-medium"
+    type: greenhouse
+    board_token: attotrading
 
   - name: "Banyan Alpha Investment"
     type: email_only
