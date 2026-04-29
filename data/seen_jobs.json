@@ -2143,10 +2143,10 @@
     },
     {
       "department": "DV Commodities",
-      "id": "4674275005",
-      "location": "Dubai, Dubai, United Arab Emirates; Singapore",
+      "id": "4674252005",
+      "location": "London",
       "title": "Experienced Trader (DV Commodities)",
-      "url": "https://job-boards.greenhouse.io/dvtrading/jobs/4674275005"
+      "url": "https://job-boards.greenhouse.io/dvtrading/jobs/4674252005"
     },
     {
       "department": "DV Commodities",
@@ -2157,10 +2157,10 @@
     },
     {
       "department": "DV Commodities",
-      "id": "4674252005",
-      "location": "London",
+      "id": "4674275005",
+      "location": "Dubai, Dubai, United Arab Emirates; Singapore",
       "title": "Experienced Trader (DV Commodities)",
-      "url": "https://job-boards.greenhouse.io/dvtrading/jobs/4674252005"
+      "url": "https://job-boards.greenhouse.io/dvtrading/jobs/4674275005"
     },
     {
       "department": "DV Equities",
@@ -2189,6 +2189,13 @@
       "location": "London",
       "title": "Global Currency Hedge Trader",
       "url": "https://job-boards.greenhouse.io/dvtrading/jobs/4671558005"
+    },
+    {
+      "department": "DV Commodities",
+      "id": "4690201005",
+      "location": "New York",
+      "title": "Graduate Trader (DV Commodities)",
+      "url": "https://job-boards.greenhouse.io/dvtrading/jobs/4690201005"
     },
     {
       "department": "DV Commodities",
@@ -4801,17 +4808,17 @@
     },
     {
       "department": "Software Engineering",
-      "id": "8213653002",
-      "location": "New York, New York, United States",
-      "title": "ASIC Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8213653002"
-    },
-    {
-      "department": "Software Engineering",
       "id": "8233259002",
       "location": "London, England, United Kingdom",
       "title": "ASIC Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8233259002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "8213653002",
+      "location": "New York, New York, United States",
+      "title": "ASIC Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8213653002"
     },
     {
       "department": "IT and Systems Engineering",
@@ -4934,13 +4941,6 @@
     },
     {
       "department": "Cybersecurity",
-      "id": "7642974002",
-      "location": "Singapore",
-      "title": "Cybersecurity Detection and Response Analyst",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7642974002"
-    },
-    {
-      "department": "Cybersecurity",
       "id": "7642886002",
       "location": "Hong Kong, Hong Kong",
       "title": "Cybersecurity Detection and Response Analyst",
@@ -4948,10 +4948,10 @@
     },
     {
       "department": "Cybersecurity",
-      "id": "8057314002",
+      "id": "7642974002",
       "location": "Singapore",
-      "title": "Cybersecurity Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8057314002"
+      "title": "Cybersecurity Detection and Response Analyst",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7642974002"
     },
     {
       "department": "Cybersecurity",
@@ -4962,13 +4962,6 @@
     },
     {
       "department": "Cybersecurity",
-      "id": "8516108002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Cybersecurity Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8516108002"
-    },
-    {
-      "department": "Cybersecurity",
       "id": "8057310002",
       "location": "London, England, United Kingdom",
       "title": "Cybersecurity Engineer",
@@ -4976,10 +4969,17 @@
     },
     {
       "department": "Cybersecurity",
-      "id": "7998232002",
+      "id": "8057314002",
+      "location": "Singapore",
+      "title": "Cybersecurity Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8057314002"
+    },
+    {
+      "department": "Cybersecurity",
+      "id": "8516108002",
       "location": "Hong Kong, Hong Kong",
-      "title": "Cybersecurity Engineer - Threat Modelling",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7998232002"
+      "title": "Cybersecurity Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8516108002"
     },
     {
       "department": "Cybersecurity",
@@ -4987,6 +4987,13 @@
       "location": "London, England, United Kingdom",
       "title": "Cybersecurity Engineer - Threat Modelling",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/7988179002"
+    },
+    {
+      "department": "Cybersecurity",
+      "id": "7998232002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Cybersecurity Engineer - Threat Modelling",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7998232002"
     },
     {
       "department": "Cybersecurity",
@@ -5018,17 +5025,17 @@
     },
     {
       "department": "Network Engineering",
-      "id": "8459138002",
-      "location": "Chicago",
-      "title": "Data Center Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8459138002"
-    },
-    {
-      "department": "Network Engineering",
       "id": "5002846002",
       "location": "New York, New York, United States",
       "title": "Data Center Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/5002846002"
+    },
+    {
+      "department": "Network Engineering",
+      "id": "8459138002",
+      "location": "Chicago",
+      "title": "Data Center Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8459138002"
     },
     {
       "department": "Real Estate Engineering",
@@ -5039,17 +5046,17 @@
     },
     {
       "department": "Network Engineering",
+      "id": "6300684002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Data Centre Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/6300684002"
+    },
+    {
+      "department": "Network Engineering",
       "id": "6102180002",
       "location": "Singapore",
       "title": "Data Centre Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/6102180002"
-    },
-    {
-      "department": "IT and Systems Engineering",
-      "id": "8464007002",
-      "location": "London, England, United Kingdom",
-      "title": "Data Centre Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8464007002"
     },
     {
       "department": "Network Engineering",
@@ -5059,11 +5066,18 @@
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/7925814002"
     },
     {
-      "department": "Network Engineering",
-      "id": "6300684002",
-      "location": "Hong Kong, Hong Kong",
+      "department": "IT and Systems Engineering",
+      "id": "8464007002",
+      "location": "London, England, United Kingdom",
       "title": "Data Centre Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/6300684002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8464007002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "7229633002",
+      "location": "London, England, United Kingdom",
+      "title": "Data Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7229633002"
     },
     {
       "department": "Software Engineering",
@@ -5078,13 +5092,6 @@
       "location": "New York, New York, United States",
       "title": "Data Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/6558007002"
-    },
-    {
-      "department": "Software Engineering",
-      "id": "7229633002",
-      "location": "London, England, United Kingdom",
-      "title": "Data Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7229633002"
     },
     {
       "department": "Software Engineering",
@@ -5151,13 +5158,6 @@
     },
     {
       "department": "Quantitative Trading",
-      "id": "8433793002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Exotic Options Trader",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8433793002"
-    },
-    {
-      "department": "Quantitative Trading",
       "id": "8443094002",
       "location": "New York, New York, United States",
       "title": "Exotic Options Trader",
@@ -5169,6 +5169,13 @@
       "location": "London, England, United Kingdom",
       "title": "Exotic Options Trader",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8433748002"
+    },
+    {
+      "department": "Quantitative Trading",
+      "id": "8433793002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Exotic Options Trader",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8433793002"
     },
     {
       "department": "Recruiting",
@@ -5221,17 +5228,17 @@
     },
     {
       "department": "Software Engineering",
-      "id": "8159216002",
-      "location": "Singapore",
-      "title": "FIX Onboarding and Connectivity Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8159216002"
-    },
-    {
-      "department": "Software Engineering",
       "id": "8161177002",
       "location": "Hong Kong, Hong Kong",
       "title": "FIX Onboarding and Connectivity Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8161177002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "8159216002",
+      "location": "Singapore",
+      "title": "FIX Onboarding and Connectivity Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8159216002"
     },
     {
       "department": "Software Engineering",
@@ -5333,17 +5340,17 @@
     },
     {
       "department": "IT and Systems Engineering",
-      "id": "8065684002",
-      "location": "New York, New York, United States",
-      "title": "IT Operations Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8065684002"
-    },
-    {
-      "department": "IT and Systems Engineering",
       "id": "8025274002",
       "location": "Hong Kong, Hong Kong",
       "title": "IT Operations Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8025274002"
+    },
+    {
+      "department": "IT and Systems Engineering",
+      "id": "8065684002",
+      "location": "New York, New York, United States",
+      "title": "IT Operations Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8065684002"
     },
     {
       "department": "IT and Systems Engineering",
@@ -5396,24 +5403,10 @@
     },
     {
       "department": "IT and Systems Engineering",
-      "id": "4276248002",
-      "location": "New York, New York, United States",
-      "title": "Linux Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4276248002"
-    },
-    {
-      "department": "IT and Systems Engineering",
       "id": "8377832002",
       "location": "Hong Kong, Hong Kong",
       "title": "Linux Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8377832002"
-    },
-    {
-      "department": "IT and Systems Engineering",
-      "id": "5701269002",
-      "location": "Singapore",
-      "title": "Linux Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/5701269002"
     },
     {
       "department": "IT and Systems Engineering",
@@ -5431,17 +5424,24 @@
     },
     {
       "department": "IT and Systems Engineering",
+      "id": "4276248002",
+      "location": "New York, New York, United States",
+      "title": "Linux Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4276248002"
+    },
+    {
+      "department": "IT and Systems Engineering",
+      "id": "8161274002",
+      "location": "Singapore",
+      "title": "Linux Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8161274002"
+    },
+    {
+      "department": "IT and Systems Engineering",
       "id": "8061059002",
       "location": "New York, New York, United States",
       "title": "Linux Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8061059002"
-    },
-    {
-      "department": "IT and Systems Engineering",
-      "id": "8104305002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Linux Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8104305002"
     },
     {
       "department": "IT and Systems Engineering",
@@ -5452,10 +5452,17 @@
     },
     {
       "department": "IT and Systems Engineering",
-      "id": "8161274002",
+      "id": "5701269002",
       "location": "Singapore",
       "title": "Linux Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8161274002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/5701269002"
+    },
+    {
+      "department": "IT and Systems Engineering",
+      "id": "8104305002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Linux Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8104305002"
     },
     {
       "department": "IT and Systems Engineering",
@@ -5501,17 +5508,17 @@
     },
     {
       "department": "Machine Learning",
-      "id": "7437779002",
-      "location": "London, England, United Kingdom",
-      "title": "Machine Learning Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7437779002"
-    },
-    {
-      "department": "Machine Learning",
       "id": "6802323002",
       "location": "Hong Kong, Hong Kong",
       "title": "Machine Learning Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/6802323002"
+    },
+    {
+      "department": "Machine Learning",
+      "id": "7437779002",
+      "location": "London, England, United Kingdom",
+      "title": "Machine Learning Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7437779002"
     },
     {
       "department": "Machine Learning",
@@ -5522,17 +5529,17 @@
     },
     {
       "department": "Machine Learning",
-      "id": "7449077002",
-      "location": "New York, New York, United States",
-      "title": "Machine Learning Performance Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7449077002"
-    },
-    {
-      "department": "Machine Learning",
       "id": "7449190002",
       "location": "New York, New York, United States",
       "title": "Machine Learning Performance Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/7449190002"
+    },
+    {
+      "department": "Machine Learning",
+      "id": "7449077002",
+      "location": "New York, New York, United States",
+      "title": "Machine Learning Performance Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7449077002"
     },
     {
       "department": "Machine Learning",
@@ -5543,17 +5550,10 @@
     },
     {
       "department": "Machine Learning",
-      "id": "4276720002",
-      "location": "New York, New York, United States",
+      "id": "8069523002",
+      "location": "London, England, United Kingdom",
       "title": "Machine Learning Researcher",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4276720002"
-    },
-    {
-      "department": "Machine Learning",
-      "id": "7246309002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Machine Learning Researcher",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7246309002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8069523002"
     },
     {
       "department": "Machine Learning",
@@ -5564,6 +5564,13 @@
     },
     {
       "department": "Machine Learning",
+      "id": "7246309002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Machine Learning Researcher",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7246309002"
+    },
+    {
+      "department": "Machine Learning",
       "id": "8069434002",
       "location": "New York, New York, United States",
       "title": "Machine Learning Researcher",
@@ -5571,10 +5578,10 @@
     },
     {
       "department": "Machine Learning",
-      "id": "8069523002",
-      "location": "London, England, United Kingdom",
+      "id": "4276720002",
+      "location": "New York, New York, United States",
       "title": "Machine Learning Researcher",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8069523002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4276720002"
     },
     {
       "department": "Machine Learning",
@@ -5669,17 +5676,17 @@
     },
     {
       "department": "Operations",
-      "id": "8354897002",
-      "location": "London, England, United Kingdom",
-      "title": "Operations Specialist",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8354897002"
-    },
-    {
-      "department": "Operations",
       "id": "8360490002",
       "location": "New York, New York, United States",
       "title": "Operations Specialist",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8360490002"
+    },
+    {
+      "department": "Operations",
+      "id": "8354897002",
+      "location": "London, England, United Kingdom",
+      "title": "Operations Specialist",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8354897002"
     },
     {
       "department": "Operations",
@@ -5753,13 +5760,6 @@
     },
     {
       "department": "Software Engineering",
-      "id": "5807405002",
-      "location": "Singapore",
-      "title": "Production Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/5807405002"
-    },
-    {
-      "department": "Software Engineering",
       "id": "5807402002",
       "location": "Hong Kong, Hong Kong",
       "title": "Production Engineer",
@@ -5781,10 +5781,10 @@
     },
     {
       "department": "Software Engineering",
-      "id": "7700474002",
-      "location": "London, England, United Kingdom",
-      "title": "Programming Language Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7700474002"
+      "id": "5807405002",
+      "location": "Singapore",
+      "title": "Production Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/5807405002"
     },
     {
       "department": "Software Engineering",
@@ -5792,6 +5792,13 @@
       "location": "New York, New York, United States",
       "title": "Programming Language Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/4275921002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "7700474002",
+      "location": "London, England, United Kingdom",
+      "title": "Programming Language Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7700474002"
     },
     {
       "department": "Quantitative Research",
@@ -5802,31 +5809,10 @@
     },
     {
       "department": "Quantitative Research",
-      "id": "6302325002",
-      "location": "New York, New York, United States",
-      "title": "Quantitative Researcher",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/6302325002"
-    },
-    {
-      "department": "Quantitative Research",
-      "id": "8343131002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Quantitative Researcher",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8343131002"
-    },
-    {
-      "department": "Quantitative Research",
       "id": "7514485002",
       "location": "Hong Kong, Hong Kong",
       "title": "Quantitative Researcher",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/7514485002"
-    },
-    {
-      "department": "Quantitative Research",
-      "id": "8071941002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Quantitative Researcher",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8071941002"
     },
     {
       "department": "Quantitative Research",
@@ -5837,17 +5823,31 @@
     },
     {
       "department": "Quantitative Research",
+      "id": "8343131002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Quantitative Researcher",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8343131002"
+    },
+    {
+      "department": "Quantitative Research",
+      "id": "8071941002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Quantitative Researcher",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8071941002"
+    },
+    {
+      "department": "Quantitative Research",
       "id": "8069351002",
       "location": "New York, New York, United States",
       "title": "Quantitative Researcher",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8069351002"
     },
     {
-      "department": "Quantitative Trading",
-      "id": "7982986002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Quantitative Trader",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7982986002"
+      "department": "Quantitative Research",
+      "id": "6302325002",
+      "location": "New York, New York, United States",
+      "title": "Quantitative Researcher",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/6302325002"
     },
     {
       "department": "Quantitative Trading",
@@ -5858,10 +5858,10 @@
     },
     {
       "department": "Quantitative Trading",
-      "id": "8070482002",
-      "location": "New York, New York, United States",
+      "id": "8092062002",
+      "location": "London, England, United Kingdom",
       "title": "Quantitative Trader",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8070482002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8092062002"
     },
     {
       "department": "Quantitative Trading",
@@ -5872,10 +5872,17 @@
     },
     {
       "department": "Quantitative Trading",
-      "id": "4794171002",
+      "id": "7982986002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Quantitative Trader",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7982986002"
+    },
+    {
+      "department": "Quantitative Trading",
+      "id": "8070482002",
       "location": "New York, New York, United States",
       "title": "Quantitative Trader",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4794171002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8070482002"
     },
     {
       "department": "Quantitative Trading",
@@ -5886,10 +5893,10 @@
     },
     {
       "department": "Quantitative Trading",
-      "id": "8092062002",
-      "location": "London, England, United Kingdom",
+      "id": "4794171002",
+      "location": "New York, New York, United States",
       "title": "Quantitative Trader",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8092062002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4794171002"
     },
     {
       "department": "Recruiting",
@@ -5935,6 +5942,13 @@
     },
     {
       "department": "Network Engineering",
+      "id": "7284911002",
+      "location": "Singapore",
+      "title": "Senior Network Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7284911002"
+    },
+    {
+      "department": "Network Engineering",
       "id": "5026297002",
       "location": "London, England, United Kingdom",
       "title": "Senior Network Engineer",
@@ -5949,13 +5963,6 @@
     },
     {
       "department": "Network Engineering",
-      "id": "7284911002",
-      "location": "Singapore",
-      "title": "Senior Network Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7284911002"
-    },
-    {
-      "department": "Network Engineering",
       "id": "4432196002",
       "location": "New York, New York, United States",
       "title": "Senior Network Engineer",
@@ -5963,17 +5970,17 @@
     },
     {
       "department": "Quantitative Trading",
-      "id": "8445154002",
-      "location": "London, England, United Kingdom",
-      "title": "Senior Weather Analyst/ML Researcher",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8445154002"
-    },
-    {
-      "department": "Quantitative Trading",
       "id": "8440974002",
       "location": "New York, New York, United States",
       "title": "Senior Weather Analyst/ML Researcher",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8440974002"
+    },
+    {
+      "department": "Quantitative Trading",
+      "id": "8445154002",
+      "location": "London, England, United Kingdom",
+      "title": "Senior Weather Analyst/ML Researcher",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8445154002"
     },
     {
       "department": "Quantitative Trading",
@@ -5991,6 +5998,13 @@
     },
     {
       "department": "Software Engineering",
+      "id": "4274814002",
+      "location": "London, England, United Kingdom",
+      "title": "Software Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4274814002"
+    },
+    {
+      "department": "Software Engineering",
       "id": "4274288002",
       "location": "New York, New York, United States",
       "title": "Software Engineer",
@@ -6005,31 +6019,10 @@
     },
     {
       "department": "Software Engineering",
-      "id": "4756741002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Software Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4756741002"
-    },
-    {
-      "department": "Software Engineering",
-      "id": "8046410002",
-      "location": "New York, New York, United States",
-      "title": "Software Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8046410002"
-    },
-    {
-      "department": "Software Engineering",
       "id": "8140274002",
       "location": "Hong Kong, Hong Kong",
       "title": "Software Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8140274002"
-    },
-    {
-      "department": "Software Engineering",
-      "id": "4274814002",
-      "location": "London, England, United Kingdom",
-      "title": "Software Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4274814002"
     },
     {
       "department": "Software Engineering",
@@ -6044,6 +6037,20 @@
       "location": "London, England, United Kingdom",
       "title": "Software Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8092065002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "4756741002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Software Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4756741002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "8046410002",
+      "location": "New York, New York, United States",
+      "title": "Software Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8046410002"
     },
     {
       "department": "Software Engineering",
@@ -6138,6 +6145,13 @@
     },
     {
       "department": "Software Engineering",
+      "id": "8476622002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Technical Product Manager ",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8476622002"
+    },
+    {
+      "department": "Software Engineering",
       "id": "8388726002",
       "location": "London, England, United Kingdom",
       "title": "Technical Product Manager ",
@@ -6145,10 +6159,10 @@
     },
     {
       "department": "Software Engineering",
-      "id": "8476622002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Technical Product Manager ",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8476622002"
+      "id": "4902080002",
+      "location": "New York, New York, United States",
+      "title": "Technical Program Manager",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4902080002"
     },
     {
       "department": "IT and Systems Engineering",
@@ -6156,13 +6170,6 @@
       "location": "Hong Kong, Hong Kong",
       "title": "Technical Program Manager",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8149745002"
-    },
-    {
-      "department": "Software Engineering",
-      "id": "4902080002",
-      "location": "New York, New York, United States",
-      "title": "Technical Program Manager",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4902080002"
     },
     {
       "department": "Software Engineering",
@@ -6201,17 +6208,24 @@
     },
     {
       "department": "Trading Desk Operations",
-      "id": "8075380002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Trading Desk Operations Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8075380002"
-    },
-    {
-      "department": "Trading Desk Operations",
       "id": "6313662002",
       "location": "Hong Kong, Hong Kong",
       "title": "Trading Desk Operations Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/6313662002"
+    },
+    {
+      "department": "Trading Desk Operations",
+      "id": "8070515002",
+      "location": "New York, New York, United States",
+      "title": "Trading Desk Operations Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8070515002"
+    },
+    {
+      "department": "Trading Desk Operations",
+      "id": "8075380002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Trading Desk Operations Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8075380002"
     },
     {
       "department": "Trading Desk Operations",
@@ -6228,13 +6242,6 @@
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8168747002"
     },
     {
-      "department": "Trading Desk Operations",
-      "id": "8070515002",
-      "location": "New York, New York, United States",
-      "title": "Trading Desk Operations Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8070515002"
-    },
-    {
       "department": "Workplace Services & Experience",
       "id": "8391254002",
       "location": "New York, New York, United States",
@@ -6243,10 +6250,10 @@
     },
     {
       "department": "IT and Systems Engineering",
-      "id": "7961649002",
-      "location": "Singapore",
+      "id": "8355894002",
+      "location": "New York, New York, United States",
       "title": "Unified Communications Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7961649002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8355894002"
     },
     {
       "department": "IT and Systems Engineering",
@@ -6257,10 +6264,17 @@
     },
     {
       "department": "IT and Systems Engineering",
-      "id": "8355894002",
-      "location": "New York, New York, United States",
+      "id": "7961649002",
+      "location": "Singapore",
       "title": "Unified Communications Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8355894002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7961649002"
+    },
+    {
+      "department": "Creative Engagement",
+      "id": "8529448002",
+      "location": "New York, New York, United States",
+      "title": "Video Editor (1 Month Fixed-Term)",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8529448002"
     },
     {
       "department": "IT and Systems Engineering",
@@ -6336,17 +6350,17 @@
     },
     {
       "department": "Front Office ",
-      "id": "7362318",
-      "location": "London",
-      "title": "Campus Crypto Researcher (Intern)",
-      "url": "https://www.jumptrading.com/hr/job?gh_jid=7362318"
-    },
-    {
-      "department": "Front Office ",
       "id": "7362347",
       "location": "Chicago",
       "title": "Campus Crypto Researcher (Intern)",
       "url": "https://www.jumptrading.com/hr/job?gh_jid=7362347"
+    },
+    {
+      "department": "Front Office ",
+      "id": "7362318",
+      "location": "London",
+      "title": "Campus Crypto Researcher (Intern)",
+      "url": "https://www.jumptrading.com/hr/job?gh_jid=7362318"
     },
     {
       "department": "Front Office ",
@@ -6637,10 +6651,10 @@
     },
     {
       "department": "Front Office ",
-      "id": "5870589",
-      "location": "Singapore",
+      "id": "5830344",
+      "location": "Amsterdam",
       "title": "Quantitative Researcher | Trading Team",
-      "url": "https://www.jumptrading.com/hr/job?gh_jid=5870589"
+      "url": "https://www.jumptrading.com/hr/job?gh_jid=5830344"
     },
     {
       "department": "Front Office ",
@@ -6651,10 +6665,10 @@
     },
     {
       "department": "Front Office ",
-      "id": "5830344",
-      "location": "Amsterdam",
+      "id": "5870589",
+      "location": "Singapore",
       "title": "Quantitative Researcher | Trading Team",
-      "url": "https://www.jumptrading.com/hr/job?gh_jid=5830344"
+      "url": "https://www.jumptrading.com/hr/job?gh_jid=5870589"
     },
     {
       "department": "Front Office ",
@@ -6739,6 +6753,13 @@
       "location": "Chicago or New York",
       "title": "Trading Services Specialist",
       "url": "https://www.jumptrading.com/hr/job?gh_jid=7589373"
+    },
+    {
+      "department": "Operations",
+      "id": "7862030",
+      "location": "London",
+      "title": "Workplace Experience Coordinator | WPS",
+      "url": "https://www.jumptrading.com/hr/job?gh_jid=7862030"
     }
   ],
   "Kepos Capital": [],
@@ -6782,18 +6803,18 @@
   ],
   "Millennium Management": [
     {
-      "department": "Operations & Middle Office",
-      "id": "740e090fd5e6b140",
-      "location": "New York, New York, United States of America",
-      "title": "Portfolio Pricing and Valuations Specialist",
-      "url": "https://career.mlp.com/careers?pid=755955971379&domain=mlp.com"
-    },
-    {
       "department": "Information Technology",
       "id": "5d1f933f6331856d",
       "location": "New York, New York, United States of America",
       "title": "Data Engineer - Trading Technology Infrastructure",
       "url": "https://career.mlp.com/careers?pid=755955013840&domain=mlp.com"
+    },
+    {
+      "department": "Operations & Middle Office",
+      "id": "740e090fd5e6b140",
+      "location": "New York, New York, United States of America",
+      "title": "Portfolio Pricing and Valuations Specialist",
+      "url": "https://career.mlp.com/careers?pid=755955971379&domain=mlp.com"
     },
     {
       "department": "Compliance",
@@ -6818,24 +6839,17 @@
     },
     {
       "department": "Information Technology",
-      "id": "77122cf10c1efcd7",
-      "location": "New York, New York, United States of America",
-      "title": "Feature Framework Engineer",
-      "url": "https://career.mlp.com/careers?pid=755955682418&domain=mlp.com"
-    },
-    {
-      "department": "Information Technology",
       "id": "d396df0fb40bfd30",
       "location": "New York, New York, United States of America",
       "title": "Project Manager - High Frequency Trading (HFT)",
       "url": "https://career.mlp.com/careers?pid=755955682308&domain=mlp.com"
     },
     {
-      "department": "Operations & Middle Office",
-      "id": "ba03ac46a83636c0",
+      "department": "Information Technology",
+      "id": "77122cf10c1efcd7",
       "location": "New York, New York, United States of America",
-      "title": "Operations Control Specialist",
-      "url": "https://career.mlp.com/careers?pid=755955532760&domain=mlp.com"
+      "title": "Feature Framework Engineer",
+      "url": "https://career.mlp.com/careers?pid=755955682418&domain=mlp.com"
     },
     {
       "department": "Operations & Middle Office",
@@ -6843,6 +6857,13 @@
       "location": "New York, New York, United States of America",
       "title": "Index & Commodities Trade Support Specialist",
       "url": "https://career.mlp.com/careers?pid=755955532742&domain=mlp.com"
+    },
+    {
+      "department": "Operations & Middle Office",
+      "id": "ba03ac46a83636c0",
+      "location": "New York, New York, United States of America",
+      "title": "Operations Control Specialist",
+      "url": "https://career.mlp.com/careers?pid=755955532760&domain=mlp.com"
     },
     {
       "department": "Trading",
@@ -6859,11 +6880,11 @@
       "url": "https://career.mlp.com/careers?pid=755955623024&domain=mlp.com"
     },
     {
-      "department": "Human Resources",
-      "id": "182805cebd5bf097",
-      "location": "New York, New York, United States of America",
-      "title": "Talent Acquisition Analyst",
-      "url": "https://career.mlp.com/careers?pid=755955436552&domain=mlp.com"
+      "department": "Information Technology",
+      "id": "7a5d9f1f29c41c3a",
+      "location": "Miami, Florida, United States of America",
+      "title": "Operations Engineer - Enterprise Command Center",
+      "url": "https://career.mlp.com/careers?pid=755955436025&domain=mlp.com"
     },
     {
       "department": "Compliance",
@@ -6873,11 +6894,11 @@
       "url": "https://career.mlp.com/careers?pid=755955438281&domain=mlp.com"
     },
     {
-      "department": "Information Technology",
-      "id": "7a5d9f1f29c41c3a",
-      "location": "Miami, Florida, United States of America",
-      "title": "Operations Engineer - Enterprise Command Center",
-      "url": "https://career.mlp.com/careers?pid=755955436025&domain=mlp.com"
+      "department": "Human Resources",
+      "id": "182805cebd5bf097",
+      "location": "New York, New York, United States of America",
+      "title": "Talent Acquisition Analyst",
+      "url": "https://career.mlp.com/careers?pid=755955436552&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -6894,13 +6915,6 @@
       "url": "https://career.mlp.com/careers?pid=755955393067&domain=mlp.com"
     },
     {
-      "department": "Finance",
-      "id": "d3a9ca3af0777b57",
-      "location": "New York, New York, United States of America",
-      "title": "Finance Analyst",
-      "url": "https://career.mlp.com/careers?pid=755955347835&domain=mlp.com"
-    },
-    {
       "department": "Corporate Services & Real Estate",
       "id": "c6aa5fbe149ee3d9",
       "location": "New York, New York, United States of America",
@@ -6913,6 +6927,13 @@
       "location": "New York, New York, United States of America",
       "title": "AI Engineer",
       "url": "https://career.mlp.com/careers?pid=755955349680&domain=mlp.com"
+    },
+    {
+      "department": "Finance",
+      "id": "d3a9ca3af0777b57",
+      "location": "New York, New York, United States of America",
+      "title": "Finance Analyst",
+      "url": "https://career.mlp.com/careers?pid=755955347835&domain=mlp.com"
     },
     {
       "department": "Risk Management",
@@ -7013,6 +7034,13 @@
       "url": "https://career.mlp.com/careers?pid=755954850275&domain=mlp.com"
     },
     {
+      "department": "Human Resources",
+      "id": "5e700712bd4c1c96",
+      "location": "New York, New York, United States of America",
+      "title": "Senior Payroll Manager",
+      "url": "https://career.mlp.com/careers?pid=755954854372&domain=mlp.com"
+    },
+    {
       "department": "Compliance",
       "id": "3b1b793bb003135f",
       "location": "New York, New York, United States of America",
@@ -7020,11 +7048,11 @@
       "url": "https://career.mlp.com/careers?pid=755954855679&domain=mlp.com"
     },
     {
-      "department": "Human Resources",
-      "id": "5e700712bd4c1c96",
-      "location": "New York, New York, United States of America",
-      "title": "Senior Payroll Manager",
-      "url": "https://career.mlp.com/careers?pid=755954854372&domain=mlp.com"
+      "department": "Information Technology",
+      "id": "4d41dc72d5d14184",
+      "location": "Miami, Florida, United States of America",
+      "title": "Quantitative Developer",
+      "url": "https://career.mlp.com/careers?pid=755954774549&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -7039,13 +7067,6 @@
       "location": "New York, New York, United States of America",
       "title": "Financial Reporting Analyst",
       "url": "https://career.mlp.com/careers?pid=755954777308&domain=mlp.com"
-    },
-    {
-      "department": "Information Technology",
-      "id": "4d41dc72d5d14184",
-      "location": "Miami, Florida, United States of America",
-      "title": "Quantitative Developer",
-      "url": "https://career.mlp.com/careers?pid=755954774549&domain=mlp.com"
     },
     {
       "department": "Finance",
@@ -7342,18 +7363,18 @@
       "url": "https://career.mlp.com/careers?pid=755955997873&domain=mlp.com"
     },
     {
-      "department": "Trading",
-      "id": "1ae02fc86925be17",
-      "location": "Bangalore, Karnataka, India",
-      "title": "Equity Research Analyst, Europe/US Consumer Staples",
-      "url": "https://career.mlp.com/careers?pid=755955975419&domain=mlp.com"
-    },
-    {
       "department": "Information Technology",
       "id": "ed0408635865c87d",
       "location": "Bangalore, Karnataka, India",
       "title": "Software Engineer - UI",
       "url": "https://career.mlp.com/careers?pid=755955986380&domain=mlp.com"
+    },
+    {
+      "department": "Trading",
+      "id": "1ae02fc86925be17",
+      "location": "Bangalore, Karnataka, India",
+      "title": "Equity Research Analyst, Europe/US Consumer Staples",
+      "url": "https://career.mlp.com/careers?pid=755955975419&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -7468,11 +7489,11 @@
       "url": "https://career.mlp.com/careers?pid=755955668184&domain=mlp.com"
     },
     {
-      "department": "Operations & Middle Office",
-      "id": "8f7122fdedb4858a",
-      "location": "Bangalore, Karnataka, India",
-      "title": "PnL Attribution Analytics - Fixed Income",
-      "url": "https://career.mlp.com/careers?pid=755955631131&domain=mlp.com"
+      "department": "Information Technology",
+      "id": "6b41ce622b2ab81e",
+      "location": "London, United Kingdom",
+      "title": "Application Security Engineer",
+      "url": "https://career.mlp.com/careers?pid=755955629908&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -7489,11 +7510,11 @@
       "url": "https://career.mlp.com/careers?pid=755955629927&domain=mlp.com"
     },
     {
-      "department": "Information Technology",
-      "id": "6b41ce622b2ab81e",
-      "location": "London, United Kingdom",
-      "title": "Application Security Engineer",
-      "url": "https://career.mlp.com/careers?pid=755955629908&domain=mlp.com"
+      "department": "Operations & Middle Office",
+      "id": "8f7122fdedb4858a",
+      "location": "Bangalore, Karnataka, India",
+      "title": "PnL Attribution Analytics - Fixed Income",
+      "url": "https://career.mlp.com/careers?pid=755955631131&domain=mlp.com"
     },
     {
       "department": "Execution Services",
@@ -7566,18 +7587,18 @@
       "url": "https://career.mlp.com/careers?pid=755955407188&domain=mlp.com"
     },
     {
-      "department": "Finance",
-      "id": "d5b00b306747ab00",
-      "location": "Dublin, Ireland",
-      "title": "FP&A Analyst",
-      "url": "https://career.mlp.com/careers?pid=755955393275&domain=mlp.com"
-    },
-    {
       "department": "Information Technology",
       "id": "b7f509bc1f9514ea",
       "location": "London, United Kingdom",
       "title": "Software Engineer \u2013 Equity Derivatives Pricing & Risk System",
       "url": "https://career.mlp.com/careers?pid=755955392398&domain=mlp.com"
+    },
+    {
+      "department": "Finance",
+      "id": "d5b00b306747ab00",
+      "location": "Dublin, Ireland",
+      "title": "FP&A Analyst",
+      "url": "https://career.mlp.com/careers?pid=755955393275&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -7881,6 +7902,13 @@
       "url": "https://career.mlp.com/careers?pid=755954401503&domain=mlp.com"
     },
     {
+      "department": "Information Technology",
+      "id": "5a6ac1cb0ea682ad",
+      "location": "Bangalore, Karnataka, India",
+      "title": "Senior Data Engineer",
+      "url": "https://career.mlp.com/careers?pid=755954367624&domain=mlp.com"
+    },
+    {
       "department": "Corporate Services & Real Estate",
       "id": "7d989d3fa12d53df",
       "location": "Singapore, Singapore",
@@ -7909,13 +7937,6 @@
       "url": "https://career.mlp.com/careers?pid=755954367639&domain=mlp.com"
     },
     {
-      "department": "Information Technology",
-      "id": "5a6ac1cb0ea682ad",
-      "location": "Bangalore, Karnataka, India",
-      "title": "Senior Data Engineer",
-      "url": "https://career.mlp.com/careers?pid=755954367624&domain=mlp.com"
-    },
-    {
       "department": "Capital Development & Investor Relations",
       "id": "5be3b1d963bb2e24",
       "location": "Singapore, Singapore",
@@ -7938,6 +7959,13 @@
     },
     {
       "department": "Execution Services",
+      "id": "8eb4b6e2a703ca2d",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Quantitative Trader",
+      "url": "https://career.mlp.com/careers?pid=755954333809&domain=mlp.com"
+    },
+    {
+      "department": "Execution Services",
       "id": "9a24e8923bca0a12",
       "location": "Tokyo, Tokyo, Japan",
       "title": "Corporate Access Services Associate",
@@ -7951,11 +7979,11 @@
       "url": "https://career.mlp.com/careers?pid=755954333814&domain=mlp.com"
     },
     {
-      "department": "Execution Services",
-      "id": "8eb4b6e2a703ca2d",
+      "department": "Information Technology",
+      "id": "c8bfc63e4f6a62fe",
       "location": "Hong Kong, Hong Kong",
-      "title": "Quantitative Trader",
-      "url": "https://career.mlp.com/careers?pid=755954333809&domain=mlp.com"
+      "title": "Java Algo Developer - EQ Trading Technology",
+      "url": "https://career.mlp.com/careers?pid=755954170596&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -7963,13 +7991,6 @@
       "location": "Tokyo, Tokyo, Japan",
       "title": "Data Center Engineer",
       "url": "https://career.mlp.com/careers?pid=755954253804&domain=mlp.com"
-    },
-    {
-      "department": "Information Technology",
-      "id": "c8bfc63e4f6a62fe",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Java Algo Developer - EQ Trading Technology",
-      "url": "https://career.mlp.com/careers?pid=755954170596&domain=mlp.com"
     },
     {
       "department": "Human Resources",
@@ -10810,6 +10831,34 @@
     },
     {
       "department": "",
+      "id": "d1585501b4e91a57",
+      "location": "",
+      "title": "Quantitative Trader Internship: Summer 2027",
+      "url": "https://careers.sig.com/job/10717/Quantitative-Trader-Internship-Summer-2027"
+    },
+    {
+      "department": "",
+      "id": "d049f2a8001bb71f",
+      "location": "",
+      "title": "C# Full-Stack Developer - Experienced Hire",
+      "url": "https://careers.sig.com/job/10495/C-Full-Stack-Developer-Experienced-Hire"
+    },
+    {
+      "department": "",
+      "id": "520e2bc0910a0c4d",
+      "location": "",
+      "title": "C++ Developer - Experienced Hire",
+      "url": "https://careers.sig.com/job/9842/C-Developer-Experienced-Hire"
+    },
+    {
+      "department": "",
+      "id": "5d56285ab90fe838",
+      "location": "",
+      "title": "Facilities Manager",
+      "url": "https://careers.sig.com/job/10735/Facilities-Manager"
+    },
+    {
+      "department": "",
       "id": "e00e9bd1d593bc93",
       "location": "",
       "title": "Quantitative Researcher | Experienced Hire",
@@ -10915,31 +10964,31 @@
     },
     {
       "department": "",
-      "id": "d8fbccb15b3499ec",
+      "id": "714d2a53607e0f2f",
       "location": "",
-      "title": "Senior C++ Developer | Trading Infrastructure | Experienced Hire",
-      "url": "https://careers.sig.com/job/8833/Senior-C-Developer-Trading-Infrastructure-Experienced-Hire"
+      "title": "Trader Education Coordinator",
+      "url": "https://careers.sig.com/job/10805/Trader-Education-Coordinator"
     },
     {
       "department": "",
-      "id": "3424cdc058c52c6f",
+      "id": "a0b8219b17f2e939",
       "location": "",
-      "title": "Compensation Analyst",
-      "url": "https://careers.sig.com/job/10589/Compensation-Analyst"
+      "title": "Quantitative Systematic Trader - Honours and Master\u2019s: 2026",
+      "url": "https://careers.sig.com/job/10432/Quantitative-Systematic-Trader-Honours-and-Master\u2019s-2026"
     },
     {
       "department": "",
-      "id": "d6cf4f897daeb02b",
+      "id": "37dfcc074c109a29",
       "location": "",
-      "title": "Credit Analyst Internship: Summer 2027",
-      "url": "https://careers.sig.com/job/10794/Credit-Analyst-Internship-Summer-2027"
+      "title": "Quantitative Systematic Trading Internship \u2013 PhD",
+      "url": "https://careers.sig.com/job/10435/Quantitative-Systematic-Trading-Internship-PhD"
     },
     {
       "department": "",
-      "id": "73936f33bdaeec40",
+      "id": "e60574f693bb305f",
       "location": "",
-      "title": "Senior Fixed Income Operations Analyst",
-      "url": "https://careers.sig.com/job/10379/Senior-Fixed-Income-Operations-Analyst"
+      "title": "Natural Gas Analyst",
+      "url": "https://careers.sig.com/job/6506/Natural-Gas-Analyst"
     },
     {
       "department": "",
@@ -11006,38 +11055,38 @@
     },
     {
       "department": "",
-      "id": "267a816860d2a1d5",
+      "id": "876e06b3aea0e689",
       "location": "",
-      "title": "Telecom Client Support Analyst",
-      "url": "https://careers.sig.com/job/10086/Telecom-Client-Support-Analyst"
+      "title": "GPU Performance Engineer | Experienced Hire",
+      "url": "https://careers.sig.com/job/10741/GPU-Performance-Engineer-Experienced-Hire"
     },
     {
       "department": "",
-      "id": "cb76b6967f0d5202",
+      "id": "289f3050798b6747",
       "location": "",
-      "title": "First Year Discovery Event: August 2026",
-      "url": "https://careers.sig.com/job/10425/First-Year-Discovery-Event-August-2026"
+      "title": "C# Developer - Core Trading Technology",
+      "url": "https://careers.sig.com/job/10797/C-Developer-Core-Trading-Technology"
     },
     {
       "department": "",
-      "id": "cf3c3d0365b4f17d",
+      "id": "213ab0d31aecd581",
       "location": "",
-      "title": "Corporate Securities Attorney",
-      "url": "https://careers.sig.com/job/10281/Corporate-Securities-Attorney"
+      "title": "Quantitative Campus Recruiter",
+      "url": "https://careers.sig.com/job/10508/Quantitative-Campus-Recruiter"
     },
     {
       "department": "",
-      "id": "1c751d4e0a337a91",
+      "id": "7414b81806d1769e",
       "location": "",
-      "title": "Trade Support | Execution Desk",
-      "url": "https://careers.sig.com/job/8990/Trade-Support-Execution-Desk"
+      "title": "Python Developer | Order Routing | Professional Hire",
+      "url": "https://careers.sig.com/job/9736/Python-Developer-Order-Routing-Professional-Hire"
     },
     {
       "department": "",
-      "id": "21b97a3ebd6a20be",
+      "id": "4b1ee56be2e7eee6",
       "location": "",
-      "title": "Credit Relationship Manager | Experienced Hire",
-      "url": "https://careers.sig.com/job/10655/Credit-Relationship-Manager-Experienced-Hire"
+      "title": "Trading Desk Associate",
+      "url": "https://careers.sig.com/job/10481/Trading-Desk-Associate"
     },
     {
       "department": "",
@@ -11076,31 +11125,17 @@
     },
     {
       "department": "",
-      "id": "673ea5e80a505596",
+      "id": "af6ae52813d89376",
       "location": "",
-      "title": "Employment Legal Counsel | Experienced Hire",
-      "url": "https://careers.sig.com/job/10291/Employment-Legal-Counsel-Experienced-Hire"
+      "title": "Quantitative Research Internship - PhD",
+      "url": "https://careers.sig.com/job/10429/Quantitative-Research-Internship-PhD"
     },
     {
       "department": "",
-      "id": "c82ff4a5a9b153c9",
+      "id": "85733ad5cdb3490b",
       "location": "",
-      "title": "Commodity Research Analyst | Experienced Hire",
-      "url": "https://careers.sig.com/job/10631/Commodity-Research-Analyst-Experienced-Hire"
-    },
-    {
-      "department": "",
-      "id": "10a30b98442278dd",
-      "location": "",
-      "title": "Quantitative Sports Researcher \u2013 Graduate Hire",
-      "url": "https://careers.sig.com/job/4454/Quantitative-Sports-Researcher-Graduate-Hire"
-    },
-    {
-      "department": "",
-      "id": "0d0bec60694948da",
-      "location": "",
-      "title": "Executive Project Assistant",
-      "url": "https://careers.sig.com/job/10438/Executive-Project-Assistant"
+      "title": "Quantitative/Data Developer - Fixed Income",
+      "url": "https://careers.sig.com/job/8878/Quantitative-Data-Developer-Fixed-Income"
     },
     {
       "department": "",
@@ -11125,10 +11160,24 @@
     },
     {
       "department": "",
-      "id": "ecc70f3c7b26afad",
+      "id": "d8fbccb15b3499ec",
       "location": "",
-      "title": "C++ Developer | Trading Strategies | Experienced Hire",
-      "url": "https://careers.sig.com/job/7066/C-Developer-Trading-Strategies-Experienced-Hire"
+      "title": "Senior C++ Developer | Trading Infrastructure | Experienced Hire",
+      "url": "https://careers.sig.com/job/8833/Senior-C-Developer-Trading-Infrastructure-Experienced-Hire"
+    },
+    {
+      "department": "",
+      "id": "257122d74832cba2",
+      "location": "",
+      "title": "Machine Learning Internship - PhD: 2027",
+      "url": "https://careers.sig.com/job/10785/Machine-Learning-Internship-PhD-2027"
+    },
+    {
+      "department": "",
+      "id": "6b8c8c9ab9ac3e91",
+      "location": "",
+      "title": "Quantitative Researcher \u2013 Master's: 2026",
+      "url": "https://careers.sig.com/job/9437/Quantitative-Researcher-Master-s-2026"
     },
     {
       "department": "",
@@ -11139,17 +11188,24 @@
     },
     {
       "department": "",
-      "id": "844a7b87808b4e86",
+      "id": "b726d0d0a8a7c610",
       "location": "",
-      "title": "Quant Researcher | Options Pricing | Experienced Hire",
-      "url": "https://careers.sig.com/job/10548/Quant-Researcher-Options-Pricing-Experienced-Hire"
+      "title": "HR Business Partner",
+      "url": "https://careers.sig.com/job/9244/HR-Business-Partner"
     },
     {
       "department": "",
-      "id": "876e06b3aea0e689",
+      "id": "c0352e3e78b4aff0",
       "location": "",
-      "title": "GPU Performance Engineer | Experienced Hire",
-      "url": "https://careers.sig.com/job/10741/GPU-Performance-Engineer-Experienced-Hire"
+      "title": "FP&A Manager | Experienced Hire",
+      "url": "https://careers.sig.com/job/10530/FP-A-Manager-Experienced-Hire"
+    },
+    {
+      "department": "",
+      "id": "102758afe752970b",
+      "location": "",
+      "title": "Trading Systems Developer C# - SYD",
+      "url": "https://careers.sig.com/job/9220/Trading-Systems-Developer-C-SYD"
     },
     {
       "department": "",
@@ -11181,10 +11237,38 @@
     },
     {
       "department": "",
-      "id": "d45358b05abe9a3a",
+      "id": "8cd079e48c716439",
       "location": "",
-      "title": "Exchange Fee Data Analyst | Experienced Hire",
-      "url": "https://careers.sig.com/job/9594/Exchange-Fee-Data-Analyst-Experienced-Hire"
+      "title": "Quantitative Systematic Trader \u2013 Master's: 2026",
+      "url": "https://careers.sig.com/job/9442/Quantitative-Systematic-Trader-Master-s-2026"
+    },
+    {
+      "department": "",
+      "id": "3c6e0cc2a30b0616",
+      "location": "",
+      "title": "Application Support Engineer (Post Trade Technology)",
+      "url": "https://careers.sig.com/job/10770/Application-Support-Engineer-Post-Trade-Technology"
+    },
+    {
+      "department": "",
+      "id": "a5e0dbfb36e1598a",
+      "location": "",
+      "title": "Payroll Specialist",
+      "url": "https://careers.sig.com/job/9565/Payroll-Specialist"
+    },
+    {
+      "department": "",
+      "id": "1acff62678ee156e",
+      "location": "",
+      "title": "Growth Equity Investing Analyst Internship: Summer 2027",
+      "url": "https://careers.sig.com/job/10714/Growth-Equity-Investing-Analyst-Internship-Summer-2027"
+    },
+    {
+      "department": "",
+      "id": "0b816094a3513045",
+      "location": "",
+      "title": "Senior Trader - Prediction Markets | Experienced Hire",
+      "url": "https://careers.sig.com/job/10418/Senior-Trader-Prediction-Markets-Experienced-Hire"
     },
     {
       "department": "",
@@ -11195,45 +11279,45 @@
     },
     {
       "department": "",
-      "id": "996c1bc24c5e932a",
+      "id": "f7831c218d9d08d5",
       "location": "",
-      "title": "Senior Software Developer | HR Technology & Shared Services | Experienced Hire",
-      "url": "https://careers.sig.com/job/7825/Senior-Software-Developer-HR-Technology-Shared-Services-Experienced-Hire"
+      "title": "Associate Linux/Window Engineer | Platform Services | Experienced Hire",
+      "url": "https://careers.sig.com/job/9204/Associate-Linux-Window-Engineer-Platform-Services-Experienced-Hire"
     },
     {
       "department": "",
-      "id": "1964f1f6eb27bc99",
+      "id": "c82ff4a5a9b153c9",
       "location": "",
-      "title": "Trading System Engineering Internship: Summer 2027",
-      "url": "https://careers.sig.com/job/10837/Trading-System-Engineering-Internship-Summer-2027"
+      "title": "Commodity Research Analyst | Experienced Hire",
+      "url": "https://careers.sig.com/job/10631/Commodity-Research-Analyst-Experienced-Hire"
     },
     {
       "department": "",
-      "id": "07f6416f5a1bf2f9",
+      "id": "10a30b98442278dd",
       "location": "",
-      "title": "Quantitative Research Internship - PhD: Summer 2027",
-      "url": "https://careers.sig.com/job/10817/Quantitative-Research-Internship-PhD-Summer-2027"
+      "title": "Quantitative Sports Researcher \u2013 Graduate Hire",
+      "url": "https://careers.sig.com/job/4454/Quantitative-Sports-Researcher-Graduate-Hire"
     },
     {
       "department": "",
-      "id": "a6c918b37dd7a13f",
+      "id": "0d0bec60694948da",
       "location": "",
-      "title": "HR Data Analyst - Operations Analyst Program: August 2026 Start",
-      "url": "https://careers.sig.com/job/10604/HR-Data-Analyst-Operations-Analyst-Program-August-2026-Start"
+      "title": "Executive Project Assistant",
+      "url": "https://careers.sig.com/job/10438/Executive-Project-Assistant"
     },
     {
       "department": "",
-      "id": "ab5d0130854a0fe3",
+      "id": "fdd31c4b064bb9c8",
       "location": "",
-      "title": "Settlements Analyst | Experienced Hire",
-      "url": "https://careers.sig.com/job/10746/Settlements-Analyst-Experienced-Hire"
+      "title": "Sell Side Research Associate, Freight Transportation & Rail Equipment",
+      "url": "https://careers.sig.com/job/10651/Sell-Side-Research-Associate-Freight-Transportation-Rail-Equipment"
     },
     {
       "department": "",
-      "id": "44ad910feba7e221",
+      "id": "d6cf4f897daeb02b",
       "location": "",
-      "title": "Quantitative Systematic Trader- Experienced Hire",
-      "url": "https://careers.sig.com/job/10434/Quantitative-Systematic-Trader-Experienced-Hire"
+      "title": "Credit Analyst Internship: Summer 2027",
+      "url": "https://careers.sig.com/job/10794/Credit-Analyst-Internship-Summer-2027"
     },
     {
       "department": "",
@@ -11251,20 +11335,6 @@
     },
     {
       "department": "",
-      "id": "3fcad6880ceb9e02",
-      "location": "",
-      "title": "Quantitative Sports Trader",
-      "url": "https://careers.sig.com/job/10622/Quantitative-Sports-Trader"
-    },
-    {
-      "department": "",
-      "id": "64fd17345119d082",
-      "location": "",
-      "title": "Quantitative Researcher \u2013 Master's: 2026",
-      "url": "https://careers.sig.com/job/9438/Quantitative-Researcher-Master-s-2026"
-    },
-    {
-      "department": "",
       "id": "2911d839887e5561",
       "location": "",
       "title": "Software Developer | Trade Finance and Internal Positions | Campus Hire",
@@ -11272,45 +11342,17 @@
     },
     {
       "department": "",
-      "id": "144925a17c35eaeb",
+      "id": "ab60d9de1ef2664e",
       "location": "",
-      "title": "Machine Learning Researcher - PhD: 2026",
-      "url": "https://careers.sig.com/job/9399/Machine-Learning-Researcher-PhD-2026"
+      "title": "Treasury Financial Data Analyst",
+      "url": "https://careers.sig.com/job/9715/Treasury-Financial-Data-Analyst"
     },
     {
       "department": "",
-      "id": "571023c2b7835a3f",
+      "id": "9e1e23dbbe4284dd",
       "location": "",
-      "title": "Quantitative Developer | Options Pricing | Experienced Hire",
-      "url": "https://careers.sig.com/job/8746/Quantitative-Developer-Options-Pricing-Experienced-Hire"
-    },
-    {
-      "department": "",
-      "id": "e00b19838785ba97",
-      "location": "",
-      "title": "Quantitative Researcher - PhD: 2026",
-      "url": "https://careers.sig.com/job/9436/Quantitative-Researcher-PhD-2026"
-    },
-    {
-      "department": "",
-      "id": "396751be1fc7832b",
-      "location": "",
-      "title": "Trading Compliance Advisory | Experienced Hire",
-      "url": "https://careers.sig.com/job/10722/Trading-Compliance-Advisory-Experienced-Hire"
-    },
-    {
-      "department": "",
-      "id": "9f9c7b82b29bd0a4",
-      "location": "",
-      "title": "Trading Desk Associate",
-      "url": "https://careers.sig.com/job/10574/Trading-Desk-Associate"
-    },
-    {
-      "department": "",
-      "id": "efc1290a239272f7",
-      "location": "",
-      "title": "Sports Trader",
-      "url": "https://careers.sig.com/job/8860/Sports-Trader"
+      "title": "Quantitative Researcher \u2013 Honours and Master's: 2026",
+      "url": "https://careers.sig.com/job/10431/Quantitative-Researcher-Honours-and-Master-s-2026"
     },
     {
       "department": "",
@@ -11335,10 +11377,31 @@
     },
     {
       "department": "",
+      "id": "ecc70f3c7b26afad",
+      "location": "",
+      "title": "C++ Developer | Trading Strategies | Experienced Hire",
+      "url": "https://careers.sig.com/job/7066/C-Developer-Trading-Strategies-Experienced-Hire"
+    },
+    {
+      "department": "",
       "id": "0a79040d552e9f6e",
       "location": "",
       "title": "PhD + Postdoc Discovery Program: 2026  (Expression of Interest)",
       "url": "https://careers.sig.com/job/10228/PhD-Postdoc-Discovery-Program-2026-Expression-of-Interest"
+    },
+    {
+      "department": "",
+      "id": "844a7b87808b4e86",
+      "location": "",
+      "title": "Quant Researcher | Options Pricing | Experienced Hire",
+      "url": "https://careers.sig.com/job/10548/Quant-Researcher-Options-Pricing-Experienced-Hire"
+    },
+    {
+      "department": "",
+      "id": "73936f33bdaeec40",
+      "location": "",
+      "title": "Senior Fixed Income Operations Analyst",
+      "url": "https://careers.sig.com/job/10379/Senior-Fixed-Income-Operations-Analyst"
     },
     {
       "department": "",
@@ -11349,45 +11412,59 @@
     },
     {
       "department": "",
-      "id": "c910234f38ed6c3b",
+      "id": "3fcad6880ceb9e02",
       "location": "",
-      "title": "Software Developer | Market Data | Libraries & Tools",
-      "url": "https://careers.sig.com/job/9619/Software-Developer-Market-Data-Libraries-Tools"
+      "title": "Quantitative Sports Trader",
+      "url": "https://careers.sig.com/job/10622/Quantitative-Sports-Trader"
     },
     {
       "department": "",
-      "id": "b446e17b3a774179",
+      "id": "144925a17c35eaeb",
       "location": "",
-      "title": "Quantitative Systematic Trader - PhD: 2026",
-      "url": "https://careers.sig.com/job/10433/Quantitative-Systematic-Trader-PhD-2026"
+      "title": "Machine Learning Researcher - PhD: 2026",
+      "url": "https://careers.sig.com/job/9399/Machine-Learning-Researcher-PhD-2026"
     },
     {
       "department": "",
-      "id": "a5b66aba0162d593",
+      "id": "305a01fd1b86af9f",
       "location": "",
-      "title": "Software Developer Productivity Engineer | HPC | Experienced Hire",
-      "url": "https://careers.sig.com/job/9451/Software-Developer-Productivity-Engineer-HPC-Experienced-Hire"
+      "title": "Equity Analyst Internship: Summer 2027",
+      "url": "https://careers.sig.com/job/10573/Equity-Analyst-Internship-Summer-2027"
     },
     {
       "department": "",
-      "id": "a5e0dbfb36e1598a",
+      "id": "de78d99dc6e3907c",
       "location": "",
-      "title": "Payroll Specialist",
-      "url": "https://careers.sig.com/job/9565/Payroll-Specialist"
+      "title": "Faculty Fellow",
+      "url": "https://careers.sig.com/job/9584/Faculty-Fellow"
     },
     {
       "department": "",
-      "id": "60734d9b83500995",
+      "id": "923f2203462d6c39",
       "location": "",
-      "title": "Derivatives Sales Trader | Experienced Hire",
-      "url": "https://careers.sig.com/job/10696/Derivatives-Sales-Trader-Experienced-Hire"
+      "title": "Settlements Analyst - Priority Client Services",
+      "url": "https://careers.sig.com/job/10564/Settlements-Analyst-Priority-Client-Services"
     },
     {
       "department": "",
-      "id": "20320ccc5b86e590",
+      "id": "fa622c165a389bbd",
       "location": "",
-      "title": "Quantitative Systematic Trader \u2013 Master's: 2026",
-      "url": "https://careers.sig.com/job/9441/Quantitative-Systematic-Trader-Master-s-2026"
+      "title": "Quantitative Trading Discovery Program: 2026 (Expression of Interest)",
+      "url": "https://careers.sig.com/job/9371/Quantitative-Trading-Discovery-Program-2026-Expression-of-Interest"
+    },
+    {
+      "department": "",
+      "id": "ab5d0130854a0fe3",
+      "location": "",
+      "title": "Settlements Analyst | Experienced Hire",
+      "url": "https://careers.sig.com/job/10746/Settlements-Analyst-Experienced-Hire"
+    },
+    {
+      "department": "",
+      "id": "44ad910feba7e221",
+      "location": "",
+      "title": "Quantitative Systematic Trader- Experienced Hire",
+      "url": "https://careers.sig.com/job/10434/Quantitative-Systematic-Trader-Experienced-Hire"
     },
     {
       "department": "",
@@ -11395,13 +11472,6 @@
       "location": "",
       "title": "Quantitative Systematic Trading Internship \u2013 Master's: Summer 2027",
       "url": "https://careers.sig.com/job/10823/Quantitative-Systematic-Trading-Internship-Master-s-Summer-2027"
-    },
-    {
-      "department": "",
-      "id": "d1585501b4e91a57",
-      "location": "",
-      "title": "Quantitative Trader Internship: Summer 2027",
-      "url": "https://careers.sig.com/job/10717/Quantitative-Trader-Internship-Summer-2027"
     },
     {
       "department": "",
@@ -11419,38 +11489,52 @@
     },
     {
       "department": "",
-      "id": "7414b81806d1769e",
-      "location": "",
-      "title": "Python Developer | Order Routing | Professional Hire",
-      "url": "https://careers.sig.com/job/9736/Python-Developer-Order-Routing-Professional-Hire"
-    },
-    {
-      "department": "",
-      "id": "b517616937a7b06b",
-      "location": "",
-      "title": "HPC Systems Engineer | Experienced Hire",
-      "url": "https://careers.sig.com/job/9141/HPC-Systems-Engineer-Experienced-Hire"
-    },
-    {
-      "department": "",
-      "id": "f8601dc150819fc2",
-      "location": "",
-      "title": "Learning & Development Coordinator",
-      "url": "https://careers.sig.com/job/10728/Learning-Development-Coordinator"
-    },
-    {
-      "department": "",
-      "id": "9d5433247ebfd490",
-      "location": "",
-      "title": "HPC Storage Engineer | Experienced Hire",
-      "url": "https://careers.sig.com/job/10487/HPC-Storage-Engineer-Experienced-Hire"
-    },
-    {
-      "department": "",
       "id": "4e8de82173b454a5",
       "location": "",
       "title": "Macro Analyst Internship: November 2026",
       "url": "https://careers.sig.com/job/9693/Macro-Analyst-Internship-November-2026"
+    },
+    {
+      "department": "",
+      "id": "4d116277bafe2619",
+      "location": "",
+      "title": "Funds Processing Specialist",
+      "url": "https://careers.sig.com/job/9645/Funds-Processing-Specialist"
+    },
+    {
+      "department": "",
+      "id": "91fce3c13a7e7ddd",
+      "location": "",
+      "title": "Machine Learning Researcher - LLM",
+      "url": "https://careers.sig.com/job/9415/Machine-Learning-Researcher-LLM"
+    },
+    {
+      "department": "",
+      "id": "9699e001f6efef2a",
+      "location": "",
+      "title": "Quantitative Research Internship \u2013 Master's: Summer 2027",
+      "url": "https://careers.sig.com/job/10819/Quantitative-Research-Internship-Master-s-Summer-2027"
+    },
+    {
+      "department": "",
+      "id": "41bc15d3705eea7c",
+      "location": "",
+      "title": "Quantitative Systematic Trader \u2013 PhD: 2026",
+      "url": "https://careers.sig.com/job/9439/Quantitative-Systematic-Trader-PhD-2026"
+    },
+    {
+      "department": "",
+      "id": "2e9ca83b446fd3cc",
+      "location": "",
+      "title": "Senior Operations Analyst",
+      "url": "https://careers.sig.com/job/10482/Senior-Operations-Analyst"
+    },
+    {
+      "department": "",
+      "id": "ca8f9b57b73f14ef",
+      "location": "",
+      "title": "Graduate Macro Analyst: 2027",
+      "url": "https://careers.sig.com/job/9696/Graduate-Macro-Analyst-2027"
     },
     {
       "department": "",
@@ -11468,6 +11552,27 @@
     },
     {
       "department": "",
+      "id": "7a119d3c743db5e7",
+      "location": "",
+      "title": "Software Development Internship: November 2026",
+      "url": "https://careers.sig.com/job/9615/Software-Development-Internship-November-2026"
+    },
+    {
+      "department": "",
+      "id": "d5a69f54b6369a6b",
+      "location": "",
+      "title": "Interior Designer",
+      "url": "https://careers.sig.com/job/9971/Interior-Designer"
+    },
+    {
+      "department": "",
+      "id": "14be414b28521ec4",
+      "location": "",
+      "title": "Trader - Prediction Markets",
+      "url": "https://careers.sig.com/job/10417/Trader-Prediction-Markets"
+    },
+    {
+      "department": "",
       "id": "0efa35fb3d2ffa5a",
       "location": "",
       "title": "Software Engineer | Sports Analytics | Experienced Hire",
@@ -11475,66 +11580,10 @@
     },
     {
       "department": "",
-      "id": "b3c4b5be1dfc7a8a",
-      "location": "",
-      "title": "Devops Engineer",
-      "url": "https://careers.sig.com/job/10692/Devops-Engineer"
-    },
-    {
-      "department": "",
-      "id": "9fe23e7187520353",
-      "location": "",
-      "title": "Senior Linux Platform Engineer",
-      "url": "https://careers.sig.com/job/10603/Senior-Linux-Platform-Engineer"
-    },
-    {
-      "department": "",
       "id": "387c544dc4150b44",
       "location": "",
       "title": "Graduate Quantitative Trader: 2027",
       "url": "https://careers.sig.com/job/9688/Graduate-Quantitative-Trader-2027"
-    },
-    {
-      "department": "",
-      "id": "d86e685090329c32",
-      "location": "",
-      "title": "Event Driven Research Analyst | Experienced Hire",
-      "url": "https://careers.sig.com/job/10579/Event-Driven-Research-Analyst-Experienced-Hire"
-    },
-    {
-      "department": "",
-      "id": "bc8b0659e3e21f1b",
-      "location": "",
-      "title": "Quantitative Researcher | Prediction Markets",
-      "url": "https://careers.sig.com/job/10410/Quantitative-Researcher-Prediction-Markets"
-    },
-    {
-      "department": "",
-      "id": "d049f2a8001bb71f",
-      "location": "",
-      "title": "C# Full-Stack Developer - Experienced Hire",
-      "url": "https://careers.sig.com/job/10495/C-Full-Stack-Developer-Experienced-Hire"
-    },
-    {
-      "department": "",
-      "id": "3c6e0cc2a30b0616",
-      "location": "",
-      "title": "Application Support Engineer (Post Trade Technology)",
-      "url": "https://careers.sig.com/job/10770/Application-Support-Engineer-Post-Trade-Technology"
-    },
-    {
-      "department": "",
-      "id": "ffe1f6c0eff775da",
-      "location": "",
-      "title": "Software Developer | C++ | GDS | Experienced Hire",
-      "url": "https://careers.sig.com/job/10032/Software-Developer-C-GDS-Experienced-Hire"
-    },
-    {
-      "department": "",
-      "id": "5707c35a18a54d0a",
-      "location": "",
-      "title": "Data Reliability Engineer",
-      "url": "https://careers.sig.com/job/9922/Data-Reliability-Engineer"
     },
     {
       "department": "",
@@ -11549,6 +11598,13 @@
       "location": "",
       "title": "C# Developer - Risk",
       "url": "https://careers.sig.com/job/10009/C-Developer-Risk"
+    },
+    {
+      "department": "",
+      "id": "bc8b0659e3e21f1b",
+      "location": "",
+      "title": "Quantitative Researcher | Prediction Markets",
+      "url": "https://careers.sig.com/job/10410/Quantitative-Researcher-Prediction-Markets"
     },
     {
       "department": "",
@@ -11587,41 +11643,6 @@
     },
     {
       "department": "",
-      "id": "f5e4a301e6aa9652",
-      "location": "",
-      "title": "Trade Surveillance Analyst | Experienced Hire",
-      "url": "https://careers.sig.com/job/10720/Trade-Surveillance-Analyst-Experienced-Hire"
-    },
-    {
-      "department": "",
-      "id": "520e2bc0910a0c4d",
-      "location": "",
-      "title": "C++ Developer - Experienced Hire",
-      "url": "https://careers.sig.com/job/9842/C-Developer-Experienced-Hire"
-    },
-    {
-      "department": "",
-      "id": "e42a523757c4229e",
-      "location": "",
-      "title": "Software Developer | Python | Prediction Markets| Experienced Hire",
-      "url": "https://careers.sig.com/job/10221/Software-Developer-Python-Prediction-Markets-Experienced-Hire"
-    },
-    {
-      "department": "",
-      "id": "4d116277bafe2619",
-      "location": "",
-      "title": "Funds Processing Specialist",
-      "url": "https://careers.sig.com/job/9645/Funds-Processing-Specialist"
-    },
-    {
-      "department": "",
-      "id": "91fce3c13a7e7ddd",
-      "location": "",
-      "title": "Machine Learning Researcher - LLM",
-      "url": "https://careers.sig.com/job/9415/Machine-Learning-Researcher-LLM"
-    },
-    {
-      "department": "",
       "id": "333a90324a6e8ab5",
       "location": "",
       "title": "Quantitative Data DevOps",
@@ -11650,10 +11671,45 @@
     },
     {
       "department": "",
+      "id": "90d6a6f53bdb34bc",
+      "location": "",
+      "title": "Quantitative Data Developer \u2013 PhD: 2026",
+      "url": "https://careers.sig.com/job/10565/Quantitative-Data-Developer-PhD-2026"
+    },
+    {
+      "department": "",
       "id": "d8c7eaac39cb7ebe",
       "location": "",
       "title": "Quantitative Developer",
       "url": "https://careers.sig.com/job/10529/Quantitative-Developer"
+    },
+    {
+      "department": "",
+      "id": "5974a11620f7e160",
+      "location": "",
+      "title": "Senior Compliance Officer - Fixed Income",
+      "url": "https://careers.sig.com/job/10689/Senior-Compliance-Officer-Fixed-Income"
+    },
+    {
+      "department": "",
+      "id": "9a6aeb03737d28b2",
+      "location": "",
+      "title": "Graduate Equity Analyst: 2027",
+      "url": "https://careers.sig.com/job/9694/Graduate-Equity-Analyst-2027"
+    },
+    {
+      "department": "",
+      "id": "2e184fbd8cb1d098",
+      "location": "",
+      "title": "Senior Compliance Associate",
+      "url": "https://careers.sig.com/job/9935/Senior-Compliance-Associate"
+    },
+    {
+      "department": "",
+      "id": "da1da1c917507754",
+      "location": "",
+      "title": "Technical Systems Analyst - Compensation | HR Tech | Experienced Hire",
+      "url": "https://careers.sig.com/job/9335/Technical-Systems-Analyst-Compensation-HR-Tech-Experienced-Hire"
     },
     {
       "department": "",
@@ -11671,45 +11727,10 @@
     },
     {
       "department": "",
-      "id": "7107b0f94f7d54f4",
+      "id": "2f59fc258253c0bc",
       "location": "",
-      "title": "Build Systems Engineer - DevOps | Development Tools and Components | Experienced Hire",
-      "url": "https://careers.sig.com/job/9931/Build-Systems-Engineer-DevOps-Development-Tools-and-Components-Experienced-Hire"
-    },
-    {
-      "department": "",
-      "id": "048667b4d5eae278",
-      "location": "",
-      "title": "Legal Counsel (Financial) | Experienced Hire",
-      "url": "https://careers.sig.com/job/10703/Legal-Counsel-Financial-Experienced-Hire"
-    },
-    {
-      "department": "",
-      "id": "546546847fff9cc0",
-      "location": "",
-      "title": "Macro Analyst Internship: Summer 2027",
-      "url": "https://careers.sig.com/job/10724/Macro-Analyst-Internship-Summer-2027"
-    },
-    {
-      "department": "",
-      "id": "8dc09380867c1071",
-      "location": "",
-      "title": "Legal Counsel (Commercial) | Experienced Hire",
-      "url": "https://careers.sig.com/job/10702/Legal-Counsel-Commercial-Experienced-Hire"
-    },
-    {
-      "department": "",
-      "id": "f8a260424a600005",
-      "location": "",
-      "title": "Quantitative Strategy Developer - New Grad",
-      "url": "https://careers.sig.com/job/9531/Quantitative-Strategy-Developer-New-Grad"
-    },
-    {
-      "department": "",
-      "id": "2713918c9c3b17bf",
-      "location": "",
-      "title": "C++ Quantitative Developer | Trading Strategies | Experienced Hire",
-      "url": "https://careers.sig.com/job/9880/C-Quantitative-Developer-Trading-Strategies-Experienced-Hire"
+      "title": "Equity Analyst Internship: Summer 2027",
+      "url": "https://careers.sig.com/job/10723/Equity-Analyst-Internship-Summer-2027"
     },
     {
       "department": "",
@@ -11790,6 +11811,13 @@
     },
     {
       "department": "",
+      "id": "586b40d17bb91ab7",
+      "location": "",
+      "title": "Devops Engineer | Experienced Hire| DDT",
+      "url": "https://careers.sig.com/job/10362/Devops-Engineer-Experienced-Hire-DDT"
+    },
+    {
+      "department": "",
       "id": "5dd65aee4abc4a74",
       "location": "",
       "title": "Senior C++ Developer | Trading Infrastructure | Experienced Hire",
@@ -11857,6 +11885,34 @@
       "location": "",
       "title": "Devops Engineer | Experienced Hire| GDFI",
       "url": "https://careers.sig.com/job/9610/Devops-Engineer-Experienced-Hire-GDFI"
+    },
+    {
+      "department": "",
+      "id": "fc6cd041588ba201",
+      "location": "",
+      "title": "Desktop Engineer",
+      "url": "https://careers.sig.com/job/9871/Desktop-Engineer"
+    },
+    {
+      "department": "",
+      "id": "19e9a1d424e7b0b1",
+      "location": "",
+      "title": "Staff Accountant",
+      "url": "https://careers.sig.com/job/9535/Staff-Accountant"
+    },
+    {
+      "department": "",
+      "id": "b3c4b5be1dfc7a8a",
+      "location": "",
+      "title": "Devops Engineer",
+      "url": "https://careers.sig.com/job/10692/Devops-Engineer"
+    },
+    {
+      "department": "",
+      "id": "9fe23e7187520353",
+      "location": "",
+      "title": "Senior Linux Platform Engineer",
+      "url": "https://careers.sig.com/job/10603/Senior-Linux-Platform-Engineer"
     }
   ],
   "Schonfeld": [
