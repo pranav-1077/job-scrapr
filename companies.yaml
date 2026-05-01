@@ -471,3 +471,7 @@ companies:
     type: email_only
     resume_email: careers@volanttrading.com
 
+  - name: "Xantium"
+    type: greenhouse
+    board_token: xantium
+
