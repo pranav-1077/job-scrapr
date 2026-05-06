@@ -4801,17 +4801,17 @@
     },
     {
       "department": "Software Engineering",
-      "id": "8531243002",
-      "location": "New York, New York, United States",
-      "title": "ASIC Physical Design Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8531243002"
-    },
-    {
-      "department": "Software Engineering",
       "id": "8512072002",
       "location": "London, England, United Kingdom",
       "title": "ASIC Physical Design Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8512072002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "8531243002",
+      "location": "New York, New York, United States",
+      "title": "ASIC Physical Design Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8531243002"
     },
     {
       "department": "IT and Systems Engineering",
@@ -4941,6 +4941,13 @@
     },
     {
       "department": "Cybersecurity",
+      "id": "7642974002",
+      "location": "Singapore",
+      "title": "Cybersecurity Detection and Response Analyst",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7642974002"
+    },
+    {
+      "department": "Cybersecurity",
       "id": "7642886002",
       "location": "Hong Kong, Hong Kong",
       "title": "Cybersecurity Detection and Response Analyst",
@@ -4948,10 +4955,17 @@
     },
     {
       "department": "Cybersecurity",
-      "id": "7642974002",
+      "id": "8516108002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Cybersecurity Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8516108002"
+    },
+    {
+      "department": "Cybersecurity",
+      "id": "8057314002",
       "location": "Singapore",
-      "title": "Cybersecurity Detection and Response Analyst",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7642974002"
+      "title": "Cybersecurity Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8057314002"
     },
     {
       "department": "Cybersecurity",
@@ -4969,17 +4983,10 @@
     },
     {
       "department": "Cybersecurity",
-      "id": "8057314002",
-      "location": "Singapore",
-      "title": "Cybersecurity Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8057314002"
-    },
-    {
-      "department": "Cybersecurity",
-      "id": "8516108002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Cybersecurity Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8516108002"
+      "id": "7999330002",
+      "location": "New York, New York, United States",
+      "title": "Cybersecurity Engineer - Threat Modelling",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7999330002"
     },
     {
       "department": "Cybersecurity",
@@ -4994,13 +5001,6 @@
       "location": "Hong Kong, Hong Kong",
       "title": "Cybersecurity Engineer - Threat Modelling",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/7998232002"
-    },
-    {
-      "department": "Cybersecurity",
-      "id": "7999330002",
-      "location": "New York, New York, United States",
-      "title": "Cybersecurity Engineer - Threat Modelling",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7999330002"
     },
     {
       "department": "Cybersecurity",
@@ -5025,17 +5025,17 @@
     },
     {
       "department": "Network Engineering",
-      "id": "8459138002",
-      "location": "Chicago",
-      "title": "Data Center Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8459138002"
-    },
-    {
-      "department": "Network Engineering",
       "id": "5002846002",
       "location": "New York, New York, United States",
       "title": "Data Center Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/5002846002"
+    },
+    {
+      "department": "Network Engineering",
+      "id": "8459138002",
+      "location": "Chicago",
+      "title": "Data Center Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8459138002"
     },
     {
       "department": "Real Estate Engineering",
@@ -5053,17 +5053,17 @@
     },
     {
       "department": "Network Engineering",
-      "id": "6102180002",
-      "location": "Singapore",
-      "title": "Data Centre Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/6102180002"
-    },
-    {
-      "department": "Network Engineering",
       "id": "6300684002",
       "location": "Hong Kong, Hong Kong",
       "title": "Data Centre Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/6300684002"
+    },
+    {
+      "department": "Network Engineering",
+      "id": "6102180002",
+      "location": "Singapore",
+      "title": "Data Centre Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/6102180002"
     },
     {
       "department": "Network Engineering",
@@ -5081,17 +5081,17 @@
     },
     {
       "department": "Software Engineering",
-      "id": "6558007002",
-      "location": "New York, New York, United States",
-      "title": "Data Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/6558007002"
-    },
-    {
-      "department": "Software Engineering",
       "id": "7668113002",
       "location": "Hong Kong, Hong Kong",
       "title": "Data Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/7668113002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "6558007002",
+      "location": "New York, New York, United States",
+      "title": "Data Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/6558007002"
     },
     {
       "department": "Software Engineering",
@@ -5158,10 +5158,10 @@
     },
     {
       "department": "Quantitative Trading",
-      "id": "8433793002",
-      "location": "Hong Kong, Hong Kong",
+      "id": "8433748002",
+      "location": "London, England, United Kingdom",
       "title": "Exotic Options Trader",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8433793002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8433748002"
     },
     {
       "department": "Quantitative Trading",
@@ -5172,17 +5172,10 @@
     },
     {
       "department": "Quantitative Trading",
-      "id": "8433748002",
-      "location": "London, England, United Kingdom",
+      "id": "8433793002",
+      "location": "Hong Kong, Hong Kong",
       "title": "Exotic Options Trader",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8433748002"
-    },
-    {
-      "department": "Recruiting",
-      "id": "7970447002",
-      "location": "New York, New York, United States",
-      "title": "Experienced Hire Recruiter, Non-Technology",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7970447002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8433793002"
     },
     {
       "department": "Recruiting",
@@ -5192,11 +5185,11 @@
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8287190002"
     },
     {
-      "department": "Real Estate Engineering",
-      "id": "7961674002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Facilities Operations Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7961674002"
+      "department": "Recruiting",
+      "id": "7970447002",
+      "location": "New York, New York, United States",
+      "title": "Experienced Hire Recruiter, Non-Technology",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7970447002"
     },
     {
       "department": "Real Estate Engineering",
@@ -5206,11 +5199,11 @@
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8210335002"
     },
     {
-      "department": "Accounting",
-      "id": "8418851002",
-      "location": "London, England, United Kingdom",
-      "title": "Financial Reporting Accountant",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8418851002"
+      "department": "Real Estate Engineering",
+      "id": "7961674002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Facilities Operations Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7961674002"
     },
     {
       "department": "Accounting",
@@ -5218,6 +5211,13 @@
       "location": "New York, New York, United States",
       "title": "Financial Reporting Accountant",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8531777002"
+    },
+    {
+      "department": "Accounting",
+      "id": "8418851002",
+      "location": "London, England, United Kingdom",
+      "title": "Financial Reporting Accountant",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8418851002"
     },
     {
       "department": "Financial Resource Management",
@@ -5228,17 +5228,17 @@
     },
     {
       "department": "Software Engineering",
-      "id": "8161177002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "FIX Onboarding and Connectivity Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8161177002"
-    },
-    {
-      "department": "Software Engineering",
       "id": "8159216002",
       "location": "Singapore",
       "title": "FIX Onboarding and Connectivity Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8159216002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "8161177002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "FIX Onboarding and Connectivity Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8161177002"
     },
     {
       "department": "Software Engineering",
@@ -5256,17 +5256,17 @@
     },
     {
       "department": "Software Engineering",
-      "id": "6184529002",
-      "location": "New York, New York, United States",
-      "title": "Front End Software Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/6184529002"
-    },
-    {
-      "department": "Software Engineering",
       "id": "6236002002",
       "location": "London, England, United Kingdom",
       "title": "Front End Software Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/6236002002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "6184529002",
+      "location": "New York, New York, United States",
+      "title": "Front End Software Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/6184529002"
     },
     {
       "department": "Quantitative Trading",
@@ -5340,13 +5340,6 @@
     },
     {
       "department": "IT and Systems Engineering",
-      "id": "8025274002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "IT Operations Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8025274002"
-    },
-    {
-      "department": "IT and Systems Engineering",
       "id": "8377831002",
       "location": "Hong Kong, Hong Kong",
       "title": "IT Operations Engineer",
@@ -5354,10 +5347,10 @@
     },
     {
       "department": "IT and Systems Engineering",
-      "id": "8065684002",
-      "location": "New York, New York, United States",
+      "id": "8025274002",
+      "location": "Hong Kong, Hong Kong",
       "title": "IT Operations Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8065684002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8025274002"
     },
     {
       "department": "IT and Systems Engineering",
@@ -5368,17 +5361,17 @@
     },
     {
       "department": "IT and Systems Engineering",
-      "id": "8220940002",
-      "location": "London, England, United Kingdom",
-      "title": "IT Security Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8220940002"
-    },
-    {
-      "department": "IT and Systems Engineering",
       "id": "8155302002",
       "location": "New York, New York, United States",
       "title": "IT Security Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8155302002"
+    },
+    {
+      "department": "IT and Systems Engineering",
+      "id": "8220940002",
+      "location": "London, England, United Kingdom",
+      "title": "IT Security Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8220940002"
     },
     {
       "department": "Software Engineering",
@@ -5396,31 +5389,10 @@
     },
     {
       "department": "IT and Systems Engineering",
-      "id": "8104305002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Linux Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8104305002"
-    },
-    {
-      "department": "IT and Systems Engineering",
-      "id": "8061059002",
+      "id": "4276248002",
       "location": "New York, New York, United States",
       "title": "Linux Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8061059002"
-    },
-    {
-      "department": "IT and Systems Engineering",
-      "id": "8061111002",
-      "location": "London, England, United Kingdom",
-      "title": "Linux Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8061111002"
-    },
-    {
-      "department": "IT and Systems Engineering",
-      "id": "8377832002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Linux Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8377832002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4276248002"
     },
     {
       "department": "IT and Systems Engineering",
@@ -5445,6 +5417,13 @@
     },
     {
       "department": "IT and Systems Engineering",
+      "id": "8104305002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Linux Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8104305002"
+    },
+    {
+      "department": "IT and Systems Engineering",
       "id": "8161274002",
       "location": "Singapore",
       "title": "Linux Engineer",
@@ -5452,17 +5431,24 @@
     },
     {
       "department": "IT and Systems Engineering",
-      "id": "4276248002",
+      "id": "8061059002",
       "location": "New York, New York, United States",
       "title": "Linux Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4276248002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8061059002"
     },
     {
       "department": "IT and Systems Engineering",
-      "id": "5625787002",
-      "location": "New York, New York, United States",
-      "title": "Linux Engineering Manager",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/5625787002"
+      "id": "8377832002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Linux Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8377832002"
+    },
+    {
+      "department": "IT and Systems Engineering",
+      "id": "8061111002",
+      "location": "London, England, United Kingdom",
+      "title": "Linux Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8061111002"
     },
     {
       "department": "IT and Systems Engineering",
@@ -5470,6 +5456,13 @@
       "location": "London, England, United Kingdom",
       "title": "Linux Engineering Manager",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/6579680002"
+    },
+    {
+      "department": "IT and Systems Engineering",
+      "id": "5625787002",
+      "location": "New York, New York, United States",
+      "title": "Linux Engineering Manager",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/5625787002"
     },
     {
       "department": "Procurement",
@@ -5494,10 +5487,10 @@
     },
     {
       "department": "Machine Learning",
-      "id": "7437779002",
-      "location": "London, England, United Kingdom",
+      "id": "6802323002",
+      "location": "Hong Kong, Hong Kong",
       "title": "Machine Learning Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7437779002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/6802323002"
     },
     {
       "department": "Machine Learning",
@@ -5508,17 +5501,10 @@
     },
     {
       "department": "Machine Learning",
-      "id": "6802323002",
-      "location": "Hong Kong, Hong Kong",
+      "id": "7437779002",
+      "location": "London, England, United Kingdom",
       "title": "Machine Learning Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/6802323002"
-    },
-    {
-      "department": "Machine Learning",
-      "id": "7449077002",
-      "location": "New York, New York, United States",
-      "title": "Machine Learning Performance Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7449077002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7437779002"
     },
     {
       "department": "Machine Learning",
@@ -5536,31 +5522,10 @@
     },
     {
       "department": "Machine Learning",
-      "id": "8069434002",
+      "id": "7449077002",
       "location": "New York, New York, United States",
-      "title": "Machine Learning Researcher",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8069434002"
-    },
-    {
-      "department": "Machine Learning",
-      "id": "8069523002",
-      "location": "London, England, United Kingdom",
-      "title": "Machine Learning Researcher",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8069523002"
-    },
-    {
-      "department": "Machine Learning",
-      "id": "8374335002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Machine Learning Researcher",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8374335002"
-    },
-    {
-      "department": "Machine Learning",
-      "id": "7246339002",
-      "location": "London, England, United Kingdom",
-      "title": "Machine Learning Researcher",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7246339002"
+      "title": "Machine Learning Performance Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7449077002"
     },
     {
       "department": "Machine Learning",
@@ -5571,10 +5536,24 @@
     },
     {
       "department": "Machine Learning",
+      "id": "8374335002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Machine Learning Researcher",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8374335002"
+    },
+    {
+      "department": "Machine Learning",
       "id": "8069532002",
       "location": "Hong Kong, Hong Kong",
       "title": "Machine Learning Researcher",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8069532002"
+    },
+    {
+      "department": "Machine Learning",
+      "id": "8069434002",
+      "location": "New York, New York, United States",
+      "title": "Machine Learning Researcher",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8069434002"
     },
     {
       "department": "Machine Learning",
@@ -5584,11 +5563,18 @@
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/4276720002"
     },
     {
-      "department": "Quantitative Trading",
-      "id": "7850705002",
-      "location": "New York, New York, United States",
-      "title": "Macro Analyst",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7850705002"
+      "department": "Machine Learning",
+      "id": "7246339002",
+      "location": "London, England, United Kingdom",
+      "title": "Machine Learning Researcher",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7246339002"
+    },
+    {
+      "department": "Machine Learning",
+      "id": "8069523002",
+      "location": "London, England, United Kingdom",
+      "title": "Machine Learning Researcher",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8069523002"
     },
     {
       "department": "Quantitative Trading",
@@ -5596,6 +5582,13 @@
       "location": "Hong Kong, Hong Kong",
       "title": "Macro Analyst",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/7731614002"
+    },
+    {
+      "department": "Quantitative Trading",
+      "id": "7850705002",
+      "location": "New York, New York, United States",
+      "title": "Macro Analyst",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7850705002"
     },
     {
       "department": "Software Engineering",
@@ -5746,10 +5739,10 @@
     },
     {
       "department": "Software Engineering",
-      "id": "5108180002",
-      "location": "New York, New York, United States",
+      "id": "5807405002",
+      "location": "Singapore",
       "title": "Production Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/5108180002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/5807405002"
     },
     {
       "department": "Software Engineering",
@@ -5760,10 +5753,10 @@
     },
     {
       "department": "Software Engineering",
-      "id": "5807405002",
-      "location": "Singapore",
+      "id": "5108180002",
+      "location": "New York, New York, United States",
       "title": "Production Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/5807405002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/5108180002"
     },
     {
       "department": "Software Engineering",
@@ -5788,10 +5781,24 @@
     },
     {
       "department": "Quantitative Research",
+      "id": "4808264002",
+      "location": "London, England, United Kingdom",
+      "title": "Quantitative Researcher",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4808264002"
+    },
+    {
+      "department": "Quantitative Research",
       "id": "8343131002",
       "location": "Hong Kong, Hong Kong",
       "title": "Quantitative Researcher",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8343131002"
+    },
+    {
+      "department": "Quantitative Research",
+      "id": "6302325002",
+      "location": "New York, New York, United States",
+      "title": "Quantitative Researcher",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/6302325002"
     },
     {
       "department": "Quantitative Research",
@@ -5802,10 +5809,10 @@
     },
     {
       "department": "Quantitative Research",
-      "id": "6302325002",
+      "id": "8069351002",
       "location": "New York, New York, United States",
       "title": "Quantitative Researcher",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/6302325002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8069351002"
     },
     {
       "department": "Quantitative Research",
@@ -5822,18 +5829,18 @@
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8071941002"
     },
     {
-      "department": "Quantitative Research",
-      "id": "4808264002",
+      "department": "Quantitative Trading",
+      "id": "4273643002",
       "location": "London, England, United Kingdom",
-      "title": "Quantitative Researcher",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4808264002"
+      "title": "Quantitative Trader",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4273643002"
     },
     {
-      "department": "Quantitative Research",
-      "id": "8069351002",
+      "department": "Quantitative Trading",
+      "id": "4794171002",
       "location": "New York, New York, United States",
-      "title": "Quantitative Researcher",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8069351002"
+      "title": "Quantitative Trader",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4794171002"
     },
     {
       "department": "Quantitative Trading",
@@ -5844,17 +5851,10 @@
     },
     {
       "department": "Quantitative Trading",
-      "id": "4273643002",
-      "location": "London, England, United Kingdom",
-      "title": "Quantitative Trader",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4273643002"
-    },
-    {
-      "department": "Quantitative Trading",
-      "id": "8071940002",
+      "id": "7982986002",
       "location": "Hong Kong, Hong Kong",
       "title": "Quantitative Trader",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8071940002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7982986002"
     },
     {
       "department": "Quantitative Trading",
@@ -5865,24 +5865,17 @@
     },
     {
       "department": "Quantitative Trading",
+      "id": "8071940002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Quantitative Trader",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8071940002"
+    },
+    {
+      "department": "Quantitative Trading",
       "id": "8092062002",
       "location": "London, England, United Kingdom",
       "title": "Quantitative Trader",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8092062002"
-    },
-    {
-      "department": "Quantitative Trading",
-      "id": "7982986002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Quantitative Trader",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7982986002"
-    },
-    {
-      "department": "Quantitative Trading",
-      "id": "4794171002",
-      "location": "New York, New York, United States",
-      "title": "Quantitative Trader",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4794171002"
     },
     {
       "department": "Recruiting",
@@ -5928,13 +5921,6 @@
     },
     {
       "department": "Network Engineering",
-      "id": "5026297002",
-      "location": "London, England, United Kingdom",
-      "title": "Senior Network Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/5026297002"
-    },
-    {
-      "department": "Network Engineering",
       "id": "4432196002",
       "location": "New York, New York, United States",
       "title": "Senior Network Engineer",
@@ -5942,10 +5928,10 @@
     },
     {
       "department": "Network Engineering",
-      "id": "7284911002",
-      "location": "Singapore",
+      "id": "5026297002",
+      "location": "London, England, United Kingdom",
       "title": "Senior Network Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7284911002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/5026297002"
     },
     {
       "department": "Network Engineering",
@@ -5953,6 +5939,13 @@
       "location": "Hong Kong, Hong Kong",
       "title": "Senior Network Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/7111147002"
+    },
+    {
+      "department": "Network Engineering",
+      "id": "7284911002",
+      "location": "Singapore",
+      "title": "Senior Network Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7284911002"
     },
     {
       "department": "Quantitative Trading",
@@ -5977,38 +5970,10 @@
     },
     {
       "department": "Software Engineering",
-      "id": "8046410002",
-      "location": "New York, New York, United States",
-      "title": "Software Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8046410002"
-    },
-    {
-      "department": "Software Engineering",
-      "id": "8140274002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Software Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8140274002"
-    },
-    {
-      "department": "Software Engineering",
-      "id": "8075770002",
-      "location": "Singapore",
-      "title": "Software Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8075770002"
-    },
-    {
-      "department": "Software Engineering",
       "id": "8092065002",
       "location": "London, England, United Kingdom",
       "title": "Software Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8092065002"
-    },
-    {
-      "department": "Software Engineering",
-      "id": "4274288002",
-      "location": "New York, New York, United States",
-      "title": "Software Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4274288002"
     },
     {
       "department": "Software Engineering",
@@ -6026,17 +5991,38 @@
     },
     {
       "department": "Software Engineering",
-      "id": "7582902002",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Software Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7582902002"
-    },
-    {
-      "department": "Software Engineering",
       "id": "8160791002",
       "location": "New York, New York, United States",
       "title": "Software Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8160791002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "8140274002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Software Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8140274002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "4274288002",
+      "location": "New York, New York, United States",
+      "title": "Software Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4274288002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "8075770002",
+      "location": "Singapore",
+      "title": "Software Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8075770002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "8046410002",
+      "location": "New York, New York, United States",
+      "title": "Software Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8046410002"
     },
     {
       "department": "Software Engineering",
@@ -6047,6 +6033,13 @@
     },
     {
       "department": "Software Engineering",
+      "id": "7582902002",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Software Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/7582902002"
+    },
+    {
+      "department": "Software Engineering",
       "id": "7604415002",
       "location": "New York, New York, United States",
       "title": "Software Engineer / Writer",
@@ -6054,17 +6047,17 @@
     },
     {
       "department": "Software Engineering",
-      "id": "8395038002",
-      "location": "London, England, United Kingdom",
-      "title": "Staff UX Designer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8395038002"
-    },
-    {
-      "department": "Software Engineering",
       "id": "8367000002",
       "location": "New York, New York, United States",
       "title": "Staff UX Designer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8367000002"
+    },
+    {
+      "department": "Software Engineering",
+      "id": "8395038002",
+      "location": "London, England, United Kingdom",
+      "title": "Staff UX Designer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8395038002"
     },
     {
       "department": "Quantitative Trading",
@@ -6110,6 +6103,13 @@
     },
     {
       "department": "Software Engineering",
+      "id": "8484671002",
+      "location": "Singapore",
+      "title": "Technical Product Manager",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8484671002"
+    },
+    {
+      "department": "Software Engineering",
       "id": "7090529002",
       "location": "New York, New York, United States",
       "title": "Technical Product Manager",
@@ -6117,10 +6117,10 @@
     },
     {
       "department": "Software Engineering",
-      "id": "8484671002",
-      "location": "Singapore",
-      "title": "Technical Product Manager",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8484671002"
+      "id": "8388726002",
+      "location": "London, England, United Kingdom",
+      "title": "Technical Product Manager ",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8388726002"
     },
     {
       "department": "Software Engineering",
@@ -6131,10 +6131,10 @@
     },
     {
       "department": "Software Engineering",
-      "id": "8388726002",
-      "location": "London, England, United Kingdom",
-      "title": "Technical Product Manager ",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8388726002"
+      "id": "4902080002",
+      "location": "New York, New York, United States",
+      "title": "Technical Program Manager",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4902080002"
     },
     {
       "department": "IT and Systems Engineering",
@@ -6142,13 +6142,6 @@
       "location": "Hong Kong, Hong Kong",
       "title": "Technical Program Manager",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/8149745002"
-    },
-    {
-      "department": "Software Engineering",
-      "id": "4902080002",
-      "location": "New York, New York, United States",
-      "title": "Technical Program Manager",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4902080002"
     },
     {
       "department": "Software Engineering",
@@ -6187,10 +6180,10 @@
     },
     {
       "department": "Trading Desk Operations",
-      "id": "8075380002",
+      "id": "8168747002",
       "location": "Hong Kong, Hong Kong",
       "title": "Trading Desk Operations Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8075380002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8168747002"
     },
     {
       "department": "Trading Desk Operations",
@@ -6201,13 +6194,6 @@
     },
     {
       "department": "Trading Desk Operations",
-      "id": "8080525002",
-      "location": "London, England, United Kingdom",
-      "title": "Trading Desk Operations Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8080525002"
-    },
-    {
-      "department": "Trading Desk Operations",
       "id": "8070515002",
       "location": "New York, New York, United States",
       "title": "Trading Desk Operations Engineer",
@@ -6215,10 +6201,17 @@
     },
     {
       "department": "Trading Desk Operations",
-      "id": "8168747002",
+      "id": "8075380002",
       "location": "Hong Kong, Hong Kong",
       "title": "Trading Desk Operations Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8168747002"
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8075380002"
+    },
+    {
+      "department": "Trading Desk Operations",
+      "id": "8080525002",
+      "location": "London, England, United Kingdom",
+      "title": "Trading Desk Operations Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/8080525002"
     },
     {
       "department": "Workplace Services & Experience",
@@ -6257,6 +6250,13 @@
     },
     {
       "department": "IT and Systems Engineering",
+      "id": "4276263002",
+      "location": "New York, New York, United States",
+      "title": "Windows Engineer",
+      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4276263002"
+    },
+    {
+      "department": "IT and Systems Engineering",
       "id": "8034317002",
       "location": "Hong Kong, Hong Kong",
       "title": "Windows Engineer",
@@ -6268,13 +6268,6 @@
       "location": "London, England, United Kingdom",
       "title": "Windows Engineer",
       "url": "https://job-boards.greenhouse.io/janestreet/jobs/4538451002"
-    },
-    {
-      "department": "IT and Systems Engineering",
-      "id": "4276263002",
-      "location": "New York, New York, United States",
-      "title": "Windows Engineer",
-      "url": "https://job-boards.greenhouse.io/janestreet/jobs/4276263002"
     },
     {
       "department": "Human Resources",
@@ -6754,13 +6747,6 @@
       "url": "https://career.mlp.com/careers?pid=755956072666&domain=mlp.com"
     },
     {
-      "department": "Information Technology",
-      "id": "db58cc183fef2735",
-      "location": "New York, New York, United States of America",
-      "title": "Software Engineer (C#) - Equity Research Technology",
-      "url": "https://career.mlp.com/careers?pid=755955506758&domain=mlp.com"
-    },
-    {
       "department": "Operations & Middle Office",
       "id": "5aa73de50e2689f7",
       "location": "New York, New York, United States of America",
@@ -6825,17 +6811,24 @@
     },
     {
       "department": "Information Technology",
+      "id": "d396df0fb40bfd30",
+      "location": "New York, New York, United States of America",
+      "title": "Project Manager - High Frequency Trading (HFT)",
+      "url": "https://career.mlp.com/careers?pid=755955682308&domain=mlp.com"
+    },
+    {
+      "department": "Information Technology",
       "id": "77122cf10c1efcd7",
       "location": "New York, New York, United States of America",
       "title": "Feature Framework Engineer",
       "url": "https://career.mlp.com/careers?pid=755955682418&domain=mlp.com"
     },
     {
-      "department": "Information Technology",
-      "id": "d396df0fb40bfd30",
-      "location": "New York, New York, United States of America",
-      "title": "Project Manager - High Frequency Trading (HFT)",
-      "url": "https://career.mlp.com/careers?pid=755955682308&domain=mlp.com"
+      "department": "Trading",
+      "id": "ec88b3e3f4a68afe",
+      "location": "Dallas, Texas, United States of America",
+      "title": "Analyst \u2013 Asset Based Finance",
+      "url": "https://career.mlp.com/careers?pid=755955623024&domain=mlp.com"
     },
     {
       "department": "Operations & Middle Office",
@@ -6850,13 +6843,6 @@
       "location": "Dallas, Texas, United States of America",
       "title": "Analyst, Underwriter \u2013 Asset Based Finance",
       "url": "https://career.mlp.com/careers?pid=755955622440&domain=mlp.com"
-    },
-    {
-      "department": "Trading",
-      "id": "ec88b3e3f4a68afe",
-      "location": "Dallas, Texas, United States of America",
-      "title": "Analyst \u2013 Asset Based Finance",
-      "url": "https://career.mlp.com/careers?pid=755955623024&domain=mlp.com"
     },
     {
       "department": "Operations & Middle Office",
@@ -6992,18 +6978,18 @@
       "url": "https://career.mlp.com/careers?pid=755954850275&domain=mlp.com"
     },
     {
-      "department": "Human Resources",
-      "id": "5e700712bd4c1c96",
-      "location": "New York, New York, United States of America",
-      "title": "Senior Payroll Manager",
-      "url": "https://career.mlp.com/careers?pid=755954854372&domain=mlp.com"
-    },
-    {
       "department": "Compliance",
       "id": "3b1b793bb003135f",
       "location": "New York, New York, United States of America",
       "title": "Compliance Analyst",
       "url": "https://career.mlp.com/careers?pid=755954855679&domain=mlp.com"
+    },
+    {
+      "department": "Human Resources",
+      "id": "5e700712bd4c1c96",
+      "location": "New York, New York, United States of America",
+      "title": "Senior Payroll Manager",
+      "url": "https://career.mlp.com/careers?pid=755954854372&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -7105,6 +7091,13 @@
     },
     {
       "department": "Execution Services",
+      "id": "17de1ee67b59efec",
+      "location": "New York, New York, United States of America",
+      "title": "Senior Execution Quantitative Analyst - Fixed Income",
+      "url": "https://career.mlp.com/careers?pid=755954333818&domain=mlp.com"
+    },
+    {
+      "department": "Execution Services",
       "id": "2f34de66ed864dcb",
       "location": "New York, New York, United States of America",
       "title": "Quantitative Developer (Python) -  Central Liquidity Strategies",
@@ -7158,13 +7151,6 @@
       "location": "New York, New York, United States of America",
       "title": "Technical Product Manager - Linux Developer Experience",
       "url": "https://career.mlp.com/careers?pid=755953932410&domain=mlp.com"
-    },
-    {
-      "department": "Information Technology",
-      "id": "a2f48be7f8f35f27",
-      "location": "Miami, Florida, United States of America",
-      "title": "Software Engineer - Learning Engineering and Data (LEaD) Program",
-      "url": "https://career.mlp.com/careers?pid=755953879362&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -7391,13 +7377,6 @@
       "url": "https://career.mlp.com/careers?pid=755955822770&domain=mlp.com"
     },
     {
-      "department": "Operations & Middle Office",
-      "id": "fea4f987d5175bb2",
-      "location": "Bangalore, Karnataka, India",
-      "title": "Fixed Income Specialist - NAM Shift",
-      "url": "https://career.mlp.com/careers?pid=755955846680&domain=mlp.com"
-    },
-    {
       "department": "Information Technology",
       "id": "3e667beb6c40c4e5",
       "location": "Bangalore, Karnataka, India",
@@ -7410,6 +7389,13 @@
       "location": "Bangalore, Karnataka, India",
       "title": "Talent Acquisition Coordinator",
       "url": "https://career.mlp.com/careers?pid=755955826092&domain=mlp.com"
+    },
+    {
+      "department": "Operations & Middle Office",
+      "id": "fea4f987d5175bb2",
+      "location": "Bangalore, Karnataka, India",
+      "title": "Fixed Income Specialist - NAM Shift",
+      "url": "https://career.mlp.com/careers?pid=755955846680&domain=mlp.com"
     },
     {
       "department": "Compliance",
@@ -7588,17 +7574,17 @@
     },
     {
       "department": "Information Technology",
-      "id": "d1f4489d35e2cd36",
-      "location": "Singapore, Singapore",
-      "title": "Software Engineer - Compliance / Regulatory Reporting",
-      "url": "https://career.mlp.com/careers?pid=755955321458&domain=mlp.com"
-    },
-    {
-      "department": "Information Technology",
       "id": "4e517c7206382b7a",
       "location": "Bangalore, Karnataka, India",
       "title": "Full\u2011Stack data engineer",
       "url": "https://career.mlp.com/careers?pid=755955321460&domain=mlp.com"
+    },
+    {
+      "department": "Information Technology",
+      "id": "d1f4489d35e2cd36",
+      "location": "Singapore, Singapore",
+      "title": "Software Engineer - Compliance / Regulatory Reporting",
+      "url": "https://career.mlp.com/careers?pid=755955321458&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -8868,13 +8854,6 @@
     },
     {
       "department": "Academy",
-      "id": "8435134002",
-      "location": "Dubai, London",
-      "title": "2027 Point72 Academy Investment Analyst Summer Internship Program - EMEA",
-      "url": "https://boards.greenhouse.io/point72/jobs/8435134002?gh_jid=8435134002"
-    },
-    {
-      "department": "Academy",
       "id": "8491055002",
       "location": "Hong Kong",
       "title": "2027 Point72 Academy Investment Analyst Summer Internship Program - Hong Kong",
@@ -9113,17 +9092,17 @@
     },
     {
       "department": "Quant Management",
-      "id": "7319319002",
-      "location": "New York",
-      "title": "Cubist Business Analyst",
-      "url": "https://boards.greenhouse.io/point72/jobs/7319319002?gh_jid=7319319002"
-    },
-    {
-      "department": "Quant Management",
       "id": "8530310002",
       "location": "Hong Kong ",
       "title": "Cubist Business Analyst",
       "url": "https://boards.greenhouse.io/point72/jobs/8530310002?gh_jid=8530310002"
+    },
+    {
+      "department": "Quant Management",
+      "id": "7319319002",
+      "location": "New York",
+      "title": "Cubist Business Analyst",
+      "url": "https://boards.greenhouse.io/point72/jobs/7319319002?gh_jid=7319319002"
     },
     {
       "department": "Quant Management",
@@ -9148,17 +9127,17 @@
     },
     {
       "department": "Quant Management",
-      "id": "7045941002",
-      "location": "Dubai, Paris, Hong Kong, London, Sydney",
-      "title": "Cubist Portfolio Manager",
-      "url": "https://boards.greenhouse.io/point72/jobs/7045941002?gh_jid=7045941002"
-    },
-    {
-      "department": "Quant Management",
       "id": "7046005002",
       "location": "New York",
       "title": "Cubist Portfolio Manager",
       "url": "https://boards.greenhouse.io/point72/jobs/7046005002?gh_jid=7046005002"
+    },
+    {
+      "department": "Quant Management",
+      "id": "7045941002",
+      "location": "Dubai, Paris, Hong Kong, London, Sydney",
+      "title": "Cubist Portfolio Manager",
+      "url": "https://boards.greenhouse.io/point72/jobs/7045941002?gh_jid=7045941002"
     },
     {
       "department": "Quant Management",
@@ -9169,20 +9148,6 @@
     },
     {
       "department": "Quant Management",
-      "id": "7046019002",
-      "location": "Singapore",
-      "title": "Cubist Quantitative Researcher",
-      "url": "https://boards.greenhouse.io/point72/jobs/7046019002?gh_jid=7046019002"
-    },
-    {
-      "department": "Quant Management",
-      "id": "7666631002",
-      "location": "Hong Kong",
-      "title": "Cubist Quantitative Researcher",
-      "url": "https://boards.greenhouse.io/point72/jobs/7666631002?gh_jid=7666631002"
-    },
-    {
-      "department": "Quant Management",
       "id": "7045936002",
       "location": "Dubai, London, Paris, Hong Kong, Sydney, Toronto",
       "title": "Cubist Quantitative Researcher",
@@ -9190,17 +9155,10 @@
     },
     {
       "department": "Quant Management",
-      "id": "7045980002",
-      "location": "Singapore",
+      "id": "7666631002",
+      "location": "Hong Kong",
       "title": "Cubist Quantitative Researcher",
-      "url": "https://boards.greenhouse.io/point72/jobs/7045980002?gh_jid=7045980002"
-    },
-    {
-      "department": "Quant Management",
-      "id": "7045987002",
-      "location": "Chicago, New York, Seattle ",
-      "title": "Cubist Quantitative Researcher",
-      "url": "https://boards.greenhouse.io/point72/jobs/7045987002?gh_jid=7045987002"
+      "url": "https://boards.greenhouse.io/point72/jobs/7666631002?gh_jid=7666631002"
     },
     {
       "department": "Quant Management",
@@ -9218,17 +9176,31 @@
     },
     {
       "department": "Quant Management",
+      "id": "7045980002",
+      "location": "Singapore",
+      "title": "Cubist Quantitative Researcher",
+      "url": "https://boards.greenhouse.io/point72/jobs/7045980002?gh_jid=7045980002"
+    },
+    {
+      "department": "Quant Management",
+      "id": "7045987002",
+      "location": "Chicago, New York, Seattle ",
+      "title": "Cubist Quantitative Researcher",
+      "url": "https://boards.greenhouse.io/point72/jobs/7045987002?gh_jid=7045987002"
+    },
+    {
+      "department": "Quant Management",
+      "id": "7046019002",
+      "location": "Singapore",
+      "title": "Cubist Quantitative Researcher",
+      "url": "https://boards.greenhouse.io/point72/jobs/7046019002?gh_jid=7046019002"
+    },
+    {
+      "department": "Quant Management",
       "id": "7297555002",
       "location": "Hong Kong",
       "title": "Cubist Quantitative Researcher",
       "url": "https://boards.greenhouse.io/point72/jobs/7297555002?gh_jid=7297555002"
-    },
-    {
-      "department": "Quant Management",
-      "id": "7297611002",
-      "location": "Hong Kong",
-      "title": "Cubist Quantitative Researcher Intern",
-      "url": "https://boards.greenhouse.io/point72/jobs/7297611002?gh_jid=7297611002"
     },
     {
       "department": "Quant Management",
@@ -9239,10 +9211,10 @@
     },
     {
       "department": "Quant Management",
-      "id": "7045979002",
-      "location": "New York",
-      "title": "Cubist Senior Data Scientist",
-      "url": "https://boards.greenhouse.io/point72/jobs/7045979002?gh_jid=7045979002"
+      "id": "7297611002",
+      "location": "Hong Kong",
+      "title": "Cubist Quantitative Researcher Intern",
+      "url": "https://boards.greenhouse.io/point72/jobs/7297611002?gh_jid=7297611002"
     },
     {
       "department": "Quant Management",
@@ -9252,6 +9224,13 @@
       "url": "https://boards.greenhouse.io/point72/jobs/7045995002?gh_jid=7045995002"
     },
     {
+      "department": "Quant Management",
+      "id": "7045979002",
+      "location": "New York",
+      "title": "Cubist Senior Data Scientist",
+      "url": "https://boards.greenhouse.io/point72/jobs/7045979002?gh_jid=7045979002"
+    },
+    {
       "department": "Technology",
       "id": "8488671002",
       "location": "Bengaluru, India",
@@ -9259,18 +9238,18 @@
       "url": "https://boards.greenhouse.io/point72/jobs/8488671002?gh_jid=8488671002"
     },
     {
-      "department": "Quant Management",
-      "id": "7829230002",
-      "location": "New York",
-      "title": "Data Engineer",
-      "url": "https://boards.greenhouse.io/point72/jobs/7829230002?gh_jid=7829230002"
-    },
-    {
       "department": "Technology",
       "id": "8467510002",
       "location": "Warsaw, PL",
       "title": "Data Engineer",
       "url": "https://boards.greenhouse.io/point72/jobs/8467510002?gh_jid=8467510002"
+    },
+    {
+      "department": "Quant Management",
+      "id": "7829230002",
+      "location": "New York",
+      "title": "Data Engineer",
+      "url": "https://boards.greenhouse.io/point72/jobs/7829230002?gh_jid=7829230002"
     },
     {
       "department": "Senior Management ",
@@ -9750,17 +9729,17 @@
     },
     {
       "department": "Quant Management",
-      "id": "7825077002",
-      "location": "New York",
-      "title": "NLP Engineer",
-      "url": "https://boards.greenhouse.io/point72/jobs/7825077002?gh_jid=7825077002"
-    },
-    {
-      "department": "Quant Management",
       "id": "8018850002",
       "location": "New York",
       "title": "NLP Engineer",
       "url": "https://boards.greenhouse.io/point72/jobs/8018850002?gh_jid=8018850002"
+    },
+    {
+      "department": "Quant Management",
+      "id": "7825077002",
+      "location": "New York",
+      "title": "NLP Engineer",
+      "url": "https://boards.greenhouse.io/point72/jobs/7825077002?gh_jid=7825077002"
     },
     {
       "department": "Technology",
@@ -9785,17 +9764,17 @@
     },
     {
       "department": "Front Office - Admin Support",
-      "id": "8532298002",
-      "location": "West Palm Beach / Miami",
-      "title": "PM Administrative Assistant ",
-      "url": "https://boards.greenhouse.io/point72/jobs/8532298002?gh_jid=8532298002"
-    },
-    {
-      "department": "Front Office - Admin Support",
       "id": "8017312002",
       "location": "New York, NY",
       "title": "PM Administrative Assistant ",
       "url": "https://boards.greenhouse.io/point72/jobs/8017312002?gh_jid=8017312002"
+    },
+    {
+      "department": "Front Office - Admin Support",
+      "id": "8532298002",
+      "location": "West Palm Beach / Miami",
+      "title": "PM Administrative Assistant ",
+      "url": "https://boards.greenhouse.io/point72/jobs/8532298002?gh_jid=8532298002"
     },
     {
       "department": "Academy",
@@ -9939,10 +9918,10 @@
     },
     {
       "department": "Quant Management",
-      "id": "7297683002",
-      "location": "Dubai, London, Paris, Hong Kong",
+      "id": "7906984002",
+      "location": "New York, Chicago",
       "title": "Quantitative Researcher",
-      "url": "https://boards.greenhouse.io/point72/jobs/7297683002?gh_jid=7297683002"
+      "url": "https://boards.greenhouse.io/point72/jobs/7906984002?gh_jid=7906984002"
     },
     {
       "department": "Quant Management",
@@ -9953,17 +9932,17 @@
     },
     {
       "department": "Quant Management",
-      "id": "7906984002",
-      "location": "New York, Chicago",
-      "title": "Quantitative Researcher",
-      "url": "https://boards.greenhouse.io/point72/jobs/7906984002?gh_jid=7906984002"
-    },
-    {
-      "department": "Quant Management",
       "id": "7752293002",
       "location": "London ",
       "title": "Quantitative Researcher",
       "url": "https://boards.greenhouse.io/point72/jobs/7752293002?gh_jid=7752293002"
+    },
+    {
+      "department": "Quant Management",
+      "id": "7297683002",
+      "location": "Dubai, London, Paris, Hong Kong",
+      "title": "Quantitative Researcher",
+      "url": "https://boards.greenhouse.io/point72/jobs/7297683002?gh_jid=7297683002"
     },
     {
       "department": "Quant Management",
@@ -10037,13 +10016,6 @@
     },
     {
       "department": "Quant Management",
-      "id": "8032153002",
-      "location": "New York",
-      "title": "Quantitative Software Developer",
-      "url": "https://boards.greenhouse.io/point72/jobs/8032153002?gh_jid=8032153002"
-    },
-    {
-      "department": "Quant Management",
       "id": "7825863002",
       "location": "New York",
       "title": "Quantitative Software Developer",
@@ -10055,6 +10027,13 @@
       "location": "New York",
       "title": "Quantitative Software Developer",
       "url": "https://boards.greenhouse.io/point72/jobs/8036928002?gh_jid=8036928002"
+    },
+    {
+      "department": "Quant Management",
+      "id": "8032153002",
+      "location": "New York",
+      "title": "Quantitative Software Developer",
+      "url": "https://boards.greenhouse.io/point72/jobs/8032153002?gh_jid=8032153002"
     },
     {
       "department": "Quant Management",
@@ -10415,17 +10394,17 @@
     },
     {
       "department": "Technology",
-      "id": "8372913002",
-      "location": "Warsaw",
-      "title": "Software Engineer, Treasury Technology",
-      "url": "https://boards.greenhouse.io/point72/jobs/8372913002?gh_jid=8372913002"
-    },
-    {
-      "department": "Technology",
       "id": "8462115002",
       "location": "New York",
       "title": "Software Engineer, Treasury Technology",
       "url": "https://boards.greenhouse.io/point72/jobs/8462115002?gh_jid=8462115002"
+    },
+    {
+      "department": "Technology",
+      "id": "8372913002",
+      "location": "Warsaw",
+      "title": "Software Engineer, Treasury Technology",
+      "url": "https://boards.greenhouse.io/point72/jobs/8372913002?gh_jid=8372913002"
     },
     {
       "department": "Finance",
@@ -13184,13 +13163,6 @@
       "location": "",
       "title": "Quantitative Developer Intern 2027",
       "url": "https://voloridge-investment-management.hiringthing.com/job/1013126/quantitative-developer-intern-2027"
-    },
-    {
-      "department": "",
-      "id": "7dc89385df77a3b0",
-      "location": "",
-      "title": "Senior Data Scientist",
-      "url": "https://voloridge-investment-management.hiringthing.com/job/165752/senior-data-scientist"
     },
     {
       "department": "",
