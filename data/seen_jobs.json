@@ -7314,13 +7314,6 @@
       "url": "https://career.mlp.com/careers?pid=755956079184&domain=mlp.com"
     },
     {
-      "department": "Operations & Middle Office",
-      "id": "efbdd68f24a43759",
-      "location": "London, United Kingdom",
-      "title": "Reference Data Operations Specialist - Corporate Actions",
-      "url": "https://career.mlp.com/careers?pid=755956079184&domain=mlp.com"
-    },
-    {
       "department": "Trading",
       "id": "773f99a754018658",
       "location": "London, United Kingdom",
@@ -7525,6 +7518,13 @@
     },
     {
       "department": "Information Technology",
+      "id": "6b41ce622b2ab81e",
+      "location": "London, United Kingdom",
+      "title": "Application Security Engineer",
+      "url": "https://career.mlp.com/careers?pid=755955629908&domain=mlp.com"
+    },
+    {
+      "department": "Information Technology",
       "id": "35b38857b2b169e4",
       "location": "Dublin, Ireland",
       "title": "Application Security Engineer",
@@ -7664,13 +7664,6 @@
       "url": "https://career.mlp.com/careers?pid=755955286680&domain=mlp.com"
     },
     {
-      "department": "Execution Services",
-      "id": "81883a79563cf4a1",
-      "location": "London, United Kingdom",
-      "title": "Sector Specialist Origination, TMT - EMEA",
-      "url": "https://career.mlp.com/careers?pid=755955286680&domain=mlp.com"
-    },
-    {
       "department": "Corporate Services & Real Estate",
       "id": "a22717055d2e81e9",
       "location": "Hong Kong, Hong Kong",
@@ -7732,6 +7725,13 @@
       "location": "Bangalore, Karnataka, India",
       "title": "Finance Analyst (Geneva Portfolio Accounting System)",
       "url": "https://career.mlp.com/careers?pid=755955113107&domain=mlp.com"
+    },
+    {
+      "department": "Information Technology",
+      "id": "94a7e11ed7884a8a",
+      "location": "Singapore, Singapore",
+      "title": "Java Developer",
+      "url": "https://career.mlp.com/careers?pid=755955058903&domain=mlp.com"
     },
     {
       "department": "Finance",
@@ -7804,13 +7804,6 @@
       "url": "https://career.mlp.com/careers?pid=755954852499&domain=mlp.com"
     },
     {
-      "department": "Trading",
-      "id": "b19a47f7ef05dcbc",
-      "location": "London, United Kingdom",
-      "title": "Quantitative Developer, Index Rebalance",
-      "url": "https://career.mlp.com/careers?pid=755954852499&domain=mlp.com"
-    },
-    {
       "department": "Information Technology",
       "id": "3c655e8adc60f81e",
       "location": "London, United Kingdom",
@@ -7872,6 +7865,13 @@
       "location": "Bangalore, Karnataka, India",
       "title": "Application Support Engineer - Commodities",
       "url": "https://career.mlp.com/careers?pid=755954614862&domain=mlp.com"
+    },
+    {
+      "department": "Compliance",
+      "id": "c7fb6134ca0242b9",
+      "location": "London, United Kingdom",
+      "title": "Compliance Officer",
+      "url": "https://career.mlp.com/careers?pid=755954625264&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -8085,13 +8085,6 @@
     },
     {
       "department": "Information Technology",
-      "id": "713a141a6fc289aa",
-      "location": "London, United Kingdom",
-      "title": "Windows Systems Engineer",
-      "url": "https://career.mlp.com/careers?pid=755953774703&domain=mlp.com"
-    },
-    {
-      "department": "Information Technology",
       "id": "af695456c2454e28",
       "location": "Bangalore, Karnataka, India",
       "title": "Senior Full Stack Data Platform Engineer",
@@ -8152,6 +8145,13 @@
       "location": "Paris, France",
       "title": "Office Manager",
       "url": "https://career.mlp.com/careers?pid=755953354045&domain=mlp.com"
+    },
+    {
+      "department": "Human Resources",
+      "id": "464a376f2b3f6fe8",
+      "location": "Bangalore, Karnataka, India",
+      "title": "Payroll Specialist",
+      "url": "https://career.mlp.com/careers?pid=755953344782&domain=mlp.com"
     },
     {
       "department": "Information Technology",
