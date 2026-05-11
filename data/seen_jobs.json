@@ -214,10 +214,10 @@
     },
     {
       "department": "Research",
-      "id": "7895903",
+      "id": "7913537",
       "location": "Greenwich, CT",
       "title": "Global Stock Selection - Product Specialist Analyst / Associate",
-      "url": "https://careers.aqr.com/jobs?gh_jid=7895903&gh_jid=7895903"
+      "url": "https://careers.aqr.com/jobs?gh_jid=7913537&gh_jid=7913537"
     },
     {
       "department": "Research",
@@ -2058,13 +2058,6 @@
       "url": "https://job-boards.greenhouse.io/dvtrading/jobs/4691295005"
     },
     {
-      "department": "Legal",
-      "id": "4668581005",
-      "location": "Chicago",
-      "title": "Associate Legal Counsel",
-      "url": "https://job-boards.greenhouse.io/dvtrading/jobs/4668581005"
-    },
-    {
       "department": "Technology",
       "id": "4692100005",
       "location": "London",
@@ -3775,13 +3768,6 @@
   "IMC Trading": [
     {
       "department": "",
-      "id": "4829446101",
-      "location": "Chicago, United States",
-      "title": "2026 US Chess Academy",
-      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4829446101"
-    },
-    {
-      "department": "",
       "id": "4787218101",
       "location": "Aarhus, Central Denmark Region, Denmark",
       "title": "Aarhus Networking event | IMC Trading ",
@@ -3887,24 +3873,17 @@
     },
     {
       "department": "Development (Group)",
-      "id": "4634204101",
-      "location": "Amsterdam, Netherlands",
-      "title": "C++ Software Engineer",
-      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4634204101"
-    },
-    {
-      "department": "Development (Group)",
       "id": "4760871101",
       "location": "Sydney,  Australia",
       "title": "C++ Software Engineer",
       "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4760871101"
     },
     {
-      "department": "Software Development",
-      "id": "4850338101",
-      "location": "Chicago, United States; New York, United States",
-      "title": "C++ Software Engineer ",
-      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4850338101"
+      "department": "Development (Group)",
+      "id": "4634204101",
+      "location": "Amsterdam, Netherlands",
+      "title": "C++ Software Engineer",
+      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4634204101"
     },
     {
       "department": "Software Development",
@@ -3914,11 +3893,11 @@
       "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4812761101"
     },
     {
-      "department": "Systems & Infrastructure",
-      "id": "4661803101",
-      "location": "Amsterdam, Netherlands",
-      "title": "Data Center Engineer",
-      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4661803101"
+      "department": "Software Development",
+      "id": "4850338101",
+      "location": "Chicago, United States; New York, United States",
+      "title": "C++ Software Engineer ",
+      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4850338101"
     },
     {
       "department": "Systems & Infrastructure",
@@ -3926,6 +3905,13 @@
       "location": "Mumbai, India",
       "title": "Data Center Engineer",
       "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4694133101"
+    },
+    {
+      "department": "Systems & Infrastructure",
+      "id": "4661803101",
+      "location": "Amsterdam, Netherlands",
+      "title": "Data Center Engineer",
+      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4661803101"
     },
     {
       "department": "Development (Group)",
@@ -4020,17 +4006,17 @@
     },
     {
       "department": "Development (Group)",
-      "id": "4564480101",
-      "location": "Amsterdam, Netherlands",
-      "title": "Graduate Software Engineer (2026)",
-      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4564480101"
-    },
-    {
-      "department": "Development (Group)",
       "id": "4635938101",
       "location": "Aarhus, Central Denmark Region, Denmark",
       "title": "Graduate Software Engineer (2026)",
       "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4635938101"
+    },
+    {
+      "department": "Development (Group)",
+      "id": "4564480101",
+      "location": "Amsterdam, Netherlands",
+      "title": "Graduate Software Engineer (2026)",
+      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4564480101"
     },
     {
       "department": "Trading",
@@ -4174,17 +4160,17 @@
     },
     {
       "department": "Legal & Compliance",
-      "id": "4803043101",
-      "location": "Chicago, United States",
-      "title": "Legal Counsel",
-      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4803043101"
-    },
-    {
-      "department": "Legal & Compliance",
       "id": "4822534101",
       "location": "Chicago, United States",
       "title": "Legal Counsel",
       "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4822534101"
+    },
+    {
+      "department": "Legal & Compliance",
+      "id": "4803043101",
+      "location": "Chicago, United States",
+      "title": "Legal Counsel",
+      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4803043101"
     },
     {
       "department": "Legal & Compliance",
@@ -4195,10 +4181,10 @@
     },
     {
       "department": "Systems & Infrastructure",
-      "id": "4791919101",
-      "location": "Sydney,  Australia",
+      "id": "4426245101",
+      "location": "Mumbai, India",
       "title": "Linux Engineer",
-      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4791919101"
+      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4426245101"
     },
     {
       "department": "Systems & Infrastructure",
@@ -4209,10 +4195,10 @@
     },
     {
       "department": "Systems & Infrastructure",
-      "id": "4426245101",
-      "location": "Mumbai, India",
+      "id": "4791919101",
+      "location": "Sydney,  Australia",
       "title": "Linux Engineer",
-      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4426245101"
+      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4791919101"
     },
     {
       "department": "Development (Group)",
@@ -4285,18 +4271,18 @@
       "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4827281101"
     },
     {
-      "department": "Screen & Quant Trading",
-      "id": "4842378101",
-      "location": "New York, United States",
-      "title": "OTC Trader",
-      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4842378101"
-    },
-    {
       "department": "Trading Services ",
       "id": "4805320101",
       "location": "Zug, Switzerland",
       "title": "OTC Trader",
       "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4805320101"
+    },
+    {
+      "department": "Screen & Quant Trading",
+      "id": "4842378101",
+      "location": "New York, United States",
+      "title": "OTC Trader",
+      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4842378101"
     },
     {
       "department": "Human Resources",
@@ -4349,6 +4335,13 @@
     },
     {
       "department": "Development (Group)",
+      "id": "4630983101",
+      "location": "Amsterdam, Netherlands",
+      "title": "Python Software Engineer",
+      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4630983101"
+    },
+    {
+      "department": "Development (Group)",
       "id": "4548292101",
       "location": "Sydney,  Australia",
       "title": "Python Software Engineer",
@@ -4360,13 +4353,6 @@
       "location": "Chicago, United States; New York, United States",
       "title": "Python Software Engineer",
       "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4850337101"
-    },
-    {
-      "department": "Development (Group)",
-      "id": "4630983101",
-      "location": "Amsterdam, Netherlands",
-      "title": "Python Software Engineer",
-      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4630983101"
     },
     {
       "department": "Software Development",
@@ -4423,20 +4409,6 @@
       "location": "Mumbai, India",
       "title": "Quantitative Researcher",
       "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4694175101"
-    },
-    {
-      "department": "Quantitative Research",
-      "id": "4832704101",
-      "location": "Chicago, United States",
-      "title": "Quantitative Researcher",
-      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4832704101"
-    },
-    {
-      "department": "Quantitative Research",
-      "id": "4832703101",
-      "location": "Chicago, United States",
-      "title": "Quantitative Researcher",
-      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4832703101"
     },
     {
       "department": "Quantitative Research",
@@ -6762,6 +6734,13 @@
       "url": "https://career.mlp.com/careers?pid=755956091922&domain=mlp.com"
     },
     {
+      "department": "Trading",
+      "id": "dc83959120aa628d",
+      "location": "New York, New York, United States of America",
+      "title": "Corporate Access",
+      "url": "https://career.mlp.com/careers?pid=755956091198&domain=mlp.com"
+    },
+    {
       "department": "Finance",
       "id": "e7135908b827977c",
       "location": "New York, New York, United States of America",
@@ -7091,6 +7070,13 @@
       "url": "https://career.mlp.com/careers?pid=755954744530&domain=mlp.com"
     },
     {
+      "department": "Information Technology",
+      "id": "fc4352a5bdcf8b78",
+      "location": "New York, New York, United States of America",
+      "title": "Senior \u2018Developer Infrastructure\u2019 Engineer",
+      "url": "https://career.mlp.com/careers?pid=755954695574&domain=mlp.com"
+    },
+    {
       "department": "Operations & Middle Office",
       "id": "1af7a5ac4cbcb1e5",
       "location": "New York, New York, United States of America",
@@ -7103,13 +7089,6 @@
       "location": "New York, New York, United States of America",
       "title": "Senior High Frequency C++ Engineer",
       "url": "https://career.mlp.com/careers?pid=755954694645&domain=mlp.com"
-    },
-    {
-      "department": "Information Technology",
-      "id": "fc4352a5bdcf8b78",
-      "location": "New York, New York, United States of America",
-      "title": "Senior \u2018Developer Infrastructure\u2019 Engineer",
-      "url": "https://career.mlp.com/careers?pid=755954695574&domain=mlp.com"
     },
     {
       "department": "Execution Services",
@@ -7462,6 +7441,13 @@
       "url": "https://career.mlp.com/careers?pid=755955822770&domain=mlp.com"
     },
     {
+      "department": "Information Technology",
+      "id": "3e667beb6c40c4e5",
+      "location": "Bangalore, Karnataka, India",
+      "title": "Business Analyst - Corporate Actions",
+      "url": "https://career.mlp.com/careers?pid=755955824607&domain=mlp.com"
+    },
+    {
       "department": "Human Resources",
       "id": "43bb4d31e2cf1e62",
       "location": "Bangalore, Karnataka, India",
@@ -7474,13 +7460,6 @@
       "location": "Bangalore, Karnataka, India",
       "title": "Fixed Income Specialist - NAM Shift",
       "url": "https://career.mlp.com/careers?pid=755955846680&domain=mlp.com"
-    },
-    {
-      "department": "Information Technology",
-      "id": "3e667beb6c40c4e5",
-      "location": "Bangalore, Karnataka, India",
-      "title": "Business Analyst - Corporate Actions",
-      "url": "https://career.mlp.com/careers?pid=755955824607&domain=mlp.com"
     },
     {
       "department": "Compliance",
@@ -7652,13 +7631,6 @@
     },
     {
       "department": "Information Technology",
-      "id": "f2c593f6539c317a",
-      "location": "Dublin, Ireland",
-      "title": "Software Engineer - Python",
-      "url": "https://career.mlp.com/careers?pid=755955321461&domain=mlp.com"
-    },
-    {
-      "department": "Information Technology",
       "id": "d1f4489d35e2cd36",
       "location": "Singapore, Singapore",
       "title": "Software Engineer - Compliance / Regulatory Reporting",
@@ -7670,6 +7642,13 @@
       "location": "Bangalore, Karnataka, India",
       "title": "Full\u2011Stack data engineer",
       "url": "https://career.mlp.com/careers?pid=755955321460&domain=mlp.com"
+    },
+    {
+      "department": "Information Technology",
+      "id": "f2c593f6539c317a",
+      "location": "Dublin, Ireland",
+      "title": "Software Engineer - Python",
+      "url": "https://career.mlp.com/careers?pid=755955321461&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -7953,13 +7932,6 @@
     },
     {
       "department": "Information Technology",
-      "id": "ddf00b77df3b168d",
-      "location": "Singapore, Singapore",
-      "title": "Java Algo Developer - EQ Trading Technology",
-      "url": "https://career.mlp.com/careers?pid=755954364253&domain=mlp.com"
-    },
-    {
-      "department": "Information Technology",
       "id": "5a6ac1cb0ea682ad",
       "location": "Bangalore, Karnataka, India",
       "title": "Senior Data Engineer",
@@ -7978,6 +7950,13 @@
       "location": "London, United Kingdom",
       "title": "Business Analyst - Corporate Actions",
       "url": "https://career.mlp.com/careers?pid=755954367639&domain=mlp.com"
+    },
+    {
+      "department": "Information Technology",
+      "id": "ddf00b77df3b168d",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Java Algo Developer - EQ Trading Technology",
+      "url": "https://career.mlp.com/careers?pid=755954364253&domain=mlp.com"
     },
     {
       "department": "Capital Development & Investor Relations",
@@ -8030,17 +8009,17 @@
     },
     {
       "department": "Information Technology",
-      "id": "c8bfc63e4f6a62fe",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Java Algo Developer - EQ Trading Technology",
-      "url": "https://career.mlp.com/careers?pid=755954170596&domain=mlp.com"
-    },
-    {
-      "department": "Information Technology",
       "id": "c579d41b5612185a",
       "location": "Tokyo, Tokyo, Japan",
       "title": "Data Center Engineer",
       "url": "https://career.mlp.com/careers?pid=755954253804&domain=mlp.com"
+    },
+    {
+      "department": "Information Technology",
+      "id": "c8bfc63e4f6a62fe",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Java Algo Developer - EQ Trading Technology",
+      "url": "https://career.mlp.com/careers?pid=755954170596&domain=mlp.com"
     },
     {
       "department": "Human Resources",
@@ -9367,7 +9346,7 @@
     {
       "department": "Compliance",
       "id": "8531774002",
-      "location": "United States",
+      "location": "Stamford",
       "title": "Devops Engineer, Surveillance",
       "url": "https://boards.greenhouse.io/point72/jobs/8531774002?gh_jid=8531774002"
     },
@@ -12912,6 +12891,13 @@
     },
     {
       "department": "Trading",
+      "id": "8453259002",
+      "location": "Austin, TX",
+      "title": "ETF Pricing Analyst",
+      "url": "https://job-boards.greenhouse.io/virtu/jobs/8453259002"
+    },
+    {
+      "department": "Trading",
       "id": "8522534002",
       "location": "Singapore",
       "title": "ETF Trader ",
@@ -12954,17 +12940,17 @@
     },
     {
       "department": "Research",
-      "id": "8017272002",
-      "location": "New York",
-      "title": "Options Quantitative Strategist ",
-      "url": "https://job-boards.greenhouse.io/virtu/jobs/8017272002"
-    },
-    {
-      "department": "Research",
       "id": "5360031002",
       "location": "Singapore",
       "title": "Options Quantitative Strategist ",
       "url": "https://job-boards.greenhouse.io/virtu/jobs/5360031002"
+    },
+    {
+      "department": "Research",
+      "id": "8017272002",
+      "location": "New York",
+      "title": "Options Quantitative Strategist ",
+      "url": "https://job-boards.greenhouse.io/virtu/jobs/8017272002"
     },
     {
       "department": "Trading",
@@ -13073,6 +13059,13 @@
     },
     {
       "department": "IT",
+      "id": "4789613002",
+      "location": "Dublin, Ireland; London, United Kingdom",
+      "title": "Systems Engineer",
+      "url": "https://job-boards.greenhouse.io/virtu/jobs/4789613002"
+    },
+    {
+      "department": "IT",
       "id": "6153489002",
       "location": "Austin, TX; New York",
       "title": "Systems Engineer",
@@ -13086,13 +13079,6 @@
       "url": "https://job-boards.greenhouse.io/virtu/jobs/6209099002"
     },
     {
-      "department": "IT",
-      "id": "4789613002",
-      "location": "Dublin, Ireland; London, United Kingdom",
-      "title": "Systems Engineer",
-      "url": "https://job-boards.greenhouse.io/virtu/jobs/4789613002"
-    },
-    {
       "department": "Human Resources",
       "id": "4290346002",
       "location": "Austin, TX; New York",
@@ -13101,17 +13087,17 @@
     },
     {
       "department": "Operations",
-      "id": "5830844002",
-      "location": "Austin, TX",
-      "title": "Trading Operations Analyst",
-      "url": "https://job-boards.greenhouse.io/virtu/jobs/5830844002"
-    },
-    {
-      "department": "Operations",
       "id": "4796163002",
       "location": "Singapore",
       "title": "Trading Operations Analyst",
       "url": "https://job-boards.greenhouse.io/virtu/jobs/4796163002"
+    },
+    {
+      "department": "Operations",
+      "id": "5830844002",
+      "location": "Austin, TX",
+      "title": "Trading Operations Analyst",
+      "url": "https://job-boards.greenhouse.io/virtu/jobs/5830844002"
     },
     {
       "department": "Operations",
