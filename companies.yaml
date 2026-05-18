@@ -75,7 +75,7 @@ companies:
 
   - name: "Maven Securities"
     type: greenhouse
-    board_token: maven
+    board_token: maventrading
 
   - name: "Old Mission Capital"
     type: greenhouse
