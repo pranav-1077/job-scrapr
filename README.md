@@ -96,57 +96,17 @@ To add a company:
 
 launchd is macOS's scheduler. It runs the job at **8:00 AM daily** and fires on next wake if the Mac was asleep at that time — no missed runs.
 
-**1. Create the plist file:**
+**1. Install the schedule:**
 
 ```bash
-mkdir -p ~/Library/LaunchAgents
+venv/bin/python scripts/setup_launchd.py
 ```
 
-Create `~/Library/LaunchAgents/com.job-scrapr.daily.plist` with the following content, replacing the paths with your own:
+This fills in your local paths in the plist template (`launchd/com.job-scrapr.daily.plist`) and installs it into `~/Library/LaunchAgents/`. Re-run if you ever move the repo.
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>Label</key>
-    <string>com.job-scrapr.daily</string>
-
-    <key>ProgramArguments</key>
-    <array>
-        <string>/path/to/job-scrapr/venv/bin/python</string>
-        <string>/path/to/job-scrapr/src/main.py</string>
-    </array>
-
-    <key>WorkingDirectory</key>
-    <string>/path/to/job-scrapr</string>
-
-    <key>StartCalendarInterval</key>
-    <dict>
-        <key>Hour</key>
-        <integer>8</integer>
-        <key>Minute</key>
-        <integer>0</integer>
-    </dict>
-
-    <key>StandardOutPath</key>
-    <string>/path/to/job-scrapr/logs/job-scrapr.log</string>
-
-    <key>StandardErrorPath</key>
-    <string>/path/to/job-scrapr/logs/job-scrapr-error.log</string>
-
-    <key>RunAtLoad</key>
-    <false/>
-</dict>
-</plist>
-```
-
-**2. Load and manage:**
+**2. Manage:**
 
 ```bash
-# Register the schedule (run once, and again after any edits to the plist)
-launchctl load ~/Library/LaunchAgents/com.job-scrapr.daily.plist
-
 # Trigger manually without waiting for 8 AM
 launchctl start com.job-scrapr.daily
 
