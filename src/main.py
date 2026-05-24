@@ -128,9 +128,11 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
     max_job_age_days: int = config.get("max_job_age_days", 60)
     cutoff: Optional[date] = date.today() - timedelta(days=max_job_age_days) if max_job_age_days else None
 
+    # partition companies by type
     active_companies = [c for c in companies if not c.get("disabled") and c.get("type") != "email_only"]
     email_only_companies: list[dict] = [c for c in companies if not c.get("disabled") and c.get("type") == "email_only"]
 
+    # playwright scrapers run first to claim worker slots before fast scrapers fill them
     fast = [c for c in active_companies if c.get("type") != "playwright"]
     slow = [c for c in active_companies if c.get("type") == "playwright"]
 
@@ -152,6 +154,7 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
         # Don't block shutdown on threads that are genuinely stuck.
         executor.shutdown(wait=False, cancel_futures=True)
 
+    # aggregate results
     all_new_jobs: list[dict] = []
     all_removed_jobs: list[dict] = []
     errors: list[str] = [f"{n}: timed out after {total_timeout}s" for n in timed_out_names]
@@ -174,6 +177,7 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
     if errors:
         log.warning("Completed with %d error(s):\n  %s", len(errors), "\n  ".join(errors))
 
+    # send email
     should_email = bool(all_new_jobs) or (notify_removed and bool(all_removed_jobs))
     removed_for_email = all_removed_jobs if notify_removed else []
 

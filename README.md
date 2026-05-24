@@ -25,20 +25,40 @@ cp .env.example .env
 # generate one at https://myaccount.google.com/apppasswords
 ```
 
+## Project structure
+
+```
+src/
+  main.py          — entry point: config loading, parallel scraping, email dispatch
+  notifier.py      — builds and sends the HTML/plain-text digest email
+  state.py         — tracks seen jobs in data/seen_jobs.json
+  scrapers/
+    base.py        — Job dataclass and BaseScraper interface
+    greenhouse.py  — Greenhouse JSON API
+    lever.py       — Lever JSON API
+    ashby.py       — Ashby JSON API
+    eightfold.py   — Eightfold AI paginated API
+    generic.py     — generic HTML scraper (BeautifulSoup)
+    playwright_scraper.py — headless Chromium for JS-rendered pages
+companies.yaml     — list of firms and their scraper config
+config.yaml        — email settings, filters, timeouts
+data/seen_jobs.json — persisted job state (committed by CI after each run)
+```
+
 ## Usage
 
 ```bash
 # First run: snapshot current jobs without sending email
-python main.py --catalog-only
+python src/main.py --catalog-only
 
 # Normal run: email any new postings since last run
-python main.py
+python src/main.py
 
 # Check which boards are reachable
-python main.py --verify-boards
+python src/main.py --verify-boards
 
 # Scrape without sending email (for testing)
-python main.py --dry-run
+python src/main.py --dry-run
 ```
 
 ## Config

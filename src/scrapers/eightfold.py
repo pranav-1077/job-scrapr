@@ -33,6 +33,7 @@ class EightfoldScraper(BaseScraper):
         jobs: list[Job] = []
         start = 0
 
+        # paginate through all positions
         while True:
             resp = requests.get(
                 api_base,

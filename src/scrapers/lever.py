@@ -20,6 +20,7 @@ class LeverScraper(BaseScraper):
         jobs = []
         for item in data:
             cats = item.get("categories") or {}
+            # convert millisecond timestamp to ISO date
             created_ms = item.get("createdAt")
             posted_at = (
                 datetime.datetime.fromtimestamp(created_ms / 1000, tz=datetime.timezone.utc)

@@ -18,11 +18,13 @@ class GreenhouseScraper(BaseScraper):
 
         jobs = []
         for item in data.get("jobs", []):
+            # first department or empty string
             dept = ""
             depts = item.get("departments") or []
             if depts:
                 dept = depts[0].get("name", "")
 
+            # normalize to ISO date
             raw_date = item.get("first_published") or item.get("updated_at")
             posted_at = raw_date[:10] if raw_date else None
 
