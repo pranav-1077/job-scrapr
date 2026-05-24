@@ -87,14 +87,11 @@ To add a company:
   board_token: acme      # greenhouse only
   # careers_url: "..."   # generic/cffi only
   # disabled: true       # skip without deleting
-  # disabled_on_ci: true # skip on GitHub Actions only (e.g. Cloudflare-protected)
 ```
 
-## Scheduled runs
+## Scheduled runs (macOS launchd)
 
-### Local (macOS launchd)
-
-launchd is macOS's scheduler. It runs the job at **8:00 AM daily** and fires on next wake if the Mac was asleep at that time — no missed runs.
+launchd runs the job at **8:00 AM daily** and fires on next wake if the Mac was asleep at that time — no missed runs.
 
 **1. Install the schedule:**
 
@@ -120,22 +117,3 @@ tail -f logs/job-scrapr-error.log
 # Unload (stop scheduling)
 launchctl unload ~/Library/LaunchAgents/com.job-scrapr.daily.plist
 ```
-
-### GitHub Actions
-
-The workflow in `.github/workflows/scrape.yml` runs on a schedule and commits updated state back to `main`.
-
-> **Note:** Companies with `disabled_on_ci: true` in `companies.yaml` are automatically skipped when running on GitHub Actions (the `CI=true` environment variable is set automatically). Use this flag for any company whose career site blocks datacenter IPs.
-
-**One-time setup:**
-
-1. Go to **Settings → Secrets and variables → Actions → New repository secret** and add:
-   - `SMTP_PASSWORD` — Gmail App Password
-   - `EMAIL_SENDER` — sending address (e.g. `you@gmail.com`)
-   - `EMAIL_RECIPIENTS` — comma-separated recipients
-
-2. Push `main` to GitHub — the workflow appears under the Actions tab.
-
-3. **First run:** trigger manually via **Actions → Daily Job Scrape → Run workflow** with the **"Catalog jobs without sending email"** box checked. This snapshots all current jobs so the next run only emails genuinely new postings.
-
-Runs weekdays at **8:00 AM PT** (`0 15 * * 1-5` UTC). Adjust the cron in `.github/workflows/scrape.yml` to change the schedule.

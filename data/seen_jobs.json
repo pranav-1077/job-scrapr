@@ -9295,18 +9295,18 @@
       "url": "https://career.mlp.com/careers?pid=755956012709&domain=mlp.com"
     },
     {
-      "department": "Information Technology",
-      "id": "2802b05c4d21bfad",
-      "location": "Singapore, Singapore",
-      "title": "Senior C++ Engineer - High Frequency Trading",
-      "url": "https://career.mlp.com/careers?pid=755955997873&domain=mlp.com"
-    },
-    {
       "department": "Trading",
       "id": "5c5ec7dd4820f225",
       "location": "Bangalore, Karnataka, India",
       "title": "Equity Research Analyst",
       "url": "https://career.mlp.com/careers?pid=755955997020&domain=mlp.com"
+    },
+    {
+      "department": "Information Technology",
+      "id": "2802b05c4d21bfad",
+      "location": "Singapore, Singapore",
+      "title": "Senior C++ Engineer - High Frequency Trading",
+      "url": "https://career.mlp.com/careers?pid=755955997873&domain=mlp.com"
     },
     {
       "department": "Trading",
@@ -9337,18 +9337,18 @@
       "url": "https://career.mlp.com/careers?pid=755955930291&domain=mlp.com"
     },
     {
-      "department": "Information Technology",
-      "id": "9c8e051735522e80",
-      "location": "Sydney, New South Wales, Australia",
-      "title": "Support Engineer",
-      "url": "https://career.mlp.com/careers?pid=755955919329&domain=mlp.com"
-    },
-    {
       "department": "Execution Services",
       "id": "314f18bdb6623da4",
       "location": "Hong Kong, Hong Kong",
       "title": "Senior Quantitative Analyst",
       "url": "https://career.mlp.com/careers?pid=755955914481&domain=mlp.com"
+    },
+    {
+      "department": "Information Technology",
+      "id": "9c8e051735522e80",
+      "location": "Sydney, New South Wales, Australia",
+      "title": "Support Engineer",
+      "url": "https://career.mlp.com/careers?pid=755955919329&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -9533,13 +9533,6 @@
       "url": "https://career.mlp.com/careers?pid=755955407188&domain=mlp.com"
     },
     {
-      "department": "Finance",
-      "id": "d5b00b306747ab00",
-      "location": "Dublin, Ireland",
-      "title": "FP&A Analyst",
-      "url": "https://career.mlp.com/careers?pid=755955393275&domain=mlp.com"
-    },
-    {
       "department": "Operations & Middle Office",
       "id": "67ada2b8afd082cb",
       "location": "Bangalore, Karnataka, India",
@@ -9552,6 +9545,13 @@
       "location": "London, United Kingdom",
       "title": "Software Engineer \u2013 Equity Derivatives Pricing & Risk System",
       "url": "https://career.mlp.com/careers?pid=755955392398&domain=mlp.com"
+    },
+    {
+      "department": "Finance",
+      "id": "d5b00b306747ab00",
+      "location": "Dublin, Ireland",
+      "title": "FP&A Analyst",
+      "url": "https://career.mlp.com/careers?pid=755955393275&domain=mlp.com"
     },
     {
       "department": "Information Technology",

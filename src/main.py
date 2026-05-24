@@ -129,13 +129,7 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
     cutoff: Optional[date] = date.today() - timedelta(days=max_job_age_days) if max_job_age_days else None
 
     # partition companies by type
-    is_ci = os.getenv("CI", "").lower() in ("true", "1", "yes")
-    active_companies = [
-        c for c in companies
-        if not c.get("disabled")
-        and c.get("type") != "email_only"
-        and not (is_ci and c.get("disabled_on_ci"))
-    ]
+    active_companies = [c for c in companies if not c.get("disabled") and c.get("type") != "email_only"]
     email_only_companies: list[dict] = [c for c in companies if not c.get("disabled") and c.get("type") == "email_only"]
 
     # playwright scrapers run first to claim worker slots before fast scrapers fill them
