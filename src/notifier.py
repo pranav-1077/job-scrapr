@@ -45,7 +45,6 @@ class EmailNotifier:
             server.login(self.config["sender"], password)
             server.sendmail(self.config["sender"], recipients, msg.as_string())
 
-    # ── Plain text ──────────────────────────────────────────────────────────────
     def _build_plain(self, jobs: list[dict], email_only: list[dict],
                      removed_jobs: list[dict] | None = None) -> str:
         by_company: dict[str, list] = defaultdict(list)
@@ -90,7 +89,6 @@ class EmailNotifier:
 
         return "\n".join(lines)
 
-    # ── HTML ────────────────────────────────────────────────────────────────────
     def _build_html(self, jobs: list[dict], email_only: list[dict],
                     removed_jobs: list[dict] | None = None) -> str:
         by_company: dict[str, list] = defaultdict(list)

@@ -1,4 +1,3 @@
-# ── Company job-board definitions ───────────────────────────────────────────────
 #
 # Fields:
 #   name         Display name
@@ -15,11 +14,8 @@
 #
 # All Greenhouse tokens live-verified. Generic URLs HTTP-verified.
 # Firms marked "private" have no known public job board; set disabled:true to skip.
-# ─────────────────────────────────────────────────────────────────────────────────
 
 companies:
-
-  # ── Greenhouse (JSON API) ─────────────────────────────────────────────────────
 
   - name: "AQR Capital Management"
     type: greenhouse
@@ -113,7 +109,6 @@ companies:
     type: greenhouse
     board_token: tudorgroup
 
-  # ── Workday (JSON API) ────────────────────────────────────────────────────────
   # Note: Workday sites are behind Cloudflare and currently return errors for
   # automated requests. These entries will log warnings and return 0 jobs until
   # a browser-based solution is added (e.g. Playwright). Keep disabled for now.
@@ -138,7 +133,6 @@ companies:
     link_pattern: "CSJobDetail"
     playwright_wait_for: "a[href*='CSJobDetail']"
 
-  # ── Generic / custom career pages (HTML scrape) ───────────────────────────────
 
   - name: "3Red Partners"
     type: greenhouse
@@ -382,7 +376,6 @@ companies:
     careers_url: "https://www.xtxmarkets.com/careers/"
     link_pattern: "/careers/"
 
-  # ── Private firms (disabled by default) ──────────────────────────────────────
   # Enable individually if you find their career page URL.
 
   - name: "Albatross Labs"

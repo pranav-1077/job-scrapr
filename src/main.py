@@ -22,7 +22,6 @@ load_dotenv()
 log = logging.getLogger("job-scrapr")
 
 
-# ── Config loading ────────────────────────────────────────────────────────────
 
 def load_yaml(path: Path) -> dict | list:
     with open(path) as f:
@@ -45,7 +44,6 @@ def load_companies(companies_path: Path) -> list[dict]:
     return data["companies"]
 
 
-# ── Parallel scraping ─────────────────────────────────────────────────────────
 
 @dataclass
 class _ScrapeResult:
@@ -87,7 +85,6 @@ def _scrape_one(
         return _ScrapeResult(name=name, jobs=[], new_jobs=[], removed_jobs=[], error=str(exc))
 
 
-# ── Main scrape loop ──────────────────────────────────────────────────────────
 
 def _run_batch(
     companies: list[dict],
@@ -120,7 +117,7 @@ def _run_batch(
 
 def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_only: bool = False):
     raw_data_dir = config.get("data_dir", "./data")
-    data_dir = raw_data_dir if Path(raw_data_dir).is_absolute() else Path(__file__).parent / raw_data_dir
+    data_dir = raw_data_dir if Path(raw_data_dir).is_absolute() else Path(__file__).parent.parent / raw_data_dir
     state = JobState(str(data_dir))
     notifier = EmailNotifier(config["email"])
     keyword_filters: list[str] = config.get("keyword_filters", [])
@@ -199,7 +196,6 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
         log.info("No new or removed jobs found — no email sent.")
 
 
-# ── Board verification ────────────────────────────────────────────────────────
 
 def verify_boards(companies: list[dict]):
     """Quick HEAD/GET check that each board URL is reachable."""
@@ -252,7 +248,6 @@ def verify_boards(companies: list[dict]):
             print(f"  {name}  [{code}]  {url}")
 
 
-# ── Entry point ───────────────────────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(description="Scrape trading firm job boards and email new postings.")
@@ -271,7 +266,7 @@ def main():
         datefmt="%Y-%m-%d %H:%M:%S",
     )
 
-    root = Path(__file__).parent
+    root = Path(__file__).parent.parent
     config_path = Path(args.config) if Path(args.config).is_absolute() else root / args.config
     companies_path = Path(args.companies) if Path(args.companies).is_absolute() else root / args.companies
 

@@ -51,7 +51,7 @@ jobs:
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             FLAGS="$FLAGS --dry-run"
           fi
-          python main.py $FLAGS
+          python src/main.py $FLAGS
 
       - name: Commit updated state
         run: |

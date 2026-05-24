@@ -1,4 +1,3 @@
-# ── Email settings ──────────────────────────────────────────────────────────────
 email:
   # sender and recipients are injected via environment variables in CI:
   #   EMAIL_SENDER, EMAIL_RECIPIENTS (comma-separated)
@@ -8,7 +7,6 @@ email:
   # Set SMTP_PASSWORD in .env (Gmail App Password — NOT your account password)
   # Generate one at: https://myaccount.google.com/apppasswords
 
-# ── Filtering ────────────────────────────────────────────────────────────────────
 # Only report jobs whose title contains at least one of these keywords (case-insensitive).
 # Leave empty to receive ALL new postings.
 keyword_filters:
@@ -29,13 +27,10 @@ keyword_filters:
   - machine learning engineer
   - algorithmic
 
-# ── Storage ───────────────────────────────────────────────────────────────────────
 data_dir: ./data
 
-# ── Request behaviour ─────────────────────────────────────────────────────────────
 request_timeout: 30   # seconds per HTTP request
 
-# ── Parallelism ───────────────────────────────────────────────────────────────────
 max_workers: 10                # concurrent scrapers; keep low enough to avoid rate-limiting
 scraper_timeout: 60            # seconds per scraper (API/generic) before considered hung
 playwright_scraper_timeout: 120  # seconds per scraper (Playwright) — needs browser launch time
