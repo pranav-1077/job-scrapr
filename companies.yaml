@@ -119,6 +119,7 @@ companies:
     link_pattern: "/careers/details/"
     title_selector: "h2.visible"
     location_selector: "span.careers-listing-card__location"
+    disabled_on_ci: true
 
   - name: "Citadel Securities"
     type: cffi
@@ -126,6 +127,7 @@ companies:
     link_pattern: "/careers/details/"
     title_selector: "h2.visible"
     location_selector: "div.careers-listing-card__location"
+    disabled_on_ci: true
 
   - name: "Cubist Systematic Strategies"
     type: playwright
