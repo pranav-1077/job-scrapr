@@ -16,9 +16,6 @@ Each company in `companies.yaml` is assigned a scraper type:
 
 On each run, newly found jobs are diffed against the last saved state and only fresh postings (and any removed ones) are emailed. State is stored in `data/seen_jobs.json`.
 
-### Cloudflare-protected sites
-
-Citadel and Citadel Securities use `type: cffi`, which bypasses Cloudflare's TLS fingerprinting when run from a residential IP. **GitHub Actions runners use Azure datacenter IPs that Cloudflare blocks with a 403 regardless of TLS fingerprint.** Both companies have `disabled_on_ci: true` in `companies.yaml` — they are skipped on CI and should be scraped via a local scheduled run instead.
 
 ## Setup
 
@@ -95,16 +92,63 @@ To add a company:
 
 ## Scheduled runs
 
-### Local (macOS launchd) — recommended for full coverage
+### Local (macOS launchd)
 
-A launchd plist is included at `~/Library/LaunchAgents/com.pranav.job-scrapr.plist`. It runs at **8:00 AM daily** and fires on next wake if the Mac was asleep at that time.
+launchd is macOS's scheduler. It runs the job at **8:00 AM daily** and fires on next wake if the Mac was asleep at that time — no missed runs.
+
+**1. Create the plist file:**
 
 ```bash
-# Load (run once after cloning or editing the plist)
-launchctl load ~/Library/LaunchAgents/com.pranav.job-scrapr.plist
+mkdir -p ~/Library/LaunchAgents
+```
+
+Create `~/Library/LaunchAgents/com.job-scrapr.daily.plist` with the following content, replacing the paths with your own:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.job-scrapr.daily</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/path/to/job-scrapr/venv/bin/python</string>
+        <string>/path/to/job-scrapr/src/main.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/path/to/job-scrapr</string>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>8</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/path/to/job-scrapr/logs/job-scrapr.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/path/to/job-scrapr/logs/job-scrapr-error.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>
+```
+
+**2. Load and manage:**
+
+```bash
+# Register the schedule (run once, and again after any edits to the plist)
+launchctl load ~/Library/LaunchAgents/com.job-scrapr.daily.plist
 
 # Trigger manually without waiting for 8 AM
-launchctl start com.pranav.job-scrapr
+launchctl start com.job-scrapr.daily
 
 # Check status / last exit code
 launchctl list | grep job-scrapr
@@ -113,13 +157,15 @@ launchctl list | grep job-scrapr
 tail -f logs/job-scrapr.log
 tail -f logs/job-scrapr-error.log
 
-# Unload (to stop scheduling)
-launchctl unload ~/Library/LaunchAgents/com.pranav.job-scrapr.plist
+# Unload (stop scheduling)
+launchctl unload ~/Library/LaunchAgents/com.job-scrapr.daily.plist
 ```
 
-### GitHub Actions — partial coverage
+### GitHub Actions
 
-The workflow in `.github/workflows/scrape.yml` runs on a schedule and commits updated state back to `main`. Companies with `disabled_on_ci: true` (currently Citadel and Citadel Securities) are skipped.
+The workflow in `.github/workflows/scrape.yml` runs on a schedule and commits updated state back to `main`.
+
+> **Note:** Companies with `disabled_on_ci: true` in `companies.yaml` are automatically skipped when running on GitHub Actions (the `CI=true` environment variable is set automatically). Use this flag for any company whose career site blocks datacenter IPs.
 
 **One-time setup:**
 
