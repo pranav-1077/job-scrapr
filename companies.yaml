@@ -93,6 +93,10 @@ companies:
     type: greenhouse
     board_token: vaticlabs
 
+  - name: "Verition Fund Management"
+    type: greenhouse
+    board_token: veritiongroupllc
+
   - name: "Virtu Financial"
     type: greenhouse
     board_token: virtu
