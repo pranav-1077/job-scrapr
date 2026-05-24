@@ -6,6 +6,7 @@ from .ashby import AshbyScraper
 from .playwright_scraper import PlaywrightScraper
 from .eightfold import EightfoldScraper
 from .linkedin import LinkedInScraper
+from .salesforce import SalesforceScraper
 from .base import Job
 
 _SCRAPER_MAP = {
@@ -17,6 +18,7 @@ _SCRAPER_MAP = {
     "playwright": PlaywrightScraper,
     "eightfold": EightfoldScraper,
     "linkedin": LinkedInScraper,
+    "salesforce": SalesforceScraper,
 }
 
 

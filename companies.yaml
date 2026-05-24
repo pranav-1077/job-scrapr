@@ -153,9 +153,10 @@ companies:
     careers_url: "https://athenacr.hire.trakstar.com/"
 
   - name: "Balyasny Asset Management"
-    type: generic
+    type: salesforce
     careers_url: "https://bambusdev.my.site.com/s/"
-    disabled: true  # Salesforce Experience Cloud; JS-rendered; needs Playwright
+    data_id_contains: "REQ"
+    job_url_template: "https://bambusdev.my.site.com/s/details?jobReq={data_id}"
 
   - name: "Belvedere Trading"
     type: lever
