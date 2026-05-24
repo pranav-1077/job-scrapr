@@ -114,15 +114,18 @@ companies:
   # a browser-based solution is added (e.g. Playwright). Keep disabled for now.
 
   - name: "Citadel"
-    type: playwright
+    type: cffi
     careers_url: "https://www.citadel.com/careers/open-opportunities/"
     link_pattern: "/careers/details/"
-    title_selector: "h2"
-    disabled: true  # Cloudflare Turnstile blocks headless browsers
+    title_selector: "h2.visible"
+    location_selector: "span.careers-listing-card__location"
 
   - name: "Citadel Securities"
-    type: linkedin
-    linkedin_company_id: "15259345"
+    type: cffi
+    careers_url: "https://www.citadelsecurities.com/careers/open-opportunities/"
+    link_pattern: "/careers/details/"
+    title_selector: "h2.visible"
+    location_selector: "div.careers-listing-card__location"
 
   - name: "Cubist Systematic Strategies"
     type: playwright

@@ -1,6 +1,6 @@
 # job-scrapr
 
-Scrapes job boards at 97 quant/trading firms and emails new postings daily.
+Scrapes job boards at 100 quant/trading firms and emails new postings daily.
 
 ## How it works
 
@@ -8,7 +8,10 @@ Each company in `companies.yaml` is assigned a scraper type:
 
 - **greenhouse / lever / workday / ashby / eightfold** — hits the firm's public jobs API directly (fast, structured)
 - **generic** — fetches the careers page with a plain HTTP request and extracts job links via BeautifulSoup heuristics
+- **cffi** — uses `curl_cffi` to impersonate a real Chrome TLS fingerprint, bypassing Cloudflare bot detection without a browser
 - **playwright** — launches a headless Chromium browser for JS-rendered pages that require JavaScript execution
+- **salesforce** — Playwright-based scraper for Salesforce Experience Cloud career sites (pierces shadow DOM via locator API)
+- **linkedin** — scrapes a company's jobs tab via LinkedIn's public guest API (no login required)
 - **email_only** — no scraping; just reminds you to check the site manually
 
 On each run, newly found jobs are diffed against the last saved state and only fresh postings (and any removed ones) are emailed. State is stored in `data/seen_jobs.json`.
@@ -39,7 +42,10 @@ src/
     ashby.py       — Ashby JSON API
     eightfold.py   — Eightfold AI paginated API
     generic.py     — generic HTML scraper (BeautifulSoup)
+    cffi_scraper.py      — curl_cffi Chrome impersonation (Cloudflare bypass)
     playwright_scraper.py — headless Chromium for JS-rendered pages
+    salesforce.py        — Salesforce Experience Cloud (Playwright + shadow DOM)
+    linkedin.py          — LinkedIn guest API (no login)
 companies.yaml     — list of firms and their scraper config
 config.yaml        — email settings, filters, timeouts
 data/seen_jobs.json — persisted job state (committed by CI after each run)
