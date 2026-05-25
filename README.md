@@ -55,6 +55,8 @@ logs/job-scrapr.log — overwritten on each run; logs both terminal and schedule
 
 ## Usage
 
+Activate the venv first: `source venv/bin/activate`
+
 ```bash
 # First run: snapshot current jobs without sending email
 python src/main.py --catalog-only
