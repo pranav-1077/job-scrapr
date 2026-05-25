@@ -112,7 +112,6 @@ launchctl list | grep job-scrapr
 
 # View logs
 tail -f logs/job-scrapr.log
-tail -f logs/job-scrapr-error.log
 
 # Unload (stop scheduling)
 launchctl unload ~/Library/LaunchAgents/com.job-scrapr.daily.plist
