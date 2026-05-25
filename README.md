@@ -49,8 +49,8 @@ src/
     linkedin.py           — LinkedIn guest API (no login)
 companies.yaml     — list of firms and their scraper config
 config.yaml        — email settings, filters, timeouts
-data/seen_jobs.json — persisted job state (committed by CI after each run)
-logs/              — stdout/stderr from local launchd runs
+data/seen_jobs.json — persisted job state
+logs/job-scrapr.log — overwritten on each run; logs both terminal and scheduled runs
 ```
 
 ## Usage

@@ -8679,18 +8679,11 @@
       "url": "https://career.mlp.com/careers?pid=755956091198&domain=mlp.com"
     },
     {
-      "department": "Information Technology",
-      "id": "feaeb3b78402dbe6",
-      "location": "Miami, Florida, United States of America",
-      "title": "Production Support Engineer",
-      "url": "https://career.mlp.com/careers?pid=755956095325&domain=mlp.com"
-    },
-    {
-      "department": "Operations & Middle Office",
-      "id": "1969663b613cb0d3",
+      "department": "Compliance",
+      "id": "2ff48d9b5a30291d",
       "location": "New York, New York, United States of America",
-      "title": "Operations Specialist",
-      "url": "https://career.mlp.com/careers?pid=755956072672&domain=mlp.com"
+      "title": "Compliance Associate",
+      "url": "https://career.mlp.com/careers?pid=755956091922&domain=mlp.com"
     },
     {
       "department": "Finance",
@@ -8698,6 +8691,13 @@
       "location": "New York, New York, United States of America",
       "title": "WSO/Geneva Accounting & Integration Consultant",
       "url": "https://career.mlp.com/careers?pid=755956071108&domain=mlp.com"
+    },
+    {
+      "department": "Operations & Middle Office",
+      "id": "1969663b613cb0d3",
+      "location": "New York, New York, United States of America",
+      "title": "Operations Specialist",
+      "url": "https://career.mlp.com/careers?pid=755956072672&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -9246,13 +9246,6 @@
       "url": "https://career.mlp.com/careers?pid=755956102384&domain=mlp.com"
     },
     {
-      "department": "Human Resources",
-      "id": "7f2274a237749fee",
-      "location": "London, United Kingdom",
-      "title": "HR Process Improvement Specialist",
-      "url": "https://career.mlp.com/careers?pid=755956091889&domain=mlp.com"
-    },
-    {
       "department": "Information Technology",
       "id": "b9596389e83aeb75",
       "location": "Bangalore, Karnataka, India",
@@ -9268,10 +9261,10 @@
     },
     {
       "department": "Human Resources",
-      "id": "28d541ec90298232",
-      "location": "Bangalore, Karnataka, India",
-      "title": "Compensation Associate",
-      "url": "https://career.mlp.com/careers?pid=755956079058&domain=mlp.com"
+      "id": "7f2274a237749fee",
+      "location": "London, United Kingdom",
+      "title": "HR Process Improvement Specialist",
+      "url": "https://career.mlp.com/careers?pid=755956091889&domain=mlp.com"
     },
     {
       "department": "Human Resources",
@@ -9295,11 +9288,11 @@
       "url": "https://career.mlp.com/careers?pid=755956079331&domain=mlp.com"
     },
     {
-      "department": "Operations & Middle Office",
-      "id": "b1b13d4cef54dff7",
+      "department": "Human Resources",
+      "id": "28d541ec90298232",
       "location": "Bangalore, Karnataka, India",
-      "title": "Middle Office Specialist (Paper Docs)",
-      "url": "https://career.mlp.com/careers?pid=755956070339&domain=mlp.com"
+      "title": "Compensation Associate",
+      "url": "https://career.mlp.com/careers?pid=755956079058&domain=mlp.com"
     },
     {
       "department": "Finance",
@@ -9314,6 +9307,13 @@
       "location": "Singapore, Singapore",
       "title": "Full Stack Engineer - Java",
       "url": "https://career.mlp.com/careers?pid=755956069652&domain=mlp.com"
+    },
+    {
+      "department": "Operations & Middle Office",
+      "id": "b1b13d4cef54dff7",
+      "location": "Bangalore, Karnataka, India",
+      "title": "Middle Office Specialist (Paper Docs)",
+      "url": "https://career.mlp.com/careers?pid=755956070339&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -9337,18 +9337,18 @@
       "url": "https://career.mlp.com/careers?pid=755956012709&domain=mlp.com"
     },
     {
-      "department": "Trading",
-      "id": "5c5ec7dd4820f225",
-      "location": "Bangalore, Karnataka, India",
-      "title": "Equity Research Analyst",
-      "url": "https://career.mlp.com/careers?pid=755955997020&domain=mlp.com"
-    },
-    {
       "department": "Information Technology",
       "id": "2802b05c4d21bfad",
       "location": "Singapore, Singapore",
       "title": "Senior C++ Engineer - High Frequency Trading",
       "url": "https://career.mlp.com/careers?pid=755955997873&domain=mlp.com"
+    },
+    {
+      "department": "Trading",
+      "id": "5c5ec7dd4820f225",
+      "location": "Bangalore, Karnataka, India",
+      "title": "Equity Research Analyst",
+      "url": "https://career.mlp.com/careers?pid=755955997020&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -9379,6 +9379,13 @@
       "url": "https://career.mlp.com/careers?pid=755955930291&domain=mlp.com"
     },
     {
+      "department": "Execution Services",
+      "id": "314f18bdb6623da4",
+      "location": "Hong Kong, Hong Kong",
+      "title": "Senior Quantitative Analyst",
+      "url": "https://career.mlp.com/careers?pid=755955914481&domain=mlp.com"
+    },
+    {
       "department": "Information Technology",
       "id": "9c8e051735522e80",
       "location": "Sydney, New South Wales, Australia",
@@ -9386,11 +9393,11 @@
       "url": "https://career.mlp.com/careers?pid=755955919329&domain=mlp.com"
     },
     {
-      "department": "Execution Services",
-      "id": "314f18bdb6623da4",
+      "department": "Information Technology",
+      "id": "d90ddaec54dbaebb",
       "location": "Hong Kong, Hong Kong",
-      "title": "Senior Quantitative Analyst",
-      "url": "https://career.mlp.com/careers?pid=755955914481&domain=mlp.com"
+      "title": "Trading Applications Support Engineer - Derivatives Analytics",
+      "url": "https://career.mlp.com/careers?pid=755955822770&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -9405,13 +9412,6 @@
       "location": "Bangalore, Karnataka, India",
       "title": "Fixed Income Specialist - NAM Shift",
       "url": "https://career.mlp.com/careers?pid=755955846680&domain=mlp.com"
-    },
-    {
-      "department": "Information Technology",
-      "id": "d90ddaec54dbaebb",
-      "location": "Hong Kong, Hong Kong",
-      "title": "Trading Applications Support Engineer - Derivatives Analytics",
-      "url": "https://career.mlp.com/careers?pid=755955822770&domain=mlp.com"
     },
     {
       "department": "Information Technology",

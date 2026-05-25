@@ -22,9 +22,6 @@
         <integer>0</integer>
     </dict>
 
-    <key>StandardErrorPath</key>
-    <string>{{REPO_DIR}}/logs/job-scrapr-error.log</string>
-
     <key>RunAtLoad</key>
     <false/>
 </dict>

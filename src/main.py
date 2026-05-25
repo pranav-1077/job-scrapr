@@ -269,15 +269,14 @@ def main():
     log_file = root / "logs" / "job-scrapr.log"
     log_file.parent.mkdir(exist_ok=True)
 
-    handlers: list[logging.Handler] = [logging.StreamHandler()]
-    if not sys.stdout.isatty():
-        handlers.append(logging.FileHandler(log_file, mode="w"))
-
     logging.basicConfig(
         level=logging.DEBUG if args.verbose else logging.INFO,
         format="%(asctime)s  %(levelname)-8s  %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
-        handlers=handlers,
+        handlers=[
+            logging.StreamHandler(),
+            logging.FileHandler(log_file, mode="w"),
+        ],
     )
     config_path = Path(args.config) if Path(args.config).is_absolute() else root / args.config
     companies_path = Path(args.companies) if Path(args.companies).is_absolute() else root / args.companies
@@ -293,4 +292,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception:
+        logging.getLogger("job-scrapr").exception("Fatal error")
+        sys.exit(1)
