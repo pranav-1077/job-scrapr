@@ -4,6 +4,7 @@
 import argparse
 import logging
 import os
+import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError as FuturesTimeoutError
 from dataclasses import dataclass
 from datetime import date, timedelta
@@ -264,13 +265,20 @@ def main():
     parser.add_argument("-v", "--verbose", action="store_true")
     args = parser.parse_args()
 
+    root = Path(__file__).parent.parent
+    log_file = root / "logs" / "job-scrapr.log"
+    log_file.parent.mkdir(exist_ok=True)
+
+    handlers: list[logging.Handler] = [logging.StreamHandler()]
+    if not sys.stdout.isatty():
+        handlers.append(logging.FileHandler(log_file, mode="w"))
+
     logging.basicConfig(
         level=logging.DEBUG if args.verbose else logging.INFO,
         format="%(asctime)s  %(levelname)-8s  %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
+        handlers=handlers,
     )
-
-    root = Path(__file__).parent.parent
     config_path = Path(args.config) if Path(args.config).is_absolute() else root / args.config
     companies_path = Path(args.companies) if Path(args.companies).is_absolute() else root / args.companies
 

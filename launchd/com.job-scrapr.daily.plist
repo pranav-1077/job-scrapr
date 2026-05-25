@@ -7,10 +7,12 @@
 
     <key>ProgramArguments</key>
     <array>
-        <string>/bin/bash</string>
-        <string>-c</string>
-        <string>cd {{REPO_DIR}} && exec {{PYTHON}} src/main.py 2>&1</string>
+        <string>{{PYTHON}}</string>
+        <string>{{REPO_DIR}}/src/main.py</string>
     </array>
+
+    <key>WorkingDirectory</key>
+    <string>{{REPO_DIR}}</string>
 
     <key>StartCalendarInterval</key>
     <dict>
@@ -20,8 +22,8 @@
         <integer>0</integer>
     </dict>
 
-    <key>StandardOutPath</key>
-    <string>{{REPO_DIR}}/logs/job-scrapr.log</string>
+    <key>StandardErrorPath</key>
+    <string>{{REPO_DIR}}/logs/job-scrapr-error.log</string>
 
     <key>RunAtLoad</key>
     <false/>
