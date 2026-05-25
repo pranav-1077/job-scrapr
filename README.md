@@ -1,12 +1,14 @@
 # job-scrapr
 
-Scrapes job boards at 100 quant/trading firms and emails new postings daily.
+Scrapes job boards at 99 quant/trading firms and emails new postings daily.
 
 ## How it works
 
 Each company in `companies.yaml` is assigned a scraper type:
 
 - **greenhouse / lever / workday / ashby / eightfold** — hits the firm's public jobs API directly (fast, structured)
+- **workable** — Workable public jobs API (`apply.workable.com`)
+- **pinpoint** — Pinpoint HQ public jobs API (`*.pinpointhq.com`)
 - **generic** — fetches the careers page with a plain HTTP request and extracts job links via BeautifulSoup heuristics
 - **cffi** — uses `curl_cffi` to impersonate a real Chrome TLS fingerprint, bypassing Cloudflare bot detection without a browser
 - **playwright** — launches a headless Chromium browser for JS-rendered pages that require JavaScript execution
@@ -47,6 +49,8 @@ src/
     playwright_scraper.py — headless Chromium for JS-rendered pages
     salesforce.py         — Salesforce Experience Cloud (Playwright + shadow DOM)
     linkedin.py           — LinkedIn guest API (no login)
+    workable.py           — Workable public jobs API
+    pinpoint.py           — Pinpoint HQ public jobs API
 companies.yaml     — list of firms and their scraper config
 config.yaml        — email settings, filters, timeouts
 data/seen_jobs.json — persisted job state
@@ -85,10 +89,14 @@ EMAIL_RECIPIENTS=you@gmail.com
 To add a company:
 ```yaml
 - name: "Acme Capital"
-  type: greenhouse       # or: generic, cffi, lever, ashby, ...
-  board_token: acme      # greenhouse only
-  # careers_url: "..."   # generic/cffi only
-  # disabled: true       # skip without deleting
+  type: greenhouse          # or: lever, workday, ashby, eightfold, workable, pinpoint,
+                            #     generic, cffi, playwright, salesforce, linkedin, email_only
+  board_token: acme         # greenhouse / ashby
+  # company_id: acme        # lever
+  # workday_base: "https://acme.wd5.myworkdayjobs.com"  # workday
+  # workday_path: "Acme"                                # workday
+  # careers_url: "..."      # generic / cffi / playwright / workable / pinpoint
+  # disabled: true          # skip without deleting
 ```
 
 ## Scheduled runs (macOS launchd)

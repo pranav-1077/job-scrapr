@@ -8,6 +8,8 @@ from .eightfold import EightfoldScraper
 from .linkedin import LinkedInScraper
 from .salesforce import SalesforceScraper
 from .cffi_scraper import CffiScraper
+from .workable import WorkableScraper
+from .pinpoint import PinpointScraper
 from .base import Job
 
 _SCRAPER_MAP = {
@@ -21,6 +23,8 @@ _SCRAPER_MAP = {
     "linkedin": LinkedInScraper,
     "salesforce": SalesforceScraper,
     "cffi": CffiScraper,
+    "workable": WorkableScraper,
+    "pinpoint": PinpointScraper,
 }
 
 

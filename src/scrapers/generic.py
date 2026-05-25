@@ -83,6 +83,10 @@ def _parse_jobs_from_html(
         if not text or len(text) < 4 or (not title_selector and len(text) > 200):
             continue
 
+        # Skip document/asset links
+        if re.search(r"\.(pdf|doc|docx|xls|xlsx|png|jpg|jpeg|gif|svg|zip)(\?|$)", href, re.I):
+            continue
+
         # Resolve URL
         if href.startswith("//"):
             href = "https:" + href

@@ -138,9 +138,6 @@ companies:
     type: greenhouse
     board_token: 3redpartners
 
-  - name: "Alphasimplex"
-    type: generic
-    careers_url: "https://www.alphasimplex.com/careers"
 
   - name: "Ansatz Capital"
     type: lever
@@ -148,8 +145,9 @@ companies:
 
 
   - name: "Arrowstreet Capital"
-    type: generic
-    careers_url: "https://arrowstreetcapital.com/"
+    type: workday
+    workday_base: "https://arrowstreetcapital.wd5.myworkdayjobs.com"
+    workday_path: "Campus_Careers"
 
   - name: "Athena Capital Research"
     type: generic
@@ -174,9 +172,8 @@ companies:
     board_token: boerboeltrading
 
   - name: "Bridgewater Associates"
-    type: generic
-    careers_url: "https://www.bridgewater.com/careers"
-    link_pattern: "/careers"
+    type: greenhouse
+    board_token: bridgewater89
 
   - name: "Crabel Capital"
     type: greenhouse
@@ -189,19 +186,16 @@ companies:
     title_selector: "span.job-display-name"
 
   - name: "DRW"
-    type: generic
-    careers_url: "https://drw.com/careers/"
-    link_pattern: "/careers/"
+    type: greenhouse
+    board_token: drweng
 
   - name: "DV Trading"
     type: greenhouse
     board_token: dvtrading
 
   - name: "Eagle Seven"
-    type: generic
-    careers_url: "https://www.eagleseven.com/"
-    link_pattern: "workable.com/jobs"
-    title_selector: "span.job-ti"
+    type: workable
+    careers_url: "https://apply.workable.com/eagle-seven/"
 
   - name: "Evergreen Statistical Trading"
     type: email_only
@@ -239,9 +233,8 @@ companies:
     careers_url: "https://www.hapcapital.com/career/"
 
   - name: "Headlands Technologies"
-    type: generic
-    careers_url: "https://www.headlandstech.com/careers/"
-    link_pattern: "/careers/"
+    type: email_only
+    email: "jobs@headlandstech.com"
 
   - name: "Hudson River Trading"
     type: playwright
@@ -257,8 +250,8 @@ companies:
     board_token: jumptrading
 
   - name: "Kepos Capital"
-    type: generic
-    careers_url: "https://keposcapital.com/"
+    type: email_only
+    email: "info@keposcapital.com"
 
 
   - name: "Laurion Capital Management"
@@ -276,8 +269,9 @@ companies:
     link_pattern: "/career-opportunities/"
 
   - name: "PanAgora Asset Management"
-    type: generic
-    careers_url: "https://www.panagora.com/careers/"
+    type: workday
+    workday_base: "https://empower.wd12.myworkdayjobs.com"
+    workday_path: "PanAgora"
 
   - name: "PDT Partners"
     type: greenhouse
@@ -294,8 +288,9 @@ companies:
     link_pattern: "/careers/"
 
   - name: "Quantlab"
-    type: generic
-    careers_url: "https://www.quantlab.com/careers/"
+    type: playwright
+    careers_url: "https://jobs.jobvite.com/quantlab/jobs"
+    link_pattern: "/quantlab/job/"
 
   - name: "Radix Trading"
     type: greenhouse
@@ -351,8 +346,8 @@ companies:
     company_id: valkyrietrading
 
   - name: "Voleon Group"
-    type: lever
-    company_id: voleon
+    type: ashby
+    board_token: voleon
 
   - name: "Voloridge Investment Management"
     type: generic
@@ -360,13 +355,12 @@ companies:
     link_pattern: "hiringthing.com"
 
   - name: "Walleye Trading"
-    type: generic
-    careers_url: "https://www.walleyetrading.com/"
+    type: greenhouse
+    board_token: walleyecapital-external-students
 
   - name: "Wolverine Trading"
-    type: generic
-    careers_url: "https://www.wolve.com/careers/"
-    link_pattern: "/careers/"
+    type: pinpoint
+    careers_url: "https://wolve.pinpointhq.com/"
 
   - name: "XR Trading"
     type: generic
