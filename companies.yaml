@@ -33,6 +33,10 @@ companies:
     type: greenhouse
     board_token: akunacapital
 
+  - name: "Centiva Capital"
+    type: email_only
+    careers_url: "https://centivacapital.com/#CONTACT"
+
   - name: "Chicago Trading Company"
     type: greenhouse
     board_token: chicagotrading
@@ -64,6 +68,10 @@ companies:
   - name: "Graham Capital Management"
     type: greenhouse
     board_token: grahamcapitalmanagement
+
+  - name: "HAP Capital"
+    type: lever
+    company_id: hap-capital
 
   - name: "IMC Trading"
     type: greenhouse
@@ -240,9 +248,6 @@ companies:
     type: generic
     careers_url: "https://www.hard8trading.com/careers/jobopportunities.html"
 
-  - name: "HAP Capital"
-    type: generic
-    careers_url: "https://www.hapcapital.com/career/"
 
   - name: "Headlands Technologies"
     type: email_only
@@ -312,6 +317,10 @@ companies:
     careers_url: "https://www.quantbot.com/careers/"
     link_pattern: "/careers/"
 
+  - name: "Quadrature Capital"
+    type: greenhouse
+    board_token: quadraturecapital
+
   - name: "Quantlab"
     type: playwright
     careers_url: "https://jobs.jobvite.com/quantlab/jobs"
@@ -348,6 +357,10 @@ companies:
   - name: "TGS Management"
     type: email_only
     careers_url: "https://jobs.lever.co/tgsmc/eeb03bfa-4314-440b-ac4c-77ca12215752"  # unlisted Lever posting; manual application only
+
+  - name: "Third Point"
+    type: email_only
+    email: "recruiting@thirdpoint.com"
 
   - name: "Tower Research Capital"
     type: greenhouse
