@@ -101,7 +101,7 @@ To add a company:
 
 ## Scheduled runs (macOS launchd)
 
-launchd runs the job at **8:00 AM daily** and fires on next wake if the Mac was asleep at that time — no missed runs.
+launchd runs the job at **8:00 AM daily** and fires on next wake if the Mac was asleep at that time — no missed runs. The script waits up to 60 seconds for network connectivity before starting, so it handles the case where the Mac wakes before Wi-Fi is ready.
 
 **1. Install the schedule:**
 

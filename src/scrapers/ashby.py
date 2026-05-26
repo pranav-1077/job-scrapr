@@ -1,19 +1,33 @@
 import hashlib
+import time
 import requests
 from .base import BaseScraper, Job
 
 API = "https://api.ashbyhq.com/posting-api/job-board/{slug}"
+_RETRIES = 3
+_BACKOFF = [5, 15]  # seconds to wait before retry 2 and 3
 
 
 class AshbyScraper(BaseScraper):
     def fetch_jobs(self) -> list[Job]:
         slug = self.company["board_token"]
-        resp = requests.get(
-            API.format(slug=slug),
-            timeout=30,
-            headers={"User-Agent": "job-scrapr/1.0"},
-        )
-        resp.raise_for_status()
+        last_exc = None
+        for attempt in range(_RETRIES):
+            if attempt:
+                time.sleep(_BACKOFF[attempt - 1])
+            try:
+                resp = requests.get(
+                    API.format(slug=slug),
+                    timeout=30,
+                    headers={"User-Agent": "job-scrapr/1.0"},
+                )
+                resp.raise_for_status()
+                break
+            except requests.exceptions.Timeout as exc:
+                last_exc = exc
+        else:
+            raise last_exc
+
         data = resp.json()
 
         jobs = []

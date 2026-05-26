@@ -22,6 +22,12 @@
         <integer>0</integer>
     </dict>
 
+    <key>StandardOutPath</key>
+    <string>{{REPO_DIR}}/logs/job-scrapr.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>{{REPO_DIR}}/logs/job-scrapr.log</string>
+
     <key>RunAtLoad</key>
     <false/>
 </dict>

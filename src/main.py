@@ -4,7 +4,9 @@
 import argparse
 import logging
 import os
+import socket
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError as FuturesTimeoutError
 from dataclasses import dataclass
 from datetime import date, timedelta
@@ -22,6 +24,19 @@ load_dotenv()
 
 log = logging.getLogger("job-scrapr")
 
+
+
+def wait_for_network(retries: int = 12, delay: int = 5) -> None:
+    """Block until a TCP connection to Google DNS succeeds, or raise after retries*delay seconds."""
+    for attempt in range(retries):
+        try:
+            with socket.create_connection(("8.8.8.8", 53), timeout=3):
+                return
+        except OSError:
+            if attempt < retries - 1:
+                log.info("Network not ready — retrying in %ds (%d/%d) …", delay, attempt + 1, retries)
+                time.sleep(delay)
+    raise RuntimeError(f"No network connectivity after {retries * delay}s — aborting")
 
 
 def load_yaml(path: Path) -> dict | list:
@@ -278,6 +293,9 @@ def main():
             logging.FileHandler(log_file, mode="w"),
         ],
     )
+    if not args.dry_run:
+        wait_for_network()
+
     config_path = Path(args.config) if Path(args.config).is_absolute() else root / args.config
     companies_path = Path(args.companies) if Path(args.companies).is_absolute() else root / args.companies
 
