@@ -1,6 +1,6 @@
 # job-scrapr
 
-Scrapes job boards at 99 quant/trading firms and emails new postings daily.
+Scrapes job boards at 106 quant/trading firms and emails new postings daily.
 
 ## How it works
 
@@ -77,8 +77,8 @@ python src/main.py --dry-run
 
 ## Config
 
-**`config.yaml`** — keyword filters, request settings  
-**`companies.yaml`** — add/remove/disable companies  
+**`config.yaml`** — keyword filters, request settings
+**`companies.yaml`** — add/remove/disable companies
 **`.env`** — secrets for local runs:
 ```
 SMTP_PASSWORD=your_gmail_app_password
@@ -101,7 +101,7 @@ To add a company:
 
 ## Scheduled runs (macOS launchd)
 
-launchd runs the job at **8:00 AM daily** and fires on next wake if the Mac was asleep at that time — no missed runs. The script waits up to 60 seconds for network connectivity before starting, so it handles the case where the Mac wakes before Wi-Fi is ready.
+launchd runs the job at **8:00 AM daily** and fires on next wake if the Mac was asleep at that time. The script waits up to 60 seconds for network connectivity before starting, so it handles the case where the Mac wakes before Wi-Fi is ready.
 
 **1. Install the schedule:**
 

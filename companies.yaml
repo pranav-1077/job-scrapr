@@ -21,6 +21,10 @@ companies:
     type: greenhouse
     board_token: aqr
 
+  - name: "Acadian Asset Management"
+    type: greenhouse
+    board_token: acadianassetmanagementllc
+
   - name: "Aquatic Capital Management"
     type: greenhouse
     board_token: aquaticcapitalmanagement
@@ -64,6 +68,10 @@ companies:
   - name: "IMC Trading"
     type: greenhouse
     board_token: imc
+
+  - name: "Man Group"
+    type: greenhouse
+    board_token: mangroup
 
   - name: "Marshall Wace"
     type: greenhouse
@@ -228,6 +236,10 @@ companies:
     link_pattern: "/job?in_iframe=1"
     title_selector: "h3"
 
+  - name: "Hard Eight Trading"
+    type: generic
+    careers_url: "https://www.hard8trading.com/careers/jobopportunities.html"
+
   - name: "HAP Capital"
     type: generic
     careers_url: "https://www.hapcapital.com/career/"
@@ -254,9 +266,18 @@ companies:
     email: "info@keposcapital.com"
 
 
+  - name: "LMR Partners"
+    type: email_only
+    careers_url: "https://www.lmrpartners.com/careers"
+    resume_email: opportunities@lmrpartners.com
+
   - name: "Laurion Capital Management"
     type: email_only
     resume_email: jobs@laurioncap.com
+
+  - name: "Millburn Ridgefield Corporation"
+    type: email_only
+    careers_url: "https://millburn.com/emerging-professional-inquiries"  # HubSpot form; manual apply only
 
   - name: "Millennium Management"
     type: eightfold
@@ -281,6 +302,10 @@ companies:
     type: generic
     careers_url: "https://peak6.com/careers/"
     link_pattern: "/careers/"
+
+  - name: "Qube Research & Technologies"
+    type: greenhouse
+    board_token: quberesearchandtechnologies
 
   - name: "Quantbot Technologies"
     type: generic
@@ -357,6 +382,10 @@ companies:
   - name: "Walleye Trading"
     type: greenhouse
     board_token: walleyecapital-external-students
+
+  - name: "Wintermute Trading"
+    type: lever
+    company_id: wintermute-trading
 
   - name: "Wolverine Trading"
     type: pinpoint
