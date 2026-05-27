@@ -7,8 +7,9 @@
 
     <key>ProgramArguments</key>
     <array>
-        <string>{{PYTHON}}</string>
-        <string>{{REPO_DIR}}/src/main.py</string>
+        <string>/bin/sh</string>
+        <string>-c</string>
+        <string>: &gt; "{{REPO_DIR}}/logs/job-scrapr.log" &amp;&amp; exec "{{PYTHON}}" "{{REPO_DIR}}/src/main.py" &gt;&gt; "{{REPO_DIR}}/logs/job-scrapr.log" 2&gt;&amp;1</string>
     </array>
 
     <key>WorkingDirectory</key>
@@ -22,11 +23,8 @@
         <integer>0</integer>
     </dict>
 
-    <key>StandardOutPath</key>
-    <string>{{REPO_DIR}}/logs/job-scrapr.log</string>
-
-    <key>StandardErrorPath</key>
-    <string>{{REPO_DIR}}/logs/job-scrapr.log</string>
+    <key>WaitForNetworkConnectivity</key>
+    <true/>
 
     <key>RunAtLoad</key>
     <false/>
