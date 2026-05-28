@@ -6,15 +6,15 @@ Scrapes job boards at 109 quant/trading firms and emails new postings daily.
 
 Each company in `companies.yaml` is assigned a scraper type:
 
-- **greenhouse / lever / workday / ashby / eightfold** — hits the firm's public jobs API directly (fast, structured)
-- **workable** — Workable public jobs API (`apply.workable.com`)
-- **pinpoint** — Pinpoint HQ public jobs API (`*.pinpointhq.com`)
-- **generic** — fetches the careers page with a plain HTTP request and extracts job links via BeautifulSoup heuristics
-- **cffi** — uses `curl_cffi` to impersonate a real Chrome TLS fingerprint, bypassing Cloudflare bot detection without a browser
-- **playwright** — launches a headless Chromium browser for JS-rendered pages that require JavaScript execution
-- **salesforce** — Playwright-based scraper for Salesforce Experience Cloud career sites (pierces shadow DOM via locator API)
-- **linkedin** — scrapes a company's jobs tab via LinkedIn's public guest API (no login required)
-- **email_only** — no scraping; just reminds you to check the site manually
+| Type | How it works |
+|---|---|
+| `greenhouse` `lever` `workday` `ashby` `eightfold` `workable` `pinpoint` | Public jobs API |
+| `generic` | HTTP request + BeautifulSoup |
+| `cffi` | Chrome TLS impersonation (Cloudflare bypass) |
+| `playwright` | Headless Chromium for JS-rendered pages |
+| `salesforce` | Playwright + shadow DOM for Salesforce career sites |
+| `linkedin` | LinkedIn public guest API |
+| `email_only` | No scraping — manual check reminder |
 
 On each run, newly found jobs are diffed against the last saved state and only fresh postings (and any removed ones) are emailed. State is stored in `data/seen_jobs.json`.
 
@@ -101,7 +101,7 @@ To add a company:
 
 ## Scheduled runs (macOS launchd)
 
-launchd runs the job at **8:00 AM daily** and fires on next wake if the Mac was asleep at that time. The script waits up to 60 seconds for network connectivity before starting, so it handles the case where the Mac wakes before Wi-Fi is ready.
+launchd runs the job at **8:00 AM daily**, waiting for network connectivity and waking the Mac if needed.
 
 **1. Install the schedule:**
 
