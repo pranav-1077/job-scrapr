@@ -1,6 +1,6 @@
 # job-scrapr
 
-Scrapes job boards at 109 quant/trading firms and emails new postings daily.
+Scrapes job boards at 111 quant/trading firms and emails new postings daily.
 
 ## How it works
 

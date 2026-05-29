@@ -289,6 +289,10 @@ companies:
     careers_url: "https://career.mlp.com/careers"
     eightfold_domain: "mlp.com"
 
+  - name: "Monarch Alternative Capital"
+    type: email_only
+    resume_email: hr@monarchlp.com
+
   - name: "Optiver"
     type: generic
     careers_url: "https://optiver.com/working-at-optiver/career-opportunities/"
