@@ -9,10 +9,11 @@ Each company in `companies.yaml` is assigned a scraper type:
 | Type | How it works |
 |---|---|
 | `greenhouse` `lever` `workday` `ashby` `eightfold` `workable` `pinpoint` | Public jobs API |
+| `jibe` | iCIMS/Jibe JSON API with category-facet pagination |
 | `generic` | HTTP request + BeautifulSoup |
 | `cffi` | Chrome TLS impersonation (Cloudflare bypass) |
 | `playwright` | Headless Chromium for JS-rendered pages |
-| `salesforce` | Playwright + shadow DOM for Salesforce career sites |
+| `salesforce` | Playwright + stealth for Salesforce Experience Cloud sites |
 | `linkedin` | LinkedIn public guest API |
 | `email_only` | No scraping — manual check reminder |
 
@@ -47,7 +48,8 @@ src/
     generic.py            — generic HTML scraper (BeautifulSoup)
     cffi_scraper.py       — curl_cffi Chrome impersonation (Cloudflare bypass)
     playwright_scraper.py — headless Chromium for JS-rendered pages
-    salesforce.py         — Salesforce Experience Cloud (Playwright + shadow DOM)
+    salesforce.py         — Salesforce Experience Cloud (Playwright + stealth)
+    jibe.py               — iCIMS/Jibe JSON API with category-facet pagination
     linkedin.py           — LinkedIn guest API (no login)
     workable.py           — Workable public jobs API
     pinpoint.py           — Pinpoint HQ public jobs API
@@ -90,12 +92,13 @@ To add a company:
 ```yaml
 - name: "Acme Capital"
   type: greenhouse          # or: lever, workday, ashby, eightfold, workable, pinpoint,
-                            #     generic, cffi, playwright, salesforce, linkedin, email_only
+                            #     jibe, generic, cffi, playwright, salesforce, linkedin, email_only
   board_token: acme         # greenhouse / ashby
   # company_id: acme        # lever
   # workday_base: "https://acme.wd5.myworkdayjobs.com"  # workday
   # workday_path: "Acme"                                # workday
-  # careers_url: "..."      # generic / cffi / playwright / workable / pinpoint
+  # careers_url: "..."      # generic / cffi / playwright / jibe / workable / pinpoint
+  # playwright_wait_for: "a[href*='/job/']"  # playwright: CSS selector to wait for before scraping
   # disabled: true          # skip without deleting
 ```
 
