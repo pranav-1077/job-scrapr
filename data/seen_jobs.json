@@ -2285,13 +2285,6 @@
     },
     {
       "department": "",
-      "id": "quantitative-developer-data-strategies-group",
-      "location": "New York",
-      "title": "Quantitative Developer \u2013 Data Strategies Group",
-      "url": "https://www.citadel.com/careers/details/quantitative-developer-data-strategies-group/"
-    },
-    {
-      "department": "",
       "id": "software-engineer-intern-europe",
       "location": "London",
       "title": "Software Engineer \u2013 Intern (Europe)",
@@ -2359,6 +2352,13 @@
       "location": "London, Paris, Zurich",
       "title": "Quantitative Researcher \u2013 PhD Intern (Europe)",
       "url": "https://www.citadel.com/careers/details/quantitative-researcher-phd-intern-europe/"
+    },
+    {
+      "department": "",
+      "id": "quantitative-developer-data-strategies-group",
+      "location": "New York",
+      "title": "Quantitative Developer \u2013 Data Strategies Group",
+      "url": "https://www.citadel.com/careers/details/quantitative-developer-data-strategies-group/"
     },
     {
       "department": "",
@@ -10286,13 +10286,6 @@
       "url": "https://career.mlp.com/careers?pid=755956330847&domain=mlp.com"
     },
     {
-      "department": "Information Technology",
-      "id": "b203c25d3a289f0e",
-      "location": "New York, New York, United States of America",
-      "title": "Platform Engineer - AI Core",
-      "url": "https://career.mlp.com/careers?pid=755956330927&domain=mlp.com"
-    },
-    {
       "department": "Trading",
       "id": "2f0697e35598133e",
       "location": "New York, New York, United States of America",
@@ -10305,6 +10298,13 @@
       "location": "New York, New York, United States of America",
       "title": "Quantitative Analyst, Quantitative Strategies",
       "url": "https://career.mlp.com/careers?pid=755956329760&domain=mlp.com"
+    },
+    {
+      "department": "Information Technology",
+      "id": "b203c25d3a289f0e",
+      "location": "New York, New York, United States of America",
+      "title": "Platform Engineer - AI Core",
+      "url": "https://career.mlp.com/careers?pid=755956330927&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -10328,13 +10328,6 @@
       "url": "https://career.mlp.com/careers?pid=755956250361&domain=mlp.com"
     },
     {
-      "department": "Equities Management",
-      "id": "99f61eb3e853f46a",
-      "location": "New York, New York, United States of America",
-      "title": "Business Manager",
-      "url": "https://career.mlp.com/careers?pid=755956235022&domain=mlp.com"
-    },
-    {
       "department": "Information Technology",
       "id": "e34ffd181504058d",
       "location": "New York, New York, United States of America",
@@ -10347,6 +10340,13 @@
       "location": "New York, New York, United States of America",
       "title": "Portfolio Pricing and Valuations Strats Analyst",
       "url": "https://career.mlp.com/careers?pid=755956235647&domain=mlp.com"
+    },
+    {
+      "department": "Equities Management",
+      "id": "99f61eb3e853f46a",
+      "location": "New York, New York, United States of America",
+      "title": "Business Manager",
+      "url": "https://career.mlp.com/careers?pid=755956235022&domain=mlp.com"
     },
     {
       "department": "Treasury",
@@ -10503,13 +10503,6 @@
       "url": "https://career.mlp.com/careers?pid=755955682418&domain=mlp.com"
     },
     {
-      "department": "Trading",
-      "id": "ec88b3e3f4a68afe",
-      "location": "Dallas, Texas, United States of America",
-      "title": "Analyst \u2013 Asset Based Finance",
-      "url": "https://career.mlp.com/careers?pid=755955623024&domain=mlp.com"
-    },
-    {
       "department": "Operations & Middle Office",
       "id": "47bb3927b6203275",
       "location": "New York, New York, United States of America",
@@ -10529,6 +10522,13 @@
       "location": "Dallas, Texas, United States of America",
       "title": "Analyst, Underwriter \u2013 Asset Based Finance",
       "url": "https://career.mlp.com/careers?pid=755955622440&domain=mlp.com"
+    },
+    {
+      "department": "Trading",
+      "id": "ec88b3e3f4a68afe",
+      "location": "Dallas, Texas, United States of America",
+      "title": "Analyst \u2013 Asset Based Finance",
+      "url": "https://career.mlp.com/careers?pid=755955623024&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -10888,13 +10888,6 @@
       "url": "https://career.mlp.com/careers?pid=755956359047&domain=mlp.com"
     },
     {
-      "department": "Information Technology",
-      "id": "6e3d88bd3fd59786",
-      "location": "Singapore, Singapore",
-      "title": "Project Manager - Infrastructure Technology",
-      "url": "https://career.mlp.com/careers?pid=755956339583&domain=mlp.com"
-    },
-    {
       "department": "Trading",
       "id": "4582de3d154b1769",
       "location": "Hong Kong, Hong Kong",
@@ -10914,6 +10907,13 @@
       "location": "London, London, United Kingdom",
       "title": "Senior Platform Engineer",
       "url": "https://career.mlp.com/careers?pid=755956344012&domain=mlp.com"
+    },
+    {
+      "department": "Information Technology",
+      "id": "6e3d88bd3fd59786",
+      "location": "Singapore, Singapore",
+      "title": "Project Manager - Infrastructure Technology",
+      "url": "https://career.mlp.com/careers?pid=755956339583&domain=mlp.com"
     },
     {
       "department": "Compliance",
@@ -11343,6 +11343,13 @@
       "url": "https://career.mlp.com/careers?pid=755955295716&domain=mlp.com"
     },
     {
+      "department": "Execution Services",
+      "id": "81883a79563cf4a1",
+      "location": "London, United Kingdom",
+      "title": "Sector Specialist Origination, TMT - EMEA",
+      "url": "https://career.mlp.com/careers?pid=755955286680&domain=mlp.com"
+    },
+    {
       "department": "Information Technology",
       "id": "f233ff5b43ff3237",
       "location": "Bangalore, Karnataka, India",
@@ -11358,10 +11365,10 @@
     },
     {
       "department": "Execution Services",
-      "id": "81883a79563cf4a1",
-      "location": "London, United Kingdom",
-      "title": "Sector Specialist Origination, TMT - EMEA",
-      "url": "https://career.mlp.com/careers?pid=755955286680&domain=mlp.com"
+      "id": "d1e3178c52c67ca5",
+      "location": "Dublin, Ireland",
+      "title": "Quantitative Development - DevOps Engineer",
+      "url": "https://career.mlp.com/careers?pid=755955223368&domain=mlp.com"
     },
     {
       "department": "Information Technology",
@@ -11369,13 +11376,6 @@
       "location": "London, United Kingdom",
       "title": "Infrastructure Technology Relationship Manager",
       "url": "https://career.mlp.com/careers?pid=755955223626&domain=mlp.com"
-    },
-    {
-      "department": "Execution Services",
-      "id": "d1e3178c52c67ca5",
-      "location": "Dublin, Ireland",
-      "title": "Quantitative Development - DevOps Engineer",
-      "url": "https://career.mlp.com/careers?pid=755955223368&domain=mlp.com"
     },
     {
       "department": "Operations & Middle Office",

@@ -1,7 +1,8 @@
+"""Generic HTML scraper using BeautifulSoup with heuristic job link detection"""
+
 import hashlib
 import re
 from urllib.parse import urljoin, urlparse
-
 import requests
 from bs4 import BeautifulSoup
 
@@ -16,14 +17,14 @@ HEADERS = {
     "Accept-Language": "en-US,en;q=0.9",
 }
 
-# Patterns that suggest a link is a job posting (not just navigation)
+# URL path segments that suggest a link points to a job posting
 JOB_URL_TERMS = re.compile(
     r"/(job|jobs|career|careers|position|positions|role|roles|opening|openings|"
     r"apply|hire|hiring|vacancy|vacancies|opportunity|opportunities)/",
     re.I,
 )
 
-# Words that strongly suggest a link text is a job title
+# words in link text that suggest the link is a job title
 JOB_TITLE_TERMS = re.compile(
     r"\b(engineer|developer|researcher|scientist|analyst|trader|quant|"
     r"quantitative|developer|programmer|architect|manager|director|"
@@ -33,22 +34,23 @@ JOB_TITLE_TERMS = re.compile(
     re.I,
 )
 
-# Link text that indicates a "next page" pagination link
 NEXT_PAGE_TEXT = re.compile(r"^(next|next page|›|»|>)$", re.I)
 
 MAX_PAGES = 20
 
 
 def _uid(text: str, url: str) -> str:
+    """Generates a short stable ID from job title and URL"""
     return hashlib.md5(f"{text}|{url}".encode()).hexdigest()[:16]
 
 
 def _find_next_page(soup: BeautifulSoup, base: str, current_url: str) -> str | None:
-    # Prefer rel="next"
+    """Returns the URL of the next pagination page or None if no next page exists"""
+    # prefer rel="next" as the most reliable signal
     tag = soup.find("a", rel="next", href=True)
     if tag:
         return urljoin(current_url, tag["href"])
-    # Fall back to text-based next link
+    # fall back to text-based detection
     for a in soup.find_all("a", href=True):
         if NEXT_PAGE_TEXT.match(a.get_text(strip=True)):
             return urljoin(current_url, a["href"])
@@ -62,10 +64,10 @@ def _parse_jobs_from_html(
     base: str,
     seen_urls: set[str],
 ) -> tuple[list[Job], str | None]:
-    """Extract job links from rendered HTML; returns (jobs, next_page_url)."""
+    """Extracts job links from rendered HTML and returns jobs plus the next page URL"""
     soup = BeautifulSoup(html, "lxml")
 
-    # Remove navigation/footer noise
+    # strip nav, footer, and scripts to reduce false positives
     for tag in soup.find_all(["nav", "footer", "script", "style"]):
         tag.decompose()
 
@@ -77,17 +79,17 @@ def _parse_jobs_from_html(
         text = a.get_text(" ", strip=True)
         href = a["href"]
 
-        # Skip empty / very long / obviously non-job links
-        # Length check skipped when title_selector is set — the selector extracts the title,
-        # so the full <a> text length is irrelevant.
+        # skip empty, very short, or very long link text
+        # length check is skipped when title_selector is set since the selector
+        # extracts the title independently of the anchor text length
         if not text or len(text) < 4 or (not title_selector and len(text) > 200):
             continue
 
-        # Skip document/asset links
+        # skip links to documents and media files
         if re.search(r"\.(pdf|doc|docx|xls|xlsx|png|jpg|jpeg|gif|svg|zip)(\?|$)", href, re.I):
             continue
 
-        # Resolve URL
+        # resolve relative URLs
         if href.startswith("//"):
             href = "https:" + href
         elif href.startswith("/"):
@@ -95,23 +97,19 @@ def _parse_jobs_from_html(
         elif not href.startswith("http"):
             href = urljoin(page_url, href)
 
-        # Filter by optional link_pattern from config
         if link_pattern and link_pattern not in href:
             continue
 
-        # Heuristic: either the URL or the link text suggests a job
+        # require either the URL or the link text to look job-related
         url_looks_like_job = bool(JOB_URL_TERMS.search(href))
         text_looks_like_job = bool(JOB_TITLE_TERMS.search(text))
-
         if not (url_looks_like_job or text_looks_like_job):
             continue
 
-        # Deduplicate by URL
         if href in seen_urls:
             continue
         seen_urls.add(href)
 
-        # If title_selector is set, only match if selector is found inside the <a> itself
         if title_selector:
             title_el = a.select_one(title_selector)
             if not title_el:
@@ -128,7 +126,10 @@ def _parse_jobs_from_html(
 
 
 class GenericScraper(BaseScraper):
+    """Scrapes career pages by fetching HTML and applying heuristic job link detection"""
+
     def fetch_jobs(self) -> list[Job]:
+        """Returns all job listings found by crawling the careers page"""
         careers_url = self.company["careers_url"]
         base = f"{urlparse(careers_url).scheme}://{urlparse(careers_url).netloc}"
 

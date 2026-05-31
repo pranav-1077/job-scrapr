@@ -1,5 +1,8 @@
+"""Scraper for Workable-powered job boards using the public API"""
+
 import requests
 from urllib.parse import urlparse
+
 from .base import BaseScraper, Job
 
 API = "https://apply.workable.com/api/v3/accounts/{slug}/jobs"
@@ -16,8 +19,12 @@ _HEADERS = {
 
 
 class WorkableScraper(BaseScraper):
+    """Fetches jobs from the Workable public jobs API"""
+
     def fetch_jobs(self) -> list[Job]:
+        """Returns all active job listings from the Workable board"""
         url = self.company["careers_url"].rstrip("/")
+        # extract the account slug from the careers URL path
         slug = urlparse(url).path.strip("/").split("/")[0]
 
         resp = requests.post(

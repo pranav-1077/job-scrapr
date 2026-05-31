@@ -1,4 +1,8 @@
+"""Scraper for Workday-powered job boards using the internal CXS JSON API"""
+
+import logging
 import requests
+
 from .base import BaseScraper, Job
 
 JOBS_ENDPOINT = "{base}/wday/cxs/{tenant}/{path}/jobs"
@@ -13,33 +17,35 @@ _HEADERS = {
     "Content-Type": "application/json",
 }
 
+log = logging.getLogger("job-scrapr")
+
 
 def _tenant_from_base(base: str) -> str:
+    """Extracts the Workday tenant name from the base URL"""
     host = base.replace("https://", "").replace("http://", "")
     return host.split(".")[0]
 
 
 class WorkdayScraper(BaseScraper):
+    """Fetches jobs from the Workday CXS internal API with CSRF token handling"""
+
     def fetch_jobs(self) -> list[Job]:
+        """Returns all active job listings from the Workday board"""
         base = self.company["workday_base"].rstrip("/")
         path = self.company["workday_path"]
         tenant = _tenant_from_base(base)
         api_url = JOBS_ENDPOINT.format(base=base, tenant=tenant, path=path)
 
-        # Workday requires a CSRF token obtained from the page session.
+        # prime session cookies and extract the CSRF token required by the API
         session = requests.Session()
         session.headers.update(_HEADERS)
-
-        # Prime session cookies + grab CSRF token
         page_url = f"{base}/{path}"
         page_resp = session.get(page_url, timeout=self.request_timeout, allow_redirects=True)
-        # Workday behind Cloudflare returns 500 for automated requests;
-        # log a warning and return empty rather than raising.
+
+        # Workday behind Cloudflare returns 4xx/5xx for automated requests
         if page_resp.status_code >= 400:
-            import logging
-            logging.getLogger("job-scrapr").warning(
-                "Workday page returned %d for %s — may require a browser. "
-                "Consider switching to type=generic in companies.yaml.",
+            log.warning(
+                "Workday page returned %d for %s, consider switching to type=generic",
                 page_resp.status_code, page_url,
             )
             return []
@@ -62,7 +68,7 @@ class WorkdayScraper(BaseScraper):
                 timeout=self.request_timeout,
             )
             if resp.status_code == 422:
-                # Some tenants return 422; fall back to returning what we have
+                # some tenants return 422 on the last page rather than an empty list
                 break
             resp.raise_for_status()
 

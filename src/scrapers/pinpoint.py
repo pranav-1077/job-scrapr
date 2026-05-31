@@ -1,5 +1,8 @@
+"""Scraper for Pinpoint HQ-powered job boards using the public JSON API"""
+
 import requests
 from urllib.parse import urlparse
+
 from .base import BaseScraper, Job
 
 API = "https://{subdomain}.pinpointhq.com/en/jobs.json"
@@ -16,7 +19,10 @@ _HEADERS = {
 
 
 class PinpointScraper(BaseScraper):
+    """Fetches jobs from the Pinpoint HQ public jobs API"""
+
     def fetch_jobs(self) -> list[Job]:
+        """Returns all active job listings from the Pinpoint board"""
         url = self.company["careers_url"].rstrip("/")
         subdomain = urlparse(url).hostname.split(".")[0]
 
@@ -26,7 +32,7 @@ class PinpointScraper(BaseScraper):
         jobs = []
         for item in resp.json().get("data", []):
             loc = item.get("location") or {}
-            dept = (item.get("department") or {})
+            dept = item.get("department") or {}
             jobs.append(Job(
                 id=str(item["id"]),
                 title=item.get("title", ""),

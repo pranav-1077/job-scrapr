@@ -1,17 +1,25 @@
+"""Scraper for Ashby-powered job boards using the public posting API"""
+
 import hashlib
 import time
 import requests
+
 from .base import BaseScraper, Job
 
 API = "https://api.ashbyhq.com/posting-api/job-board/{slug}"
 _RETRIES = 3
-_BACKOFF = [5, 15]  # seconds to wait before retry 2 and 3
+_BACKOFF = [5, 15]  # seconds between retry attempts
 
 
 class AshbyScraper(BaseScraper):
+    """Fetches jobs from the Ashby public job board API with retry on timeout"""
+
     def fetch_jobs(self) -> list[Job]:
+        """Returns all active job listings from the Ashby board"""
         slug = self.company["board_token"]
         last_exc = None
+
+        # retry with increasing backoff on timeout
         for attempt in range(_RETRIES):
             if attempt:
                 time.sleep(_BACKOFF[attempt - 1])
@@ -32,6 +40,7 @@ class AshbyScraper(BaseScraper):
 
         jobs = []
         for item in data.get("jobs", []):
+            # Ashby IDs are UUIDs, hash to a shorter stable identifier
             uid = hashlib.md5(item["id"].encode()).hexdigest()[:16]
             raw_date = item.get("publishedAt")
             posted_at = raw_date[:10] if raw_date else None

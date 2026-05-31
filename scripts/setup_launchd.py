@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-"""Install the launchd schedule for job-scrapr on macOS."""
+"""Installs the launchd schedule for job-scrapr on macOS"""
 
 import subprocess
 import sys
@@ -15,6 +14,7 @@ dest = LAUNCH_AGENTS / PLIST_NAME
 
 
 def main():
+    """Fills in path placeholders in the plist template and installs it into LaunchAgents"""
     if sys.platform != "darwin":
         print("launchd is macOS-only.")
         sys.exit(1)
@@ -24,13 +24,14 @@ def main():
         print("Run: python3 -m venv venv && venv/bin/pip install -r requirements.txt")
         sys.exit(1)
 
+    # substitute repo-specific paths into the plist template
     content = template.read_text()
     content = content.replace("{{REPO_DIR}}", str(repo_dir))
     content = content.replace("{{PYTHON}}", str(python))
 
     LAUNCH_AGENTS.mkdir(parents=True, exist_ok=True)
 
-    # unload existing job if present
+    # unload any previously installed version before overwriting
     if dest.exists():
         subprocess.run(["launchctl", "unload", str(dest)], capture_output=True)
 

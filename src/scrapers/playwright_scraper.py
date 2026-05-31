@@ -1,5 +1,8 @@
+"""Scraper for JS-rendered career pages using headless Chromium via Playwright"""
+
 import logging
 from urllib.parse import urlparse
+from playwright.sync_api import sync_playwright
 
 from .base import BaseScraper, Job
 from .generic import HEADERS, MAX_PAGES, _parse_jobs_from_html
@@ -8,15 +11,16 @@ log = logging.getLogger("job-scrapr")
 
 
 class PlaywrightScraper(BaseScraper):
-    def fetch_jobs(self) -> list[Job]:
-        try:
-            from playwright.sync_api import sync_playwright
-        except ImportError:
-            raise RuntimeError(
-                "playwright is not installed. "
-                "Run: pip install playwright && playwright install chromium"
-            )
+    """Renders career pages in a headless browser to capture JS-rendered job listings
 
+    Config keys:
+      careers_url        - URL of the careers listing page
+      link_pattern       - substring that job hrefs must contain
+      playwright_wait_for - optional CSS selector to wait for before extracting jobs
+    """
+
+    def fetch_jobs(self) -> list[Job]:
+        """Returns all job listings by rendering the careers page in a headless browser"""
         careers_url = self.company["careers_url"]
         wait_for = self.company.get("playwright_wait_for")
         base = f"{urlparse(careers_url).scheme}://{urlparse(careers_url).netloc}"
@@ -34,24 +38,24 @@ class PlaywrightScraper(BaseScraper):
                         break
                     visited_pages.add(page_url)
 
-                    # Open a fresh page per URL so client-side routers don't carry
-                    # over stale DOM content from the previous page into the next.
+                    # open a fresh context per page so client-side routers
+                    # don't carry stale DOM state between navigations
                     context = browser.new_context(
                         user_agent=HEADERS["User-Agent"],
                         extra_http_headers={"Accept-Language": HEADERS["Accept-Language"]},
                     )
                     pw_page = context.new_page()
-
                     log.debug("  [playwright] fetching %s", page_url)
                     pw_page.goto(page_url, wait_until="domcontentloaded", timeout=self.request_timeout * 1000)
 
                     if wait_for:
+                        # wait for a specific element to confirm jobs have rendered
                         try:
                             pw_page.wait_for_selector(wait_for, timeout=self.request_timeout * 1000)
                         except Exception:
                             log.debug("  [playwright] wait_for selector '%s' not found", wait_for)
                     else:
-                        # Give JS frameworks a moment to render after load
+                        # give JS frameworks a moment to render after DOM is ready
                         pw_page.wait_for_timeout(2000)
 
                     html = pw_page.content()

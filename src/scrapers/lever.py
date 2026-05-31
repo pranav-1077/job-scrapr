@@ -1,12 +1,18 @@
+"""Scraper for Lever-powered job boards using the public JSON API"""
+
 import datetime
 import requests
+
 from .base import BaseScraper, Job
 
 API = "https://api.lever.co/v0/postings/{company}"
 
 
 class LeverScraper(BaseScraper):
+    """Fetches jobs from the Lever public postings API"""
+
     def fetch_jobs(self) -> list[Job]:
+        """Returns all active job listings from the Lever board"""
         company_id = self.company["company_id"]
         resp = requests.get(
             API.format(company=company_id),
@@ -20,7 +26,7 @@ class LeverScraper(BaseScraper):
         jobs = []
         for item in data:
             cats = item.get("categories") or {}
-            # convert millisecond timestamp to ISO date
+            # Lever timestamps are milliseconds since epoch
             created_ms = item.get("createdAt")
             posted_at = (
                 datetime.datetime.fromtimestamp(created_ms / 1000, tz=datetime.timezone.utc)

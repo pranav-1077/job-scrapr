@@ -27,7 +27,7 @@ keyword_filters:
 
 data_dir: ./data
 
-request_timeout: 30   # seconds per HTTP request
-max_workers: 10                # concurrent scrapers; keep low enough to avoid rate-limiting
-playwright_scraper_timeout: 60   # seconds per Playwright page navigation
-max_job_age_days: 60  # ignore jobs posted more than this many days ago (API scrapers only)
+request_timeout: 30 # seconds per HTTP request
+max_workers: 10 # concurrent scrapers; keep low enough to avoid rate-limiting
+playwright_scraper_timeout: 60 # seconds per Playwright page navigation
+max_job_age_days: 60 # ignore jobs posted more than this many days ago (API scrapers only)

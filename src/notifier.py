@@ -1,3 +1,5 @@
+"""Builds and sends a digest email summarising new and removed job postings"""
+
 import os
 import smtplib
 from collections import defaultdict
@@ -5,13 +7,20 @@ from datetime import date
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+# shared cell styles used across the HTML table
+TD = "padding:10px 12px;border-bottom:1px solid #e5e7eb;"
+TH = "padding:10px 12px;text-align:left;font-weight:600;border-bottom:2px solid #e5e7eb;"
+
 
 class EmailNotifier:
     def __init__(self, config: dict):
+        """Stores SMTP config for use when sending"""
         self.config = config
 
     def send(self, jobs: list[dict], email_only_companies: list[dict] | None = None,
              removed_jobs: list[dict] | None = None):
+        """Builds and sends the digest email with new and removed postings"""
+        # prefer env var over config file so secrets stay out of yaml
         password = os.environ.get("SMTP_PASSWORD") or self.config.get("smtp_password", "")
         if not password:
             raise RuntimeError(
@@ -19,20 +28,24 @@ class EmailNotifier:
                 "Add it to your .env file (Gmail App Password)."
             )
 
-        msg = MIMEMultipart("alternative")
-        today = date.today().strftime("%B %d, %Y")
         removed_jobs = removed_jobs or []
+        email_only_companies = email_only_companies or []
+
+        # build subject line dynamically based on what changed
+        today = date.today().strftime("%B %d, %Y")
         parts = []
         if jobs:
             parts.append(f"{len(jobs)} new posting(s)")
         if removed_jobs:
             parts.append(f"{len(removed_jobs)} removed")
+
+        msg = MIMEMultipart("alternative")
         msg["Subject"] = f"[job-scrapr] {', '.join(parts)} — {today}"
         msg["From"] = self.config["sender"]
         recipients = self.config["recipients"]
         msg["To"] = ", ".join(recipients)
 
-        email_only_companies = email_only_companies or []
+        # attach both plain-text and HTML; email clients pick the best one they support
         msg.attach(MIMEText(self._build_plain(jobs, email_only_companies, removed_jobs), "plain"))
         msg.attach(MIMEText(self._build_html(jobs, email_only_companies, removed_jobs), "html"))
 
@@ -47,6 +60,8 @@ class EmailNotifier:
 
     def _build_plain(self, jobs: list[dict], email_only: list[dict],
                      removed_jobs: list[dict] | None = None) -> str:
+        """Renders a plain-text version of the digest grouped by company"""
+        # group new jobs by company for a cleaner layout
         by_company: dict[str, list] = defaultdict(list)
         for j in jobs:
             by_company[j["company"]].append(j)
@@ -91,6 +106,8 @@ class EmailNotifier:
 
     def _build_html(self, jobs: list[dict], email_only: list[dict],
                     removed_jobs: list[dict] | None = None) -> str:
+        """Renders an HTML version of the digest as a styled table"""
+        # group by company so we can use rowspan to merge company name cells
         by_company: dict[str, list] = defaultdict(list)
         for j in jobs:
             by_company[j["company"]].append(j)
@@ -102,6 +119,7 @@ class EmailNotifier:
                 dept = j.get("department") or ""
                 loc = j.get("location") or ""
                 posted = j.get("posted_at") or ""
+                # only emit the company cell on the first row; rowspan covers the rest
                 co_cell = (
                     f'<td rowspan="{len(by_company[company])}" style="{TD} font-weight:600;'
                     f'vertical-align:top;border-right:2px solid #e5e7eb;">{company}</td>'
@@ -155,6 +173,7 @@ class EmailNotifier:
                         f'vertical-align:top;border-right:2px solid #fecaca;color:#6b7280;">{company}</td>'
                         if first else ""
                     )
+                    # render title as a strikethrough link if a URL is available
                     title_cell = (
                         f'<a href="{r["url"]}" style="color:#9ca3af;text-decoration:line-through;">'
                         f'{r["title"]}</a>'
@@ -242,7 +261,3 @@ class EmailNotifier:
   </div>
 </body>
 </html>"""
-
-
-TD = "padding:10px 12px;border-bottom:1px solid #e5e7eb;"
-TH = "padding:10px 12px;text-align:left;font-weight:600;border-bottom:2px solid #e5e7eb;"

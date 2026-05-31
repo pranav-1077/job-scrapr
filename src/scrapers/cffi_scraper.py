@@ -1,6 +1,7 @@
+"""Scraper for Cloudflare-protected sites using curl_cffi Chrome TLS impersonation"""
+
 import re
 from urllib.parse import urljoin, urlparse
-
 from bs4 import BeautifulSoup
 from curl_cffi import requests as cffi_requests
 from curl_cffi.const import CurlOpt
@@ -11,16 +12,17 @@ MAX_PAGES = 20
 
 
 class CffiScraper(BaseScraper):
-    """Scraper for Cloudflare-protected sites using curl_cffi browser impersonation.
+    """Bypasses Cloudflare bot detection using curl_cffi Chrome fingerprint impersonation
 
     Config keys:
-      careers_url    — URL of the careers listing page
-      link_pattern   — substring that job hrefs must contain
-      title_selector — CSS selector for the title element within each job <a>
-      location_selector — CSS selector for the location element within each job <a>
+      careers_url       - URL of the careers listing page
+      link_pattern      - substring that job hrefs must contain
+      title_selector    - CSS selector for the title element within each job link
+      location_selector - CSS selector for the location element within each job link
     """
 
     def fetch_jobs(self) -> list[Job]:
+        """Returns all job listings by scraping the careers page with Chrome impersonation"""
         careers_url = self.company["careers_url"]
         link_pattern = self.company.get("link_pattern", "")
         title_selector = self.company.get("title_selector", "")
@@ -34,12 +36,12 @@ class CffiScraper(BaseScraper):
 
         while page_url and pages_visited < MAX_PAGES:
             pages_visited += 1
+            # curl_easy_impersonate resets all curl options including TIMEOUT_MS
+            # so we re-apply the timeout via curl_options which are set after impersonation
             resp = cffi_requests.get(
                 page_url,
                 impersonate="chrome120",
                 timeout=self.request_timeout,
-                # curl_easy_impersonate() resets all curl options (including TIMEOUT_MS),
-                # so re-apply the timeout via curl_options, which are set after impersonation.
                 curl_options={CurlOpt.TIMEOUT_MS: self.request_timeout * 1000},
             )
             resp.raise_for_status()
@@ -76,11 +78,11 @@ class CffiScraper(BaseScraper):
                 if not title or len(title) < 4:
                     continue
 
-                # use URL slug as stable id
+                # use the URL slug as a stable job ID
                 slug = href.rstrip("/").rsplit("/", 1)[-1]
                 jobs.append(Job(id=slug, title=title, url=href, location=location))
 
-            # follow URL-based pagination
+            # follow URL-based pagination if a next link is present
             next_a = soup.find("a", class_=re.compile(r"next", re.I), href=True)
             if not next_a:
                 next_a = soup.find("a", rel="next", href=True)

@@ -1,6 +1,7 @@
+"""Scraper for Eightfold AI-powered career sites using the internal apply API"""
+
 import hashlib
 from urllib.parse import urlparse
-
 import requests
 
 from .base import BaseScraper, Job
@@ -17,14 +18,15 @@ PAGE_SIZE = 50
 
 
 class EightfoldScraper(BaseScraper):
-    """Scraper for eightfold.ai-powered career sites.
+    """Fetches jobs from the Eightfold AI internal apply API
 
     Config keys:
-      careers_url      — public careers page (used to build job links)
-      eightfold_domain — value of the `domain` query param (e.g. 'mlp.com')
+      careers_url      - public careers page used to build job links
+      eightfold_domain - value of the domain query param (e.g. mlp.com)
     """
 
     def fetch_jobs(self) -> list[Job]:
+        """Returns all job listings by paginating through the Eightfold API"""
         careers_url = self.company["careers_url"]
         domain = self.company["eightfold_domain"]
         base = f"{urlparse(careers_url).scheme}://{urlparse(careers_url).netloc}"
@@ -33,7 +35,6 @@ class EightfoldScraper(BaseScraper):
         jobs: list[Job] = []
         start = 0
 
-        # paginate through all positions
         while True:
             resp = requests.get(
                 api_base,
@@ -54,7 +55,6 @@ class EightfoldScraper(BaseScraper):
                 location = pos.get("location") or ""
                 department = pos.get("department") or ""
                 url = f"{careers_url}?pid={job_id}&domain={domain}"
-
                 uid = hashlib.md5(job_id.encode()).hexdigest()[:16]
                 jobs.append(Job(
                     id=uid,

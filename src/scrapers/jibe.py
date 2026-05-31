@@ -1,5 +1,6 @@
-from urllib.parse import urlparse
+"""Scraper for iCIMS/Jibe-powered career sites using the internal JSON API"""
 
+from urllib.parse import urlparse
 from curl_cffi import requests as cffi_requests
 from curl_cffi.const import CurlOpt
 
@@ -7,17 +8,18 @@ from .base import BaseScraper, Job
 
 
 class JibeScraper(BaseScraper):
-    """Scraper for iCIMS/Jibe-powered career sites.
+    """Fetches jobs from the iCIMS/Jibe JSON API
 
-    The API caps results at 100 per request regardless of limit. To retrieve all
-    jobs, we first fetch the tags1 facet list then query each category separately,
-    deduplicating by req_id.
+    The API caps results at 100 per request regardless of limit parameter.
+    To retrieve all jobs we fetch the tags1 facet list from the first response
+    then re-query per category, deduplicating by req_id.
 
     Config keys:
-      careers_url — public careers listing URL; base and path are derived from it
+      careers_url - public careers listing URL, base and path are derived from it
     """
 
     def _get(self, base: str, path: str, **params) -> dict:
+        """Makes a single request to the Jibe jobs API and returns the parsed response"""
         resp = cffi_requests.get(
             f"{base}/api/jobs",
             params={"path": path, "limit": 100, **params},
@@ -29,12 +31,13 @@ class JibeScraper(BaseScraper):
         return resp.json()
 
     def fetch_jobs(self) -> list[Job]:
+        """Returns all job listings by paginating through each category facet"""
         careers_url = self.company["careers_url"]
         parsed = urlparse(careers_url)
         base = f"{parsed.scheme}://{parsed.netloc}"
         path = parsed.path
 
-        # fetch first page to get the full category facet list
+        # first request also returns the full category facet list used for pagination
         first = self._get(base, path)
         categories = [
             f["term"]
@@ -45,6 +48,7 @@ class JibeScraper(BaseScraper):
         jobs: list[Job] = []
 
         def _parse(data: dict) -> None:
+            """Extracts jobs from an API response and adds unseen ones to the jobs list"""
             for item in data.get("jobs", []):
                 d = item["data"]
                 req_id = str(d["req_id"])
@@ -61,9 +65,9 @@ class JibeScraper(BaseScraper):
                     posted_at=posted_raw[:10] if posted_raw else None,
                 ))
 
-        # collect jobs from initial fetch, then re-query per category for the rest
         _parse(first)
 
+        # re-query per category to retrieve jobs beyond the 100-result API cap
         for cat in categories:
             if len(seen_ids) >= first.get("totalCount", 0):
                 break

@@ -1,6 +1,7 @@
+"""Scraper for LinkedIn company job pages using the public guest API"""
+
 import re
 import time
-
 import requests
 from bs4 import BeautifulSoup
 
@@ -23,6 +24,7 @@ _JOB_ID_RE = re.compile(r"-(\d+)$")
 
 
 def _parse_page(html: str) -> list[Job]:
+    """Parses a LinkedIn guest API HTML response and extracts job listings"""
     soup = BeautifulSoup(html, "lxml")
     jobs = []
     for li in soup.find_all("li"):
@@ -35,12 +37,12 @@ def _parse_page(html: str) -> list[Job]:
             continue
 
         title = title_el.get_text(strip=True)
-        # strip tracking params from URL
+        # strip tracking params from the URL
         url = link_el["href"].split("?")[0]
         location = loc_el.get_text(strip=True) if loc_el else ""
         posted_at = time_el.get("datetime", "")[:10] if time_el else None
 
-        # use the numeric job ID from the URL as stable identifier
+        # use the numeric job ID at the end of the URL as a stable identifier
         m = _JOB_ID_RE.search(url)
         job_id = m.group(1) if m else url
 
@@ -55,12 +57,14 @@ def _parse_page(html: str) -> list[Job]:
 
 
 class LinkedInScraper(BaseScraper):
+    """Fetches jobs from the LinkedIn public guest API without requiring login"""
+
     def fetch_jobs(self) -> list[Job]:
+        """Returns all job listings by paginating through the LinkedIn guest API"""
         company_id = self.company["linkedin_company_id"]
         jobs = []
         start = 0
 
-        # paginate until an empty page
         while True:
             resp = requests.get(
                 GUEST_API,
@@ -76,6 +80,7 @@ class LinkedInScraper(BaseScraper):
 
             jobs.extend(page_jobs)
             start += PAGE_SIZE
+            # small delay to avoid rate limiting
             time.sleep(0.5)
 
         return jobs
