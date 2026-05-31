@@ -39,9 +39,9 @@ class SalesforceScraper(BaseScraper):
             )
             page = context.new_page()
             Stealth().apply_stealth_sync(page)
-            page.goto(careers_url, wait_until="load", timeout=40000)
+            page.goto(careers_url, wait_until="domcontentloaded", timeout=self.request_timeout * 1000)
             # wait for first job card to appear
-            page.wait_for_selector(card_selector, timeout=20000)
+            page.wait_for_selector(card_selector, timeout=self.request_timeout * 1000)
             page.wait_for_timeout(2000)
 
             # each lightning-layout-item containing a job card has exactly 2 lines:

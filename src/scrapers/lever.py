@@ -11,7 +11,7 @@ class LeverScraper(BaseScraper):
         resp = requests.get(
             API.format(company=company_id),
             params={"mode": "json", "limit": 500},
-            timeout=30,
+            timeout=self.request_timeout,
             headers={"User-Agent": "job-scrapr/1.0"},
         )
         resp.raise_for_status()

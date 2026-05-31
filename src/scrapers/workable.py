@@ -24,7 +24,7 @@ class WorkableScraper(BaseScraper):
             API.format(slug=slug),
             headers=_HEADERS,
             json={"query": "", "location": [], "department": [], "worktype": [], "remote": []},
-            timeout=30,
+            timeout=self.request_timeout,
         )
         resp.raise_for_status()
 

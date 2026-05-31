@@ -142,7 +142,7 @@ class GenericScraper(BaseScraper):
                 break
             visited_pages.add(page_url)
 
-            resp = requests.get(page_url, headers=HEADERS, timeout=30, allow_redirects=True)
+            resp = requests.get(page_url, headers=HEADERS, timeout=self.request_timeout, allow_redirects=True)
             resp.raise_for_status()
 
             new_jobs, page_url = _parse_jobs_from_html(resp.text, self.company, page_url, base, seen_urls)

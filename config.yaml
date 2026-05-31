@@ -15,23 +15,19 @@ keyword_filters:
   - software
   - engineer
   - developer
-  - software engineer
-  - software developer
+  - engineer
   - research
   - researcher
   - trader
-  - data scientist
-  - data engineer
+  - trading
   - data
   - machine learning
-  - machine learning engineer
+  - algorithm
   - algorithmic
 
 data_dir: ./data
 
 request_timeout: 30   # seconds per HTTP request
-
 max_workers: 10                # concurrent scrapers; keep low enough to avoid rate-limiting
-scraper_timeout: 60            # seconds per scraper (API/generic) before considered hung
-playwright_scraper_timeout: 120  # seconds per scraper (Playwright) — needs browser launch time
+playwright_scraper_timeout: 60   # seconds per Playwright page navigation
 max_job_age_days: 60  # ignore jobs posted more than this many days ago (API scrapers only)

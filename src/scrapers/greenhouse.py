@@ -10,7 +10,7 @@ class GreenhouseScraper(BaseScraper):
         resp = requests.get(
             API.format(token=token),
             params={"content": "true"},
-            timeout=30,
+            timeout=self.request_timeout,
             headers={"User-Agent": "job-scrapr/1.0"},
         )
         resp.raise_for_status()

@@ -20,8 +20,9 @@ class Job:
 
 
 class BaseScraper:
-    def __init__(self, company: dict):
+    def __init__(self, company: dict, request_timeout: int = 30):
         self.company = company
+        self.request_timeout = request_timeout
 
     def fetch_jobs(self) -> list[Job]:
         raise NotImplementedError

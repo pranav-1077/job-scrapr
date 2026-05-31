@@ -5,7 +5,7 @@ import argparse
 import logging
 import os
 import sys
-from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError as FuturesTimeoutError
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from datetime import date, timedelta
 from pathlib import Path
@@ -62,11 +62,14 @@ def _scrape_one(
     keyword_filters: list[str],
     catalog_only: bool,
     cutoff: Optional[date],
+    request_timeout: int = 30,
+    playwright_timeout: int = 120,
 ) -> _ScrapeResult:
     name = company["name"]
     log.info("Scraping %s …", name)
     try:
-        scraper = get_scraper(company)
+        timeout = playwright_timeout if company.get("type") in ("playwright", "salesforce") else request_timeout
+        scraper = get_scraper(company, timeout)
         jobs = scraper.fetch_jobs()
         log.debug("  [%s] fetched %d job(s)", name, len(jobs))
         if catalog_only and state.is_first_run(name):
@@ -94,26 +97,17 @@ def _run_batch(
     keyword_filters: list[str],
     catalog_only: bool,
     cutoff: Optional[date],
-    total_timeout: int,
-) -> tuple[list[_ScrapeResult], list[str]]:
-    """Submit a batch of companies to the executor and collect results."""
+    request_timeout: int = 30,
+    playwright_timeout: int = 120,
+) -> list[_ScrapeResult]:
+    """Submit all companies to the executor and collect results."""
     if not companies:
-        return [], []
-    future_to_company = {
-        executor.submit(_scrape_one, c, state, keyword_filters, catalog_only, cutoff): c
+        return []
+    futures = {
+        executor.submit(_scrape_one, c, state, keyword_filters, catalog_only, cutoff, request_timeout, playwright_timeout): c
         for c in companies
     }
-    completed: list[_ScrapeResult] = []
-    timed_out: list[str] = []
-    try:
-        for future in as_completed(future_to_company, timeout=total_timeout):
-            completed.append(future.result())
-    except FuturesTimeoutError:
-        for future, company in future_to_company.items():
-            if not future.done():
-                timed_out.append(company["name"])
-                log.warning("Scraper timed out (hung): %s", company["name"])
-    return completed, timed_out
+    return [future.result() for future in as_completed(futures)]
 
 
 def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_only: bool = False):
@@ -123,7 +117,7 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
     notifier = EmailNotifier(config["email"])
     keyword_filters: list[str] = config.get("keyword_filters", [])
     max_workers: int = config.get("max_workers", 10)
-    scraper_timeout: int = config.get("scraper_timeout", 60)
+    request_timeout: int = config.get("request_timeout", 30)
     playwright_scraper_timeout: int = config.get("playwright_scraper_timeout", 120)
     notify_removed: bool = config.get("notify_removed_jobs", True)
     max_job_age_days: int = config.get("max_job_age_days", 60)
@@ -134,31 +128,23 @@ def run(config: dict, companies: list[dict], *, dry_run: bool = False, catalog_o
     email_only_companies: list[dict] = [c for c in companies if not c.get("disabled") and c.get("type") == "email_only"]
 
     # playwright scrapers run first to claim worker slots before fast scrapers fill them
-    fast = [c for c in active_companies if c.get("type") != "playwright"]
-    slow = [c for c in active_companies if c.get("type") == "playwright"]
+    slow = [c for c in active_companies if c.get("type") in ("playwright", "salesforce")]
+    fast = [c for c in active_companies if c.get("type") not in ("playwright", "salesforce")]
 
-    completed_results: list[_ScrapeResult] = []
-    timed_out_names: list[str] = []
-
-    # Playwright scrapers are submitted first so they get immediate worker slots.
-    # Fast scrapers fill remaining workers in parallel rather than waiting for a second phase.
-    # Total budget = playwright ceiling + one fast-scraper ceiling to cover stragglers.
-    total_timeout = playwright_scraper_timeout + scraper_timeout
     log.info("Scraping %d companies (%d Playwright, %d fast) …", len(active_companies), len(slow), len(fast))
 
     executor = ThreadPoolExecutor(max_workers=max_workers)
     try:
-        completed_results, timed_out_names = _run_batch(
-            slow + fast, executor, state, keyword_filters, catalog_only, cutoff, total_timeout
+        completed_results = _run_batch(
+            slow + fast, executor, state, keyword_filters, catalog_only, cutoff, request_timeout, playwright_scraper_timeout
         )
     finally:
-        # Don't block shutdown on threads that are genuinely stuck.
-        executor.shutdown(wait=False, cancel_futures=True)
+        executor.shutdown(wait=True)
 
     # aggregate results
     all_new_jobs: list[dict] = []
     all_removed_jobs: list[dict] = []
-    errors: list[str] = [f"{n}: timed out after {total_timeout}s" for n in timed_out_names]
+    errors: list[str] = []
 
     for result in completed_results:
         if result.error:

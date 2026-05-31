@@ -43,11 +43,11 @@ class PlaywrightScraper(BaseScraper):
                     pw_page = context.new_page()
 
                     log.debug("  [playwright] fetching %s", page_url)
-                    pw_page.goto(page_url, wait_until="load", timeout=30000)
+                    pw_page.goto(page_url, wait_until="domcontentloaded", timeout=self.request_timeout * 1000)
 
                     if wait_for:
                         try:
-                            pw_page.wait_for_selector(wait_for, timeout=15000)
+                            pw_page.wait_for_selector(wait_for, timeout=self.request_timeout * 1000)
                         except Exception:
                             log.debug("  [playwright] wait_for selector '%s' not found", wait_for)
                     else:

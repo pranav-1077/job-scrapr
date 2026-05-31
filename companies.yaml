@@ -257,6 +257,7 @@ companies:
     type: playwright
     careers_url: "https://www.hudsonrivertrading.com/careers/"
     link_pattern: "/hrt-job/"
+    playwright_wait_for: "a[href*='/hrt-job/']"
 
   - name: "Jane Street Capital"
     type: greenhouse
@@ -345,9 +346,8 @@ companies:
     careers_url: "https://www.rentec.com/Careers.action?jobs=true"
 
   - name: "SIG (Susquehanna)"
-    type: playwright
-    careers_url: "https://careers.sig.com/global-susquehanna-jobs"
-    link_pattern: "sig.com"
+    type: jibe
+    careers_url: "https://careers.sig.com/global-susquehanna/jobs"
 
   - name: "Simplex Trading"
     type: greenhouse

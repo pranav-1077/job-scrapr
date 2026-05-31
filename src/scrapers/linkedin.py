@@ -66,7 +66,7 @@ class LinkedInScraper(BaseScraper):
                 GUEST_API,
                 params={"f_C": company_id, "start": start},
                 headers=HEADERS,
-                timeout=30,
+                timeout=self.request_timeout,
             )
             resp.raise_for_status()
 

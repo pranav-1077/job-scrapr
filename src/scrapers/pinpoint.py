@@ -20,7 +20,7 @@ class PinpointScraper(BaseScraper):
         url = self.company["careers_url"].rstrip("/")
         subdomain = urlparse(url).hostname.split(".")[0]
 
-        resp = requests.get(API.format(subdomain=subdomain), headers=_HEADERS, timeout=30)
+        resp = requests.get(API.format(subdomain=subdomain), headers=_HEADERS, timeout=self.request_timeout)
         resp.raise_for_status()
 
         jobs = []

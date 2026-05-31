@@ -2,6 +2,8 @@ import re
 from urllib.parse import urljoin, urlparse
 
 from bs4 import BeautifulSoup
+from curl_cffi import requests as cffi_requests
+from curl_cffi.const import CurlOpt
 
 from .base import BaseScraper, Job
 
@@ -19,13 +21,6 @@ class CffiScraper(BaseScraper):
     """
 
     def fetch_jobs(self) -> list[Job]:
-        try:
-            from curl_cffi import requests as cffi_requests
-        except ImportError:
-            raise RuntimeError(
-                "curl-cffi is not installed. Run: pip install curl-cffi"
-            )
-
         careers_url = self.company["careers_url"]
         link_pattern = self.company.get("link_pattern", "")
         title_selector = self.company.get("title_selector", "")
@@ -39,7 +34,14 @@ class CffiScraper(BaseScraper):
 
         while page_url and pages_visited < MAX_PAGES:
             pages_visited += 1
-            resp = cffi_requests.get(page_url, impersonate="chrome120", timeout=30)
+            resp = cffi_requests.get(
+                page_url,
+                impersonate="chrome120",
+                timeout=self.request_timeout,
+                # curl_easy_impersonate() resets all curl options (including TIMEOUT_MS),
+                # so re-apply the timeout via curl_options, which are set after impersonation.
+                curl_options={CurlOpt.TIMEOUT_MS: self.request_timeout * 1000},
+            )
             resp.raise_for_status()
 
             soup = BeautifulSoup(resp.text, "lxml")

@@ -39,7 +39,7 @@ class EightfoldScraper(BaseScraper):
                 api_base,
                 params={"domain": domain, "start": start, "num": PAGE_SIZE, "sort_by": "relevance"},
                 headers=HEADERS,
-                timeout=30,
+                timeout=self.request_timeout,
             )
             resp.raise_for_status()
             data = resp.json()

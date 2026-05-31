@@ -32,7 +32,7 @@ class WorkdayScraper(BaseScraper):
 
         # Prime session cookies + grab CSRF token
         page_url = f"{base}/{path}"
-        page_resp = session.get(page_url, timeout=30, allow_redirects=True)
+        page_resp = session.get(page_url, timeout=self.request_timeout, allow_redirects=True)
         # Workday behind Cloudflare returns 500 for automated requests;
         # log a warning and return empty rather than raising.
         if page_resp.status_code >= 400:
@@ -59,7 +59,7 @@ class WorkdayScraper(BaseScraper):
             resp = session.post(
                 api_url,
                 json={"limit": limit, "offset": offset, "searchText": "", "locations": []},
-                timeout=30,
+                timeout=self.request_timeout,
             )
             if resp.status_code == 422:
                 # Some tenants return 422; fall back to returning what we have

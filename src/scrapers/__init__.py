@@ -10,6 +10,7 @@ from .salesforce import SalesforceScraper
 from .cffi_scraper import CffiScraper
 from .workable import WorkableScraper
 from .pinpoint import PinpointScraper
+from .jibe import JibeScraper
 from .base import Job
 
 _SCRAPER_MAP = {
@@ -25,12 +26,13 @@ _SCRAPER_MAP = {
     "cffi": CffiScraper,
     "workable": WorkableScraper,
     "pinpoint": PinpointScraper,
+    "jibe": JibeScraper,
 }
 
 
-def get_scraper(company: dict):
+def get_scraper(company: dict, request_timeout: int = 30):
     scraper_type = company.get("type", "generic")
     cls = _SCRAPER_MAP.get(scraper_type)
     if not cls:
         raise ValueError(f"Unknown scraper type '{scraper_type}' for {company.get('name')}")
-    return cls(company)
+    return cls(company, request_timeout)
