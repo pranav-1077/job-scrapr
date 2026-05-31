@@ -109,8 +109,9 @@ def _run_batch(
 
 def run(config: dict, companies: list[dict], dry_run: bool = False, catalog_only: bool = False):
     """Orchestrates the full scrape, diff, state update, and email dispatch"""
+
+    # resolve relative paths against the repo root, load config params
     raw_data_dir = config.get("data_dir", "./data")
-    # resolve relative paths against the repo root, not the working directory
     data_dir = raw_data_dir if Path(raw_data_dir).is_absolute() else Path(__file__).parent.parent / raw_data_dir
     state = JobState(str(data_dir))
     notifier = EmailNotifier(config["email"])
@@ -120,6 +121,7 @@ def run(config: dict, companies: list[dict], dry_run: bool = False, catalog_only
     playwright_scraper_timeout: int = config.get("playwright_scraper_timeout", 120)
     notify_removed: bool = config.get("notify_removed_jobs", True)
     max_job_age_days: int = config.get("max_job_age_days", 60)
+
     # ignore jobs posted before this date to reduce noise from old postings
     cutoff: Optional[date] = date.today() - timedelta(days=max_job_age_days) if max_job_age_days else None
 
@@ -128,12 +130,12 @@ def run(config: dict, companies: list[dict], dry_run: bool = False, catalog_only
     email_only_companies: list[dict] = [c for c in companies if not c.get("disabled") and c.get("type") == "email_only"]
 
     # submit playwright/salesforce scrapers first so they claim worker slots immediately
-    # rather than waiting for the fast API scrapers to fill all available workers
     slow = [c for c in active_companies if c.get("type") in ("playwright", "salesforce")]
     fast = [c for c in active_companies if c.get("type") not in ("playwright", "salesforce")]
 
     log.info("Scraping %d companies (%d Playwright, %d fast) …", len(active_companies), len(slow), len(fast))
 
+    # parallelized scrape execution
     executor = ThreadPoolExecutor(max_workers=max_workers)
     try:
         completed_results = _run_batch(
@@ -242,6 +244,7 @@ def verify_boards(companies: list[dict]):
 
 def main():
     """Parses CLI args, sets up logging, and dispatches to run or verify_boards"""
+
     parser = argparse.ArgumentParser(description="Scrape trading firm job boards and email new postings.")
     parser.add_argument("--config", default="config.yaml", help="Path to config.yaml")
     parser.add_argument("--companies", default="companies.yaml", help="Path to companies.yaml")
