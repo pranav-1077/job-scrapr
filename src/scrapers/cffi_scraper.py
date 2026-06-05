@@ -40,7 +40,7 @@ class CffiScraper(BaseScraper):
             # so we re-apply the timeout via curl_options which are set after impersonation
             resp = cffi_requests.get(
                 page_url,
-                impersonate="chrome120",
+                impersonate="chrome",
                 timeout=self.request_timeout,
                 curl_options={CurlOpt.TIMEOUT_MS: self.request_timeout * 1000},
             )

@@ -12,6 +12,7 @@ Each company in `companies.yaml` is assigned a scraper type:
 | `jibe` | iCIMS/Jibe JSON API with category-facet pagination |
 | `generic` | HTTP request + BeautifulSoup |
 | `cffi` | Chrome TLS impersonation (Cloudflare bypass) |
+| `wp_ajax` | WordPress admin-ajax.php job listing API (Citadel, Citadel Securities) |
 | `playwright` | Headless Chromium for JS-rendered pages |
 | `salesforce` | Playwright + stealth for Salesforce Experience Cloud sites |
 | `linkedin` | LinkedIn public guest API |
@@ -47,6 +48,7 @@ src/
     eightfold.py          — Eightfold AI paginated API
     generic.py            — generic HTML scraper (BeautifulSoup)
     cffi_scraper.py       — curl_cffi Chrome impersonation (Cloudflare bypass)
+    wp_ajax.py            — WordPress admin-ajax.php API (Citadel, Citadel Securities)
     playwright_scraper.py — headless Chromium for JS-rendered pages
     salesforce.py         — Salesforce Experience Cloud (Playwright + stealth)
     jibe.py               — iCIMS/Jibe JSON API with category-facet pagination
@@ -92,7 +94,7 @@ To add a company:
 ```yaml
 - name: "Acme Capital"
   type: greenhouse          # or: lever, workday, ashby, eightfold, workable, pinpoint,
-                            #     jibe, generic, cffi, playwright, salesforce, linkedin, email_only
+                            #     jibe, generic, cffi, wp_ajax, playwright, salesforce, linkedin, email_only
   board_token: acme         # greenhouse / ashby
   # company_id: acme        # lever
   # workday_base: "https://acme.wd5.myworkdayjobs.com"  # workday

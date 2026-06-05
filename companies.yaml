@@ -130,18 +130,12 @@ companies:
   # a browser-based solution is added (e.g. Playwright). Keep disabled for now.
 
   - name: "Citadel"
-    type: cffi
+    type: wp_ajax
     careers_url: "https://www.citadel.com/careers/open-opportunities/"
-    link_pattern: "/careers/details/"
-    title_selector: "h2.visible"
-    location_selector: "span.careers-listing-card__location"
 
   - name: "Citadel Securities"
-    type: cffi
+    type: wp_ajax
     careers_url: "https://www.citadelsecurities.com/careers/open-opportunities/"
-    link_pattern: "/careers/details/"
-    title_selector: "h2.visible"
-    location_selector: "div.careers-listing-card__location"
 
   - name: "Cubist Systematic Strategies"
     type: playwright

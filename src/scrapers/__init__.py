@@ -13,6 +13,7 @@ from .playwright_scraper import PlaywrightScraper
 from .salesforce import SalesforceScraper
 from .workable import WorkableScraper
 from .workday import WorkdayScraper
+from .wp_ajax import WPAjaxScraper
 
 from .base import Job
 
@@ -30,6 +31,7 @@ _SCRAPER_MAP = {
     "salesforce": SalesforceScraper,
     "workable": WorkableScraper,
     "workday": WorkdayScraper,
+    "wp_ajax": WPAjaxScraper,
 }
 
 
