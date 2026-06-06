@@ -42,6 +42,7 @@ class WPAjaxScraper(BaseScraper):
         resp = cffi_requests.post(
             ajax_url,
             data=data,
+            headers={"Referer": careers_url},
             impersonate="chrome",
             timeout=self.request_timeout,
             curl_options=curl_opts,
