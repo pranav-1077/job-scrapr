@@ -3,6 +3,7 @@
 from .ashby import AshbyScraper
 from .cffi_scraper import CffiScraper
 from .eightfold import EightfoldScraper
+from .gem import GemScraper
 from .generic import GenericScraper
 from .greenhouse import GreenhouseScraper
 from .jibe import JibeScraper
@@ -21,6 +22,7 @@ _SCRAPER_MAP = {
     "ashby": AshbyScraper,
     "cffi": CffiScraper,
     "eightfold": EightfoldScraper,
+    "gem": GemScraper,
     "generic": GenericScraper,
     "greenhouse": GreenhouseScraper,
     "jibe": JibeScraper,

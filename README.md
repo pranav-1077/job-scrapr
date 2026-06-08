@@ -1,6 +1,6 @@
 # job-scrapr
 
-Scrapes job boards at 112 quant/trading firms and emails new postings daily.
+Scrapes job boards at 114 quant/trading firms and emails new postings daily.
 
 ## How it works
 
@@ -8,7 +8,7 @@ Each company in `companies.yaml` is assigned a scraper type:
 
 | Type | How it works |
 |---|---|
-| `greenhouse` `lever` `workday` `ashby` `eightfold` `workable` `pinpoint` | Public jobs API |
+| `greenhouse` `lever` `workday` `ashby` `eightfold` `workable` `pinpoint` `gem` | Public jobs API |
 | `jibe` | iCIMS/Jibe JSON API with category-facet pagination |
 | `generic` | HTTP request + BeautifulSoup |
 | `cffi` | Chrome TLS impersonation (Cloudflare bypass) |

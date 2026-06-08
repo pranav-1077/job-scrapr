@@ -224,6 +224,11 @@ companies:
     careers_url: "https://group1.com/careers/"
     link_pattern: "group1.applicantpro.com/jobs/"
 
+  - name: "G-Research"
+    type: generic
+    careers_url: "https://www.gresearch.com/vacancies/"
+    link_pattern: "/vacancies/"
+
   - name: "GSA Capital"
     type: greenhouse
     board_token: gsacapital
@@ -351,6 +356,10 @@ companies:
     type: generic
     careers_url: "https://www.sparkim.com/careers/"
     link_pattern: "sparkim.com/role/"
+
+  - name: "Summit Securities Group"
+    type: gem
+    board_slug: "ssg"
 
   - name: "TGS Management"
     type: email_only

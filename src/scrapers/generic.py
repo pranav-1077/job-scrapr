@@ -97,6 +97,10 @@ def _parse_jobs_from_html(
         elif not href.startswith("http"):
             href = urljoin(page_url, href)
 
+        # skip fragment anchors and self-links back to the careers root
+        if "#" in href or href.rstrip("/") == company.get("careers_url", "").rstrip("/"):
+            continue
+
         if link_pattern and link_pattern not in href:
             continue
 
