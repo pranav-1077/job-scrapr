@@ -3,7 +3,9 @@
 import argparse
 import logging
 import os
+import socket
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from datetime import date, timedelta
@@ -107,8 +109,28 @@ def _run_batch(
     return [future.result() for future in as_completed(futures)]
 
 
+def _wait_for_internet(timeout_seconds: int = 300):
+    """Blocks until internet is reachable or timeout_seconds elapses, then raises."""
+    deadline = time.time() + timeout_seconds
+    attempt = 0
+    while time.time() < deadline:
+        try:
+            socket.setdefaulttimeout(3)
+            socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect(("8.8.8.8", 53))
+            if attempt:
+                log.info("Network reachable after %ds.", attempt * 5)
+            return
+        except OSError:
+            attempt += 1
+            log.info("Waiting for network… (%ds elapsed)", attempt * 5)
+            time.sleep(5)
+    raise RuntimeError(f"No internet connectivity after {timeout_seconds}s — aborting.")
+
+
 def run(config: dict, companies: list[dict], dry_run: bool = False, catalog_only: bool = False):
     """Orchestrates the full scrape, diff, state update, and email dispatch"""
+
+    _wait_for_internet()
 
     # resolve relative paths against the repo root, load config params
     raw_data_dir = config.get("data_dir", "./data")
