@@ -52,6 +52,7 @@ class EmailNotifier:
         with smtplib.SMTP(
             self.config.get("smtp_host", "smtp.gmail.com"),
             self.config.get("smtp_port", 587),
+            timeout=30,
         ) as server:
             server.ehlo()
             server.starttls()

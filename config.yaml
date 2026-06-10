@@ -25,6 +25,13 @@ keyword_filters:
   - algorithm
   - algorithmic
 
+# Daily run schedule for the macOS launchd job
+# hour is 0 to 23 interpreted in the timezone below
+# timezone accepts PST EST or CST and is converted to the machine local time at install
+schedule:
+  hour: 8
+  timezone: EST
+
 data_dir: ./data
 
 request_timeout: 30 # seconds per HTTP request

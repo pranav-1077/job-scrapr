@@ -3,9 +3,7 @@
 import argparse
 import logging
 import os
-import socket
 import sys
-import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from datetime import date, timedelta
@@ -109,28 +107,8 @@ def _run_batch(
     return [future.result() for future in as_completed(futures)]
 
 
-def _wait_for_internet(timeout_seconds: int = 300):
-    """Blocks until internet is reachable or timeout_seconds elapses, then raises."""
-    deadline = time.time() + timeout_seconds
-    attempt = 0
-    while time.time() < deadline:
-        try:
-            socket.setdefaulttimeout(3)
-            socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect(("8.8.8.8", 53))
-            if attempt:
-                log.info("Network reachable after %ds.", attempt * 5)
-            return
-        except OSError:
-            attempt += 1
-            log.info("Waiting for network… (%ds elapsed)", attempt * 5)
-            time.sleep(5)
-    raise RuntimeError(f"No internet connectivity after {timeout_seconds}s — aborting.")
-
-
 def run(config: dict, companies: list[dict], dry_run: bool = False, catalog_only: bool = False):
     """Orchestrates the full scrape, diff, state update, and email dispatch"""
-
-    _wait_for_internet()
 
     # resolve relative paths against the repo root, load config params
     raw_data_dir = config.get("data_dir", "./data")
@@ -186,8 +164,6 @@ def run(config: dict, companies: list[dict], dry_run: bool = False, catalog_only
         all_removed_jobs.extend(result.removed_jobs)
         state.update(result.name, result.jobs)
 
-    state.save()
-
     if errors:
         log.warning("Completed with %d error(s):\n  %s", len(errors), "\n  ".join(errors))
 
@@ -200,8 +176,10 @@ def run(config: dict, companies: list[dict], dry_run: bool = False, catalog_only
         try:
             notifier.send(all_new_jobs, email_only_companies, removed_for_email)
             log.info("Email sent.")
+            state.save()
         except Exception as exc:
             log.error("Failed to send email: %s", exc)
+            log.warning("State not saved — new jobs will be re-reported on next successful run.")
     elif should_email:
         log.info("[dry-run] Would send email with %d new, %d removed posting(s).",
                  len(all_new_jobs), len(all_removed_jobs))
@@ -209,8 +187,10 @@ def run(config: dict, companies: list[dict], dry_run: bool = False, catalog_only
             log.info("  [NEW]     [%s] %s — %s", j["company"], j["title"], j["url"])
         for r in all_removed_jobs:
             log.info("  [REMOVED] [%s] %s — %s", r["company"], r["title"], r.get("url", ""))
+        state.save()
     else:
         log.info("No new or removed jobs found — no email sent.")
+        state.save()
 
 
 def verify_boards(companies: list[dict]):

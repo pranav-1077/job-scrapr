@@ -1,11 +1,17 @@
 """Scraper for WordPress admin-ajax.php job listing pages"""
 
+import time
 from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 from curl_cffi import requests as cffi_requests
 from curl_cffi.const import CurlOpt  # re-applied after impersonate resets curl options
 
 from .base import BaseScraper, Job
+
+_RETRIES = 3
+_BACKOFF = [3, 8]  # seconds to wait before each retry after a transient block
+# statuses that come from intermittent anti-bot or rate-limit responses worth retrying
+_RETRYABLE = (403, 429)
 
 _SITE_CONFIGS = {
     "https://www.citadel.com/careers/open-opportunities/": {
@@ -39,14 +45,20 @@ class WPAjaxScraper(BaseScraper):
             ("jobTitle", ""),
         ]
 
-        resp = cffi_requests.post(
-            ajax_url,
-            data=data,
-            headers={"Referer": careers_url},
-            impersonate="chrome",
-            timeout=self.request_timeout,
-            curl_options=curl_opts,
-        )
+        # retry the intermittent Cloudflare 403 with backoff before giving up
+        for attempt in range(_RETRIES):
+            if attempt:
+                time.sleep(_BACKOFF[attempt - 1])
+            resp = cffi_requests.post(
+                ajax_url,
+                data=data,
+                headers={"Referer": careers_url},
+                impersonate="chrome",
+                timeout=self.request_timeout,
+                curl_options=curl_opts,
+            )
+            if resp.status_code not in _RETRYABLE:
+                break
         resp.raise_for_status()
 
         soup = BeautifulSoup(resp.json()["content"], "lxml")
