@@ -11,10 +11,10 @@ Each company in `companies.yaml` is assigned a scraper type:
 | `greenhouse` `lever` `workday` `ashby` `eightfold` `workable` `pinpoint` `gem` | Public jobs API |
 | `jibe` | iCIMS/Jibe JSON API with category-facet pagination |
 | `generic` | HTTP request + BeautifulSoup |
-| `cffi` | Chrome TLS impersonation (Cloudflare bypass) |
+| `cffi` | HTTP client with a real browser TLS fingerprint, for sites that reject plain scripts |
 | `wp_ajax` | WordPress admin-ajax.php job listing API (Citadel, Citadel Securities) |
 | `playwright` | Headless Chromium for JS-rendered pages |
-| `salesforce` | Playwright + stealth for Salesforce Experience Cloud sites |
+| `salesforce` | Headless browser for Salesforce Experience Cloud pages |
 | `linkedin` | LinkedIn public guest API |
 | `email_only` | No scraping — manual check reminder |
 
@@ -47,10 +47,10 @@ src/
     ashby.py              — Ashby JSON API
     eightfold.py          — Eightfold AI paginated API
     generic.py            — generic HTML scraper (BeautifulSoup)
-    cffi_scraper.py       — curl_cffi Chrome impersonation (Cloudflare bypass)
+    cffi_scraper.py       — curl_cffi client using a browser-compatible fingerprint
     wp_ajax.py            — WordPress admin-ajax.php API (Citadel, Citadel Securities)
     playwright_scraper.py — headless Chromium for JS-rendered pages
-    salesforce.py         — Salesforce Experience Cloud (Playwright + stealth)
+    salesforce.py         — Salesforce Experience Cloud via headless browser
     jibe.py               — iCIMS/Jibe JSON API with category-facet pagination
     linkedin.py           — LinkedIn guest API (no login)
     workable.py           — Workable public jobs API
