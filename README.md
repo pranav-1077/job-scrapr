@@ -12,7 +12,7 @@ Each company in `companies.yaml` is assigned a scraper type:
 | `jibe` | iCIMS/Jibe JSON API with category-facet pagination |
 | `generic` | HTTP request + BeautifulSoup |
 | `cffi` | HTTP client with a real browser TLS fingerprint, for sites that reject plain scripts |
-| `wp_ajax` | WordPress admin-ajax.php job listing API (Citadel, Citadel Securities) |
+| `wp_ajax` | WordPress admin-ajax.php job listing API |
 | `playwright` | Headless Chromium for JS-rendered pages |
 | `salesforce` | Headless browser for Salesforce Experience Cloud pages |
 | `linkedin` | LinkedIn public guest API |
