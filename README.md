@@ -81,7 +81,7 @@ python src/main.py --dry-run
 
 ## Config
 
-**`config.yaml`** — keyword filters, request settings
+**`config.yaml`** — keyword filters, request settings, daily run `schedule`
 **`companies.yaml`** — add/remove/disable companies
 **`.env`** — secrets for local runs:
 ```
@@ -106,20 +106,18 @@ To add a company:
 
 ## Scheduled runs (macOS launchd)
 
-launchd runs the job at **8:00 AM daily**, waiting for network connectivity and waking the Mac if needed.
-
-**1. Install the schedule:**
+Set the run time in `config.yaml` (`schedule.hour` 0-23, `schedule.timezone` PST/EST/CST), then install:
 
 ```bash
 venv/bin/python scripts/setup_launchd.py
 ```
 
-This fills in your local paths in the plist template (`launchd/com.job-scrapr.daily.plist`) and installs it into `~/Library/LaunchAgents/`. Re-run if you ever move the repo.
+Re-run after changing the schedule or moving the repo. launchd only fires when the Mac is awake at that time.
 
-**2. Manage:**
+Manage:
 
 ```bash
-# Trigger manually without waiting for 8 AM
+# Trigger manually without waiting for the scheduled time
 launchctl start com.job-scrapr.daily
 
 # Check status / last exit code
