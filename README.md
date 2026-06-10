@@ -48,7 +48,7 @@ src/
     eightfold.py          — Eightfold AI paginated API
     generic.py            — generic HTML scraper (BeautifulSoup)
     cffi_scraper.py       — curl_cffi client using a browser-compatible fingerprint
-    wp_ajax.py            — WordPress admin-ajax.php API (Citadel, Citadel Securities)
+    wp_ajax.py            — WordPress admin-ajax.php API
     playwright_scraper.py — headless Chromium for JS-rendered pages
     salesforce.py         — Salesforce Experience Cloud via headless browser
     jibe.py               — iCIMS/Jibe JSON API with category-facet pagination
