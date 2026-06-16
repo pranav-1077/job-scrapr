@@ -520,6 +520,10 @@ companies:
     type: greenhouse
     board_token: weissassetmanagement
 
+  - name: "WH Trading"
+    type: email_only
+    resume_email: opportunities@whtrading.com
+
   - name: "Xantium"
     type: greenhouse
     board_token: xantium
