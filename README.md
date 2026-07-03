@@ -1,6 +1,6 @@
 # job-scrapr
 
-Scrapes job boards at 115 quant/trading firms and emails new postings daily.
+Most job boards fail to reliably capture postings from niche hedge funds / trading firms. This tool scrapes job boards at 115 quant/trading firms and emails new postings daily.
 
 ## How it works
 

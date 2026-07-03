@@ -217,7 +217,13 @@ def verify_boards(companies: list[dict]):
         elif t == "ashby":
             url = f"https://api.ashbyhq.com/posting-api/job-board/{company['board_token']}"
         elif t == "workday":
-            url = company["workday_base"]
+            url = f"{company['workday_base'].rstrip('/')}/{company['workday_path']}"
+        elif t == "gem":
+            url = f"https://jobs.gem.com/{company['board_slug']}"
+        elif t == "wp_ajax":
+            log.info("  -  %s  (wp_ajax uses Chrome impersonation, skipping HTTP check)", name)
+            ok.append(name)
+            continue
         else:
             url = company.get("careers_url", "")
 
