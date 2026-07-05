@@ -249,8 +249,8 @@ companies:
 
 
   - name: "Headlands Technologies"
-    type: email_only
-    email: "jobs@headlandstech.com"
+    type: greenhouse
+    board_token: headlandstechnologiesllc
 
   - name: "Hudson River Trading"
     type: playwright
