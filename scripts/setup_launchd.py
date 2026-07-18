@@ -20,7 +20,7 @@ TZ_ALIASES = {
 }
 
 repo_dir = Path(__file__).parent.parent.resolve()
-python = repo_dir / "venv" / "bin" / "python"
+python = repo_dir / ".venv" / "bin" / "python"
 template = repo_dir / "launchd" / PLIST_NAME
 config_file = repo_dir / "config.yaml"
 dest = LAUNCH_AGENTS / PLIST_NAME
@@ -60,7 +60,7 @@ def main():
 
     if not python.exists():
         print(f"venv not found at {python}")
-        print("Run python3 -m venv venv && venv/bin/pip install -r requirements.txt")
+        print("Run uv sync")
         sys.exit(1)
 
     hour, tz_name = _load_schedule()

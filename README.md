@@ -23,15 +23,15 @@ On each run, newly found jobs are diffed against the last saved state and only f
 
 ## Setup
 
-```bash
-python3 -m venv venv && source venv/bin/activate
-pip install -r requirements.txt
-playwright install chromium
+Requires [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
-cp .env.example .env
+```bash
+make setup
 # add your Gmail App Password to .env
 # generate one at https://myaccount.google.com/apppasswords
 ```
+
+`make setup` runs `uv sync` (installs deps into `.venv`), installs the Playwright Chromium browser, and copies `.env.example` to `.env` if it doesn't exist yet.
 
 ## Project structure
 
@@ -63,21 +63,21 @@ logs/job-scrapr.log — overwritten on each run; logs both terminal and schedule
 
 ## Usage
 
-Activate the venv first: `source venv/bin/activate`
-
 ```bash
 # First run: snapshot current jobs without sending email
-python src/main.py --catalog-only
+make catalog-only
 
 # Normal run: email any new postings since last run
-python src/main.py
+make run
 
 # Check which boards are reachable
-python src/main.py --verify-boards
+make verify-boards
 
 # Scrape without sending email (for testing)
-python src/main.py --dry-run
+make dry-run
 ```
+
+Equivalent `uv run` commands work too, e.g. `uv run python src/main.py --dry-run`.
 
 ## Config
 
@@ -109,7 +109,7 @@ To add a company:
 Set the run time in `config.yaml` (`schedule.hour` 0-23, `schedule.timezone` PST/EST/CST), then install:
 
 ```bash
-venv/bin/python scripts/setup_launchd.py
+make launchd
 ```
 
 Re-run after changing the schedule or moving the repo. launchd only fires when the Mac is awake at that time.
