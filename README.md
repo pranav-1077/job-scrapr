@@ -23,8 +23,6 @@ On each run, newly found jobs are diffed against the last saved state and only f
 
 ## Setup
 
-Requires [uv](https://docs.astral.sh/uv/getting-started/installation/).
-
 ```bash
 make setup
 # add your Gmail App Password to .env
